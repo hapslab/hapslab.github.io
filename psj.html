@@ -1,0 +1,1569 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+
+
+h1 { color: Black;   display: block; font-size: 2.5em; font-weight: bold;}
+h2 { color: #003665; display: block; font-size: 2.1em; font-weight: bold;}
+h3 { color: Teal; display: block; margin-top:0;margin-bottom:0;font-size: 1.70em; font-weight: bold; text-align:center; text-decoration: underline; font-family: monospace;}
+h4 { color: #F88017; display: block; font-size: 1.40em; font-weight: bold;}
+h5 { color: #8F0766; display: block; font-size: 1.20em; font-weight: bold;}
+h6 { color: Red; display: block; font-size: 1.0em; font-weight: bold;}
+
+html
+{
+/*   position: absolute;  takes care of horizontal scrolling too */ 
+/*   background-color: #E9E9E9; */
+   padding-top: 4%;
+/*   padding-bottom: 4%;     TO BE TAKEN BY DISCLAIMER */
+}
+
+
+/*
+table, th, td { border: 1px solid #3d2800; }  #ffeccc; changeto border: 1px solid #e2ce9d;
+*/
+
+table, th, td { border: 1px solid #e2ce9d; text-align:center; }
+
+.show1coltable { border: 1px solid black; align:"justify"; margin:1.5% 20% 1.5% 3%; width: auto;}
+
+.show2coltable { border: 1px solid black; align:"justify"; margin:1.5% 20% 1.5% 3%; width: auto;}
+
+.remember, .note, .important, .watch, .warn 
+{
+   color: red;
+   font-family: courier;
+   font-size: 16px;
+}
+
+.summary
+{
+   color: green;
+   font-family: courier;
+   font-size: 16px;
+   font-style: bold;
+}
+
+.boxed
+{
+border: 3px solid maroon; 
+#align:"left"; 
+margin:1.5% 3% 1.5% 3%; 
+width: auto;
+}
+
+
+table#T01
+{
+   font-family: courier;
+   background-color: cream;
+}
+
+.paraboxed
+{
+   border: 3px solid maroon; 
+   align: left; 
+   width: auto;
+   font-family: monospace;
+   background-color: #f4f1cc;
+   line-height :150%;
+   margin: 0 6% 0 3%; 
+   padding: 0;
+}
+
+pre 
+{
+   display: inline;
+   font-size: 110%;
+   white-space:pre-wrap;
+}
+
+.list
+{
+   font-family: monospace;
+   background-color: #f4f1cc;
+   line-height: 175%;
+   border: .01em solid #e2ce9d;
+   margin: 1em 40em 1em 1.5em;
+   padding: .5em;
+} 
+
+.para 
+{
+   font-family: monospace;
+   background-color: #f4f1cc;
+   line-height: 150%;
+   border: .01em solid #e2ce9d;
+   margin: 1.5em 3em 1.5em 1.5em;
+   padding: 0em 3em .5em 0em;
+} 
+
+.ref
+{
+   font-family: monospace;
+   background-color: #f4f1cc;
+   line-height: 175%;
+   border: .01em solid #e2ce9d;
+   margin: 1.5em 3em 1.5em 1.5em;
+   padding: 1.5em 3em 1.5em 2.5em;
+} 
+
+div.pic
+{
+   text-align: center;   /* aligns image in the center by using img tag inside dev tag */
+   font-family: monospace;
+   background-color: #f4f1cc;
+   border: .01em solid #e2ce9d;
+   margin: 0;
+   padding: 0;
+} 
+
+
+.page_top_img_container
+{
+   position: relative;
+   margin-top: 8%;  
+} 
+
+
+.page_top_img
+{
+   position: relative;
+}
+
+
+
+.show4coltable 
+{
+   position: relative; 
+   float:center;
+   text-align:center; 
+   background-color: #f4f1cc; 
+   font-family: arial;
+   color: black; 
+   margin-left:6%;
+   margin-top:0;
+   margin-right:5%;
+   margin-bottom:1%;
+}
+
+
+.psj_comparison
+{
+   position: relative; 
+   float: center;
+   width: 100%;
+}
+
+.psj_comparison_table_container
+{
+   position: relative; 
+   float:left;
+   text-align:center;
+   height:auto;
+}
+
+.psj_comparison_table
+{
+   border-radius:.5em;
+   border: 1px solid #e2ce9d;
+   font-family:arial;
+   font-size:.9em;
+   background-color:#f9ffe6; 
+   color:black; 
+   margin:1% 5% 3% 16%;    /* 6% -> 16% changes the left margin and dimension/area of .div_psj_walkthrough */
+}
+
+
+.div_psj_walkthrough
+{
+   position:relative;
+   float:left;
+   width:80%;
+   border:none;
+   border-radius:1em;
+/* 
+   border-top:.1em solid #805300;
+   border-left:.2em solid #805300; 
+   border: .02em solid #ffeccc;
+#fff6e6;
+#3d2800;
+   border:.5em solid #cccccc;
+   border-style:groove;
+   box-shadow:1px 2px 3px 8px #bfbfbf;
+   border-radius:1em;
+*/
+
+   font-family:Courier;
+   font-size:14px;
+   color: #003665;
+   font-weight: bold;  
+
+   padding-top:0;
+   padding-right:.7em;    /* .7em; will change gap (white color) between outermost double border and dark gold border foe python, java and scala */
+   padding-left:.5em;
+   padding-bottom:.5em;
+   margin:5% 5% 3% 10%;  /* 10% changes the left margin and dimension/area of .div_psj_walkthrough */
+/*
+   margin:2% 3% 3% 4%;
+*/
+   background:white;
+   line-height: 150%;
+}
+
+
+/* 
+   padding is outer most 
+   margin is inner 
+*/
+
+
+#div_psj_walkthrough_parent_p
+{
+   width: 100%;
+   float:left;
+   border: 1px solid #e2ce9d;
+/*
+   border: .02em solid #ffeccc;
+   color: #003665;  
+*/
+   background-color: #ecf2f8;
+}
+
+.div_psj_walkthrough_child_p
+{
+   width: auto;
+/*
+   width: 99%; must be set to auto for correct padding on all sides 
+*/
+   float:left; 
+   margin-left:.3em;
+   margin-right:1em;
+   padding-top:5%;
+   padding-bottom:3%;
+
+/* changes inner margin on left & right of the Python, Scala & Java boxes */
+   padding-left:6%; 
+   padding-right:5%; 
+
+/* changes left & right inner margin of python box
+   padding-top:.8em;
+   padding-left:.3em; 
+   padding-right:.5em; 
+*/
+}
+
+#div_psj_walkthrough_parent_s
+{
+   float:left;
+   width: 100%;
+   border: 1px solid #e2ce9d;
+/*
+   border: .02em solid #ffeccc;
+*/
+   background-color: #ffe6e6;
+}
+
+.div_psj_walkthrough_child_s
+{
+   width: auto;
+   float:left; 
+   margin-left:.3em; 
+   margin-right:.5em;
+   padding-top:5%;
+   padding-bottom:3%;
+   text-align:left; 
+
+/* changes inner margin on left & right of the Python, Scala & Java boxes */
+   padding-left:6%; 
+   padding-right:5%; 
+}
+
+#div_psj_walkthrough_parent_j
+{
+   width: 100%;
+   border: 1px solid #e2ce9d;
+/*
+   border: .02em solid #ffeccc;
+*/
+   background-color: #fbfce9;
+   float:left;  /* center will fix left shift of java div */
+}
+
+.div_psj_walkthrough_child_j
+{
+   width: auto;
+   float: left;
+/*   clear: both; */
+   margin-left:.3em; 
+   margin-right:.5em;
+   padding-top:5%;
+   padding-bottom:3%;
+
+   text-align:left; 
+/*   overflow: hidden;  */
+
+/* changes inner margin on left & right of the Python, Scala & Java boxes */
+   padding-left:6%; 
+   padding-right:5%; 
+}
+
+/*  
+   REMEMBER: float & clear will NEVER come together 
+
+*/
+
+.page_container
+{
+/****   
+    position: absolute; moved to html tag 
+    THIS FIXED horizontal scrolling of the page
+****/
+   position: relative;
+   float: center;
+   width: 100%;
+   height:auto;
+}
+
+
+p 
+{
+   display: inline;
+   white-space:pre-wrap;
+   background-color: #e5e5cc;    /* #ebebe0;  deep silver #eeeedd;  greenish #e5e5cc;  silver #ebebe0;  brownish #f2e6d9;  creamish #ffeecc;   #fff7e6;  #ccffcc;   #e6ffe6;   b3ffb3;  #99ff99; */
+   color: black; 
+   font-size: 110%;
+   font-style: italic;
+   font-weight: normal;
+/*
+   background-color:#66ff66;
+   background-color:#cc9900; #33ff33
+*/
+}
+
+scan 
+{
+   float: left;
+/*
+   margin-left: 1em;
+   background-color:#cc9900; #33ff33
+*/
+}
+
+.img_display_border
+{
+   float: right;
+   border: .01em solid #3d2800;
+   border-radius: 4px;
+   padding: 1em;
+   width:auto;
+   background:#f9ecec;
+   margin-left: 5em;
+   margin-right: 15em;
+   margin-bottom: 1em;
+}
+
+.img_display_noborder
+{
+   float: center;
+   border: none;
+   border-radius: 8px;
+   padding-left: 0;
+   padding-top: 1em;
+   padding-right: 1em;
+   padding-bottom: 1em;
+}
+
+/*
+h1.wip 
+*/
+.wip 
+{
+    width: 55%;
+    height: 45%;
+    font-family: monospace;
+/*    font-size: 2.5em; */
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: ultra-expanded;
+    text-transform: uppercase;
+    float: left;  /* left setting, brings WIP to left and p tag to right */
+    text-align:center; 
+    text-shadow: 0 0 7px #ff6600, 10px 10px 30px #ff704d;
+    color: #3d2800; 
+    background: #88cc00;
+    display: inline;
+    margin-top: 8%;
+    margin-right: 5%;
+    margin-bottom: 8%;
+    margin-left: 24%;
+    padding-top: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    border-radius: .5em;
+    border:.5em solid orange;
+    border-style: groove;
+    box-shadow: -15px -15px 24px 10px  #ffad33;
+}
+
+span.h1-tag
+{
+    color: black;   
+    font-size: 2em; 
+    font-weight: bold; 
+    font-family:Verdana;
+    margin-left: -100px;
+/*
+    text-align: left;
+*/
+    vertical-align:center;
+}
+
+span.h1-tag-psj-walk
+{
+    margin-bottom:.25em;
+    display:block;
+/*    background-color:#fff6e6;  #eff8f9; */
+    text-align:center;
+    width:auto;
+}
+
+span.h2-tag
+{
+    color: black; 
+/*
+    color: #003665;   
+*/
+    font-size: 1.75em; 
+    font-weight: bold; 
+    font-family:Arial;
+    text-align: left;
+    vertical-align:center;
+}
+
+div.h2-tag-psj-walk
+{
+    display:block; width:auto; height:auto; text-align:left; vertical-align:middle;  background-color:#f9f4eb; /* #fcf5e9 #fff6e6 #eff8f9; */ font-weight:bold; 
+padding-left:1%; padding-top:1%; padding-bottom:1%;
+}
+
+span.h2-tag-psj-walk-text
+{
+    margin-left:1%; font-size:1.5em; font-weight:bold; font-family:Georgia; color: black; /* color: #003665; */
+}
+
+span.h2-tag-psj-walk-python
+{
+    font-size:2em; font-family:Lucida Console; color:#666666;
+}
+
+span.h2-tag-psj-walk-scala
+{
+    font-size:2em; font-family:Tahoma; color:black;
+}
+
+span.h2-tag-psj-walk-java
+{
+    font-size:2em; font-family:Arial; color:#e60000;
+}
+
+span.h2-tag-psj-comp-python
+{
+    font-size:1.5em; font-family:Lucida Console; color:#666666;
+}
+
+span.h2-tag-psj-comp-scala
+{
+    font-size:1.5em; font-family:Tahoma; color:black;
+}
+
+span.h2-tag-psj-comp-java
+{
+    font-size:1.5em; font-family:Arial; color:#e60000;
+}
+
+
+span.prompt
+{
+    font-size:1em; font-weight:bold; color: #003665;
+}
+
+a.a-tag
+{
+    color:teal; 
+    font-size:.9em; 
+    text-decoration:underline;
+    text-decoration-style:solid;
+/*    
+    font-weight:bold; 
+    text-align:center;
+    margin-left:2%;fclass=
+    border:0;
+*/
+}
+
+a
+{
+    color:#736AFF; 
+    font-size:1.05em; 
+    font-weight:bold;   
+    text-decoration:none;
+    border-bottom:.1px solid;
+}
+
+p > a
+{
+    color:#736AFF; 
+    font-size:.89em; 
+    font-weight:bold;   
+/* combination of below two makes very thin line for a tag */
+    text-decoration:none;
+    border-bottom:.1px solid;
+}
+
+/*
+a:hover { background-color: }
+*/
+
+a:hover { background-color:#b3f2d5; }
+a:visited { color:#003665; }
+a:active { color:#003665; }
+
+img.h1-tag-align
+{
+    vertical-align: -22px; margin-left:2em;margin-right:2em;
+}
+
+img.h2-tag-align
+{
+    vertical-align: -25px; margin-left:2em;margin-right:2em;
+}
+
+img.a-tag-align
+{
+    vertical-align: -22px; margin-left:2em;margin-right:2em;
+}
+
+div.h1-tag-center {
+    margin: auto;
+    width: 85%;
+    padding: 0;
+}
+
+div.h2-tag-center {
+    margin: auto;
+    width: 80%;
+    padding: 0;
+}
+
+div.a-tag-center {
+    margin: auto;
+    width: 70%;
+    height:20px;    /* 0 will overlap all a tags , roughly half of img height 53*/
+    padding: 0;
+}
+
+div.h1-tag-top {
+    margin: auto;
+    width: 46%;
+    padding: 0;
+}
+
+div.h1-tag-comp {
+    margin: auto;
+    width: 70%;
+    padding: 0;
+}
+
+div.h2-tag-comp {
+    margin: auto;
+    width: 65%;
+    padding: 0;
+}
+
+div.h1-tag-walk {
+    margin: auto;
+    width: 50%;
+    padding: 0;
+}
+
+div.h2-tag-walk {
+    margin: auto;
+    width: 55%;
+    padding: 0;
+}
+div.h1-tag-only {
+    margin: auto;
+    width: 60%;
+    padding: 0;
+}
+
+div.h2-tag-only {
+    margin: auto;
+    width: 55%;
+    padding: 0;
+}
+
+div.a-tag-index {
+    margin: auto;
+    width: 50%;
+    padding: 0;
+}
+
+div.top-img {
+    margin: auto;
+    width: 40%;
+    padding: 0;
+}
+
+.page-top-img-border
+{
+/*
+   border-top:.1em solid #cccccc;
+   border-style: groove;
+*/
+   margin-left: 18%; 
+   width: 40%;
+}
+
+</style>
+
+<title> Python, Scala & Java, a quick walk-through </title>
+
+</head>
+<body>
+
+<!------------------------------------------ START of body ------------------------------------------>
+<!------------------------------------------ START of body ------------------------------------------>
+<!------------------------------------------ START of body ------------------------------------------>
+<!------------------------------------------ START of body ------------------------------------------>
+
+<!--    COMMENTED 
+https://3.bp.blogspot.com/-mASdaY-y3qw/WMp1IGvFuaI/AAAAAAAAGXw/AVOsPxwuiksnSKwE0elHXSlSnoLr0wNiACLcB/s320/psj-logo2.png
+https://3.bp.blogspot.com/-gbk6B7LyOMA/WMp1NhcqbnI/AAAAAAAAGX8/_gWMkvfjzfgnE6EW_ALsddd2RtbkBDysgCLcB/s320/python-logo2.png
+https://2.bp.blogspot.com/-pKH8IgFegr4/WMp1NXPjJUI/AAAAAAAAGX4/-RUotOq6jQkyKVdZ_xkQrEEauHpFbuYUQCLcB/s320/scala-logo2.png
+https://1.bp.blogspot.com/-J0eqDTPFva0/WMp1NNHHS7I/AAAAAAAAGX0/UBzyXDCo_-k7SHws57tDTM4SGM2PaaFNACLcB/s320/java-logo2.png
+padding-top:8%;
+    COMMENTED -->
+
+<div class="page_container" style="padding-top:0">
+
+<div class="top-img" style="padding-bottom:0;">
+<img src="https://3.bp.blogspot.com/-mASdaY-y3qw/WMp1IGvFuaI/AAAAAAAAGXw/AVOsPxwuiksnSKwE0elHXSlSnoLr0wNiACLcB/s320/psj-logo2.png" alt="Python-Scala-Java-logo" width="300" height=210" />
+</div>
+
+<div class="h1-tag-top" style="padding-top:2em">
+<span class="h1-tag">A quick walk-through</span> 
+</div>
+
+<!-------- START of page index --------->
+<!-------- START of page index --------->
+<!-------- START of page index --------->
+
+<div class="a-tag-index" style="padding-top:2%">
+ <a href="#comp-psc">
+ Python, Scala, Java - Comparison
+ </a>
+</div>
+
+<div class="a-tag-index">
+ <a href="#env-ver-pro">
+ Environment - Version & Prompt
+ </a>
+</div>
+
+<div class="a-tag-index">
+ <a href="#env-help">
+ Environment - Help
+ </a>
+</div>
+
+<div class="a-tag-index">
+ <a href="#env-var">
+ Environment - Variables
+ </a>
+</div>
+
+<div class="a-tag-index">
+ <a href="#env-comm-code">
+ Environment - Comment and Code block
+ </a>
+</div>
+
+<div class="a-tag-index">
+ <a href="#env-ide">
+ Environment - IDE's
+ </a>
+</div>
+
+<div class="a-tag-index">
+ <a href="#dev-pkg-int-mod-fun">
+ Development - Packages, Interfaces, Modules, Classes, & Functions
+ </a>
+</div>
+
+<div class="a-tag-index">
+ <a href="#env-inst-pkgs">
+ Environment - Installing Packages
+ </a>
+</div>
+
+<div class="a-tag-index">
+ <a href="#dev-clas-meth">
+ Development - Classes and Methods
+ </a>
+</div>
+
+
+<!-------- END of page index --------->
+<!-------- END of page index --------->
+<!-------- END of page index --------->
+
+
+<!--------------- START of psj_comparison_table ---------------->
+<!--------------- START of psj_comparison_table ---------------->
+<!--------------- START of psj_comparison_table ---------------->
+
+<div class="h2-tag-comp" style="clear:both;padding-top:8%;">
+<span class="h2-tag">Python, Scala, Java - Comparison </span> 
+</div>
+<table class="psj_comparison_table" id="comp-psc">
+<tr><th style="width:auto;text-align:left;padding-left:.5em;font-weight:bold; "> </th><th style="width:20%;"><span class="h2-tag-psj-comp-python">Python</span></th><th style="width:20%;"><span class="h2-tag-psj-comp-scala">Scala</span></th><th style="width:20%;"><span class="h2-tag-psj-comp-java">Java</span></th></tr>
+<tr><td style="width:auto;text-align:left;padding-left:.5em;font-weight:bold; ">REPL (read–eval–print loop) </td><td style="width:20%;">Y</td><td style="width:20%;">Y</td><td style="width:20%;">N </td></tr>
+<tr><td style="width:auto;text-align:left;padding-left:.5em;font-weight:bold; ">Object Oriented</td><td style="width:20%;">Y</td><td style="width:20%;">Y</td><td style="width:20%;">Y </td></tr>
+<tr><td style="width:auto;text-align:left;padding-left:.5em;font-weight:bold; ">Lambda functions</td><td style="width:20%;">Y</td><td style="width:20%;">Y</td><td style="width:20%;">Y </td></tr>
+<tr><td style="width:auto;text-align:left;padding-left:.5em;font-weight:bold; ">Popular Frameworks used with</td><td style="width:20%;">Django</td><td style="width:20%;">Akka</td><td style="width:20%;">Spring now J2EE earlier </td></tr>
+<tr><td style="width:auto;text-align:left;padding-left:.5em;font-weight:bold; "></td><td style="width:20%;"></td><td style="width:20%;"></td><td style="width:20%;"> </td></tr>
+<tr><td style="width:auto;text-align:left;padding-left:.5em;font-weight:bold; ">Advanced Data Structures</td><td style="width:20%;">Y</td><td style="width:20%;">Y</td><td style="width:20%;">Y w/ 1.8 </td></tr>
+<tr><td style="width:auto;text-align:left;padding-left:.5em;font-weight:bold; ">Lists</td><td style="width:20%;">Y</td><td style="width:20%;">Y</td><td style="width:20%;">Y </td></tr>
+<tr><td style="width:auto;text-align:left;padding-left:.5em;font-weight:bold; ">Arrays</td><td style="width:20%;">Y</td><td style="width:20%;">Y</td><td style="width:20%;">Y </td></tr>
+<tr><td style="width:auto;text-align:left;padding-left:.5em;font-weight:bold; ">Arraylist</td><td style="width:20%;">N</td><td style="width:20%;">Y</td><td style="width:20%;">Y </td></tr>
+<tr><td style="width:auto;text-align:left;padding-left:.5em;font-weight:bold; ">Hashmap</td><td style="width:20%;">Dictionary</td><td style="width:20%;">Y</td><td style="width:20%;">Y </td></tr>
+<tr><td style="width:auto;text-align:left;padding-left:.5em;font-weight:bold; ">Sorted Map</td><td style="width:20%;">N</td><td style="width:20%;">Y</td><td style="width:20%;">Y </td></tr>
+<tr><td style="width:auto;text-align:left;padding-left:.5em;font-weight:bold; ">Set</td><td style="width:20%;">N</td><td style="width:20%;">Y</td><td style="width:20%;">Y </td></tr>
+<tr><td style="width:auto;text-align:left;padding-left:.5em;font-weight:bold; ">Tree</td><td style="width:20%;">N</td><td style="width:20%;">Y</td><td style="width:20%;">Y </td></tr>
+<tr><td style="width:auto;text-align:left;padding-left:.5em;font-weight:bold; ">Sorted Tree</td><td style="width:20%;">N</td><td style="width:20%;">Y</td><td style="width:20%;">Y </td></tr>
+<tr><td style="width:auto;text-align:left;padding-left:.5em;font-weight:bold; ">Tuple</td><td style="width:20%;">Y</td><td style="width:20%;">N</td><td style="width:20%;">N </td></tr>
+<tr><td style="width:auto;text-align:left;padding-left:.5em;font-weight:bold; "></td><td style="width:20%;"></td><td style="width:20%;"></td><td style="width:20%;"> </td></tr>
+<tr><td style="width:auto;text-align:left;padding-left:.5em;font-weight:bold; ">Functional Programming</td><td style="width:20%;">N</td><td style="width:20%;">Y</td><td style="width:20%;">Y w/ 1.8 </td></tr>
+<tr><td style="width:auto;text-align:left;padding-left:.5em;font-weight:bold; ">Higher Order function</td><td style="width:20%;">N</td><td style="width:20%;">Y</td><td style="width:20%;">N </td></tr>
+<tr><td style="width:auto;text-align:left;padding-left:.5em;font-weight:bold; ">Currying</td><td style="width:20%;">N</td><td style="width:20%;">Y</td><td style="width:20%;">N </td></tr>
+<tr><td style="width:auto;text-align:left;padding-left:.5em;font-weight:bold; ">Anonymous function</td><td style="width:20%;">N</td><td style="width:20%;">Y</td><td style="width:20%;">N </td></tr>
+<tr><td style="width:auto;text-align:left;padding-left:.5em;font-weight:bold; ">Abstract class</td><td style="width:20%;">N</td><td style="width:20%;">Y</td><td style="width:20%;">N </td></tr>
+</table>
+
+<!--------------- END of psj_comparison_table ---------------->
+<!--------------- END of psj_comparison_table ---------------->
+<!--------------- END of psj_comparison_table ---------------->
+
+
+<!--------------- START of div_psj_walkthrough --------------->
+<div class="div_psj_walkthrough" id="env-ver-pro">  
+
+<div>
+<span class="h1-tag h1-tag-psj-walk">Environment </span> 
+</div>
+
+  <div id='div_psj_walkthrough_parent_p'>
+
+<!---------- START of h2-tag-psj-walk -------->
+<div class="h2-tag-psj-walk">
+     <span class="h2-tag-psj-walk-python">Python</span>
+     <span class="h2-tag-psj-walk-text">Version & Prompt</span>
+</div>
+<!---------- END of h2-tag-psj-walk -------->
+
+  <div class="div_psj_walkthrough_child_p">
+  <pre>
+H:\> python 
+Python 3.6.0 |Anaconda 4.3.0 (64-bit)| (default, Dec 23 2016, 11:57:41) [MSC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+
+>>> <p># this is default python prompt</p>
+
+>>> <p># we will now import important system config modules - platform & sys. platform module for <a href="https://docs.python.org/2/library/platform.html">Python2.x </a> <a href="https://docs.python.org/3/library/platform.html">& Python3.x</a> - Access to underlying platform’s identifying data & sys module for <a href="https://docs.python.org/2/library/sys.html">Python2.x </a> & <a href="https://docs.python.org/3/library/sys.html">Python3.x</a> - for System-specific parameters and functions </p>
+
+>>> import sys
+>>> sys.version  <p># current python version using sys module variable version</p>
+'3.6.0 |Anaconda 4.3.0 (64-bit)| (default, Dec 23 2016, 11:57:41) [MSC v.1900 64 bit (AMD64)]'
+>>> sys.version_info
+sys.version_info(major=3, minor=6, micro=0, releaselevel='final', serial=0)
+
+>>> import platform
+>>> platform.python_version()
+'3.6.0'
+
+>>> platform.uname()  <p># this output is similar to unix/linux command uname</p>
+uname_result(system='Windows', node='Hemendra-PC', release='7', version='6.1.7601', machine='AMD64', processor='Intel64 Family 6 Model 42 Stepping 7, GenuineIntel')
+
+>>> platform.python_version()  <p># current python version using platform module method, python_version()</p>
+'3.6.0'
+>>> sys.version.split(' ')[0]
+'3.6.0'
+>>> sys.ps1="python"+platform.python_version()+"> "  <p> Using any of the above two ways we can change the command prompt to display current python version </p>
+python3.6.0>
+ <p>Scala REPL has limited features when compared to Python. Also, no handy way to reset default Scala CLI prompt like Python adfsadfsa dfsa df asdf asdf sdf </p>
+  </pre></div>
+  </div>
+
+  <div id='div_psj_walkthrough_parent_s'>
+
+<!---------- START of h2-tag-psj-walk -------->
+<div class="h2-tag-psj-walk">
+     <span class="h2-tag-psj-walk-scala">Scala</span>
+     <span class="h2-tag-psj-walk-text">Version & Prompt</span>
+</div>
+<!---------- END of h2-tag-psj-walk -------->
+
+  <div class="div_psj_walkthrough_child_s">
+  <pre>
+H:\> scala
+scala>
+scala> util.Properties.versionString
+res0: String = version 2.11.4
+
+scala> util.Properties.versionMsg   <p>// another way to find scala version </p>
+res1: String = Scala library version 2.11.4 -- Copyright 2002-2013, LAMP/EPFL
+
+scala>  <p>// Scala REPL has limited features when compared to Python. Also, no handy way to reset default Scala CLI prompt like Python adfsadfsa dfsa df asdf asdf sdf </p>
+  </pre></div>
+  </div>
+
+
+  <div id='div_psj_walkthrough_parent_j'>
+
+<!---------- START of h2-tag-psj-walk -------->
+<div class="h2-tag-psj-walk">
+     <span class="h2-tag-psj-walk-java">Java</span>
+     <span class="h2-tag-psj-walk-text">Version & Prompt</span>
+</div>
+<!---------- END of h2-tag-psj-walk -------->
+
+  <div class="div_psj_walkthrough_child_j">
+  <pre>
+C:\Users\Omsai>
+C:\Users\Omsai>javac -version   <p>javac is also used for compiling java code </p>
+javac 1.7.0_10
+
+C:\Users\Omsai>java -version
+java version "1.7.0_10"
+Java(TM) SE Runtime Environment (build 1.7.0_10-b18)
+Java HotSpot(TM) 64-Bit Server VM (build 23.6-b04, mixed mode)
+
+<p>// Java has no REPL hence no CLI for Java. We can sure reset OS prompt for Java </p>
+ <p>// Scala REPL has limited features when compared to Python. Also, no handy way to reset default Scala CLI prompt like Python adfsadfsa dfsa df asdf asdf sdf </p>
+  </pre></div>
+  </div>
+
+</div>  
+<!--------------- END of div_psj_walkthrough --------------->
+
+
+
+<!--------------- START of div_psj_walkthrough --------------->
+<div class="div_psj_walkthrough" id="env-help">  
+
+<div>
+<span class="h1-tag h1-tag-psj-walk">Environment</span> 
+</div>
+
+  <div id='div_psj_walkthrough_parent_p'>
+
+<!---------- START of h2-tag-psj-walk -------->
+<div class="h2-tag-psj-walk">
+     <span class="h2-tag-psj-walk-python">Python</span>
+     <span class="h2-tag-psj-walk-text">Help</span>
+</div>
+<!---------- END of h2-tag-psj-walk -------->
+
+
+  <div class="div_psj_walkthrough_child_p">
+  <pre>
+
+python3.6.0>
+python3.6.0> help ('platform')  <p># will display platform module help using more command & quit by 'q'</p>
+<!----
+<img class="img_display_noborder" align="top" src="python_platform_module.png">
+---->
+python3.6.0> help ('sys')  <p># will display sys module help using more command & quit by 'q'</p>
+python3.6.0> dir('sys')  <p># will display sys module, methods as a list (wont be very readable)</p>
+['__add__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__gt__', '__hash__',....
+python3.6.0> 
+python3.6.0> for methods in dir('sys'):   <p># this code snippet will print all methods of sys seperated by newline (pretty readable)</p>
+...              print (methods)
+...
+__add__
+__class__
+__contains__
+__delattr__
+__dir__
+.
+.
+.
+python3.6.0> 
+python3.6.0> import sys    <p># we can also check sys package documentation </p>
+python3.6.0> print (sys.__doc__)
+.
+.
+.
+.
+  </pre></div>
+  </div>
+
+  <div id='div_psj_walkthrough_parent_s'>
+
+<!---------- START of h2-tag-psj-walk -------->
+<div class="h2-tag-psj-walk">
+     <span class="h2-tag-psj-walk-scala">Scala</span>
+     <span class="h2-tag-psj-walk-text">Help</span>
+</div>
+<!---------- END of h2-tag-psj-walk -------->
+
+  <div class="div_psj_walkthrough_child_s">
+  <pre>
+scala> :help  <p>//displays help for Scala REPL </p>
+scala> :quit
+H:\> 
+H:\> scala -help  <p>// displays inline help for Scala CLI. Scala offers detailed help via html or non-REPL doocumentation</p>
+<!--
+<img class="img_display_noborder" align="top" src="scala_help.png">
+--->
+  </pre></div>
+  </div>
+
+
+  <div id='div_psj_walkthrough_parent_j'>
+
+<!---------- START of h2-tag-psj-walk -------->
+<div class="h2-tag-psj-walk">
+     <span class="h2-tag-psj-walk-java">Java</span>
+     <span class="h2-tag-psj-walk-text">Help</span>
+</div>
+<!---------- END of h2-tag-psj-walk -------->
+
+  <div class="div_psj_walkthrough_child_j">
+  <pre>
+H:\>
+H:\> java -help  <p>// displays inline help for Java CLI. Java offers detailed help via html doocumentation. Java has no REPL.</p>  
+<!-- 
+<img class="img_display_noborder" align="top" src="java_help.png"> 
+-->
+  </pre></div>
+  </div>
+
+</div>  
+<!--------------- END of div_psj_walkthrough --------------->
+
+
+<!--------------- START of div_psj_walkthrough --------------->
+</div>  
+<div class="div_psj_walkthrough" id="env-var">  
+
+<div>
+<span class="h1-tag h1-tag-psj-walk">Environment </span> 
+</div>
+
+  <div id='div_psj_walkthrough_parent_p'>
+
+<!---------- START of h2-tag-psj-walk -------->
+<div class="h2-tag-psj-walk">
+     <span class="h2-tag-psj-walk-python">Python</span>
+     <span class="h2-tag-psj-walk-text">Environment Variables</span>
+</div>
+<!---------- END of h2-tag-psj-walk -------->
+
+
+  <div class="div_psj_walkthrough_child_p">
+  <pre>
+
+H:\Home\Hapslab>echo %PYTHONPATH%
+E:\Python36
+
+/home/hapslab>echo %PYTHONPATH%
+/usr/bin/sw/python36
+
+<p>
+<b>PYTHONPATH</b> is same as JVM world's CLASSPATH. Ideal place for looking python pachages/modules. In JVM world CLASSPATH usage can vary based on project needs. But PYTHONPATH stays mostly unchanged for that stand alone installation. PYTHONPATH may not be an ideal way for importing python packages across diferent python versions (installations). You may see unexpected or unexplained exceptions, crashes of bugs. To have smooth python development have complete development stack at same version. IF you have legacy code on say python 2.7 that you need to call from new python 3.x code stack. Using third party tools like Canopy etc can smoothen issues pointed earlier. Else PYTHONPATH should be ignored for use.
+
+<b>PYTHONHOME</b> is used as an alternative module search path. Its purpose is to switch between different python installations. But same objective is achieved easily without causing any issues via PATH hence PYTHONPATH is recommended instead. Also using PYTHONHOME you can run into.
+
+<b>PATH</b> variable keeps binaries located in installation directory of <a href="https://www.python.org/">Python</a> or JDK (Java Development Kit) or any JVM language like <a href="https://www.scala-lang.org/">Scala</a> , <a href="https:www.groovy-lang.org/">Groovy</a> , <a href="https://clojure.org/">Clojure</a> etc.
+</p>
+>>> import os
+>>> print ( os.environ.get('PYTHONPATH') )
+  </pre></div>
+  </div>
+
+  <div id='div_psj_walkthrough_parent_s'>
+
+<!---------- START of h2-tag-psj-walk -------->
+<div class="h2-tag-psj-walk">
+     <span class="h2-tag-psj-walk-scala">Scala</span>
+     <span class="h2-tag-psj-walk-text">Environment Variables</span>
+</div>
+<!---------- END of h2-tag-psj-walk -------->
+
+  <div class="div_psj_walkthrough_child_s">
+  <pre>
+<p>
+<b>SCALA_HOME</b> variable is Scala installation directory. Scala being a JVM language CLASSPATH & PATH environment variables discussed in Python & Java sections applies. 
+
+<b>CLASSPATH</b> <a href="https://en.wikipedia.org/wiki/List_of_JVM_languages">JVM langauge world</a> <a href="https://www.java.com/">Java</a>, <a href="https://www.scala-lang.org/">Scala</a>, <a href="www.groovy-lang.org/">Groovy</a>, <a href="https://clojure.org/">Clojure</a> etc solely relies on CLASSPATH for accessing modules or packages to be used. Scala uses this same as Java (below).
+
+<b>PATH</b> pls refer Python above.
+</p>
+  </pre></div>
+  </div>
+
+
+  <div id='div_psj_walkthrough_parent_j'>
+
+<!---------- START of h2-tag-psj-walk -------->
+<div class="h2-tag-psj-walk">
+     <span class="h2-tag-psj-walk-java">Java</span>
+     <span class="h2-tag-psj-walk-text">Environment Variables</span>
+</div>
+<!---------- END of h2-tag-psj-walk -------->
+
+  <div class="div_psj_walkthrough_child_j">
+  <pre>
+<p>
+<b>JAVA_HOME</b> variable is JDK (Java Development Kit) installation directory 
+
+<b>CLASSPATH</b> CLASSPATH is case insensitive. Classpath in Java is the path to directory or list of the directory which is used by ClassLoaders to find and load user defined classes in Java program. It can be specified as -cp or -classpath command line option or Class-Path attribute in manifest.mf file inside JAR file in Java. Last one is used when you use java -jar CLI option.
+
+<b>PATH</b> pls refer Python above.
+  </pre></div>
+  </div>
+</p>
+</div>  
+<!--------------- END of div_psj_walkthrough --------------->
+
+
+<!--------------- START of div_psj_walkthrough --------------->
+<div class="div_psj_walkthrough" id="env-comm-code">  
+
+<div>
+<span class="h1-tag h1-tag-psj-walk">Environment </span> 
+</div>
+
+  <div id='div_psj_walkthrough_parent_p'>
+
+<!---------- START of h2-tag-psj-walk -------->
+<div class="h2-tag-psj-walk">
+     <span class="h2-tag-psj-walk-python">Python</span>
+     <span class="h2-tag-psj-walk-text">Comment and Code block</span>
+</div>
+<!---------- END of h2-tag-psj-walk -------->
+
+
+  <div class="div_psj_walkthrough_child_p">
+  <pre>
+<p># this is single line comment in python</p>
+
+<p>"""
+    this is multi-line comment in python started with """ above and ending with """ (below) 
+    this can also be used for documenting code like packages or modules or functions
+"""</p>
+<p>Content between """ and """ is called docstring. Usually used for creating code level documentation. It can be accessed by using __doc__ as below:</p>
+
+python3.6.0> import sys    <p># we can check documentation of sys package</p>
+python3.6.0> print (sys.__doc__)    <p># Will list: </p>
+                                         <p> Dynamic objects: </p>
+                                          <p>.</p>
+                                          <p>.</p>
+                                         <p> Static objects: </p>
+                                          <p>.</p>
+                                          <p>.</p>
+                                         <p> Functions: </p>
+                                          <p>.</p>
+                                          <p>.</p>
+
+ </pre></div>
+  </div>
+
+  <div id='div_psj_walkthrough_parent_s'>
+
+<!---------- START of h2-tag-psj-walk -------->
+<div class="h2-tag-psj-walk">
+     <span class="h2-tag-psj-walk-scala">Scala</span>
+     <span class="h2-tag-psj-walk-text">Comment and Code block</span>
+</div>
+<!---------- END of h2-tag-psj-walk -------->
+
+  <div class="div_psj_walkthrough_child_s">
+  <pre>
+<p>// this is single line comment in Scala and Java</p>
+
+<p>/*
+    this is multi-line comment in Scala and Java started with /* above and ending with */ (below) 
+    this can also be used for documenting code like packages or modules or functions
+*/
+</p>
+  </pre></div>
+  </div>
+
+
+  <div id='div_psj_walkthrough_parent_j'>
+
+<!---------- START of h2-tag-psj-walk -------->
+<div class="h2-tag-psj-walk">
+     <span class="h2-tag-psj-walk-java">Java</span>
+     <span class="h2-tag-psj-walk-text">Comment and Code block</span>
+</div>
+<!---------- END of h2-tag-psj-walk -------->
+
+  <div class="div_psj_walkthrough_child_j">
+  <pre>
+<p>// this is single line comment in Scala and Java</p>
+<p>
+/*
+    this is multi-line comment in Scala and Java started with /* above and ending with */ (below) 
+    this can also be used for documenting code like packages or modules or functions
+*/</p>
+
+<p>// Content between /* and */ can be accessed by using javadoc utility as below. pitaLib.html will be prepared by this command line. This can be easily used for code documentation in Scala and Java.</p>
+<!----
+<img class="img_display_noborder" src="https://1.bp.blogspot.com/-r6eN3Q_KdVU/WNLJJLCb4wI/AAAAAAAAGYU/6EXOSRzE8SobXJfWtJAUFdpu1hXkOdRLQCLcB/s320/pita-javadoc.png"> 
+---->
+<scan>
+H:\Home\Hapslab\dev> javadoc pitaLib.java
+Loading source file pitaLib.java...
+Constructing Javadoc information...
+Standard Doclet version 1.7.0_10
+Building tree for all the packages and classes...
+<p>Generating \pitaLib.html...</p>
+.
+.
+Lists warning, Generating & Building index messages
+.
+.
+H:\Home\Hapslab\dev> 
+</scan>
+  </pre></div>
+  </div>
+
+</div>  
+<!--------------- END of div_psj_walkthrough --------------->
+
+
+<!--------------- START of div_psj_walkthrough --------------->
+<div class="div_psj_walkthrough" id="env-ide">  
+
+<div>
+<span class="h1-tag h1-tag-psj-walk">Environment </span> 
+</div>
+
+  <div id='div_psj_walkthrough_parent_p'>
+
+<!---------- START of h2-tag-psj-walk -------->
+<div class="h2-tag-psj-walk">
+     <span class="h2-tag-psj-walk-python">Python</span>
+     <span class="h2-tag-psj-walk-text">IDE's</span>
+</div>
+<!---------- END of h2-tag-psj-walk -------->
+
+
+  <div class="div_psj_walkthrough_child_p">
+  <pre>
+<p>
+<a href="https://en.wikipedia.org/wiki/PyDev">PyDev</a> and <a href="https://en.wikipedia.org/wiki/Eclipse_(software)">Eclipse</a> combination works as the <a href="http://www.vogella.com/tutorials/Python/article.html">best IDE for python</a>. PyDev is a plug-in for Eclipse IDE, an IDE made ever famous by being used mostly for Java. Other popular ones being <a href="https://en.wikipedia.org/wiki/PyCharm">PyCharm<a> (from <a href="https://www.jetbrains.com">JetBrains<a>), <a href="https://www.gnu.org/s/Emacs/">Emacs<a>, <a href="https://www.vim.org/">Vim<a> etc
+</p>
+ </pre></div>
+  </div>
+
+  <div id='div_psj_walkthrough_parent_s'>
+
+<!---------- START of h2-tag-psj-walk -------->
+<div class="h2-tag-psj-walk">
+     <span class="h2-tag-psj-walk-scala">Scala</span>
+     <span class="h2-tag-psj-walk-text">IDE's</span>
+</div>
+<!---------- END of h2-tag-psj-walk -------->
+
+  <div class="div_psj_walkthrough_child_s">
+  <pre>
+<p>
+<a href="http://scala-ide.org/">Scala IDE</a> and <a href="https://en.wikipedia.org/wiki/Eclipse_(software)">Eclipse</a> combination works as the best IDE for Scala. Scala IDE is a plug-in for Eclipse IDE. For command line code bulding  <a href="https://en.wikipedia.org/wiki/Sbt_(software)">sbt</a> is a good open source tool for Scala and Java projects. sbt comes similar to Maven or Ant with Java. sbt has lot of features for interactive code handling etc for Scala. 
+Combination of <a href="https://maven.apache.org/">Maven</a> (earlier <a href="ant.apache.org/">Ant</a> was used), then <a href="hudson-ci.org//">Hudson</a> now changed to <a href="https://jenkins.io/">Jenkins</a> have been used for <a href="https://en.wikipedia.org/wiki/CI/CD">CI/CD</a>. Also offered by most popular DevOps tool <a href="https://www.docker.com/use-cases/cicd">CI/CD | Docker</a>. Hudson is an extensible Continuous Integration Server. Jenkins is a self-contained Java-based program, ready to run out-of-the-box, with packages for Windows, Mac OS X and other Unix-like operating systems.
+</p>
+  </pre></div>
+  </div>
+
+
+  <div id='div_psj_walkthrough_parent_j'>
+
+<!---------- START of h2-tag-psj-walk -------->
+<div class="h2-tag-psj-walk">
+     <span class="h2-tag-psj-walk-java">Java</span>
+     <span class="h2-tag-psj-walk-text">IDE's</span>
+</div>
+<!---------- END of h2-tag-psj-walk -------->
+
+  <div class="div_psj_walkthrough_child_j">
+  <pre>
+<p>
+There will be a long list of popular IDE's for used for Java that are used to develop desktop, mobile and web applications. They are also being used for development in JavaScript, HTML5, PHP, C/C++ and more. <a href="https://www.eclipse.org/">Eclipse</a> (Eclipse Public License), <a href="https://www.jetbrains.com/idea/">IntelliJ IDEA</a> from Jetbrains (Apache License), and <a href="https://netbeans.org/">NetBeans</a> (Freeware) being the most popular ones. <a href="https://www.bluej.org/">BlueJ</a> (General Public License), <a href="www.oracle.com/technetwork/developer-tools/jdev/overview/index.html">Oracle JDeveloper</a> (Proprietary License), <a href="http://www.drjava.org/">DrJava</a>, <a href="https://developer.android.com/studio/index.html">Android Studio</a> from Google for Android platforms etc. 
+Also check <a href="https://blog.idrsolutions.com/2015/03/the-top-11-free-ide-for-java-coding-development-programming/">Top 11 free IDE's for Java</a>. Best IDE's offer Full Java EE support, deep code understanding, best debugger, refactorings (many choices), polyglot experience (<a href="https://en.wikipedia.org/wiki/Java_virtual_machine">Java Virtual Machine</a>/Non-JVM, Multiple languages), built-in developer tools, etc. 
+</p>
+  </pre></div>
+  </div>
+
+</div>  
+<!--------------- END of div_psj_walkthrough --------------->
+
+
+<!--------------- START of div_psj_walkthrough --------------->
+<div class="div_psj_walkthrough" id="dev-pkg-int-mod-fun">  
+
+<div>
+<span class="h1-tag h1-tag-psj-walk">Development </span> 
+</div>
+
+  <div id='div_psj_walkthrough_parent_p'>
+
+<!---------- START of h2-tag-psj-walk -------->
+<div class="h2-tag-psj-walk">
+     <span class="h2-tag-psj-walk-python">Python</span>
+     <span class="h2-tag-psj-walk-text">Packages, Interfaces, Modules, Classes, & Functions</span>
+</div>
+<!---------- END of h2-tag-psj-walk -------->
+
+#WIP
+  <div class="div_psj_walkthrough_child_p">
+  <pre>
+
+<p><a href="https://docs.python.org/3/tutorial/modules.html#packages">Packages</a> in python are namespaces which can contain multiple packages, classes and modules themselves. This collection of package can also be called an API. A package in Python is a directory which always contains a special file called __init__.py. File can be empty indicating that the directory it contains is a Python package. <a href="https://www.learnpython.org/en/Modules_and_Packages">Packages</a> can be imported the same way a module can be imported. We can have different directories dedicated to specific packages for better organization of code stack across different application areas.</p>
+
+<p><a href="https://docs.python.org/3/tutorial/modules.html">Modules</a> in python are simply files with the .py extension. Each file implement a or set of functions. Modules can be imported from other modules using the <b>import</b> command. We can import any of the <a href="https://docs.python.org/3/library/">standard list of built-in python modules</a> in the standard library. You can also glossary over <a href="https://docs.python.org/3/glossary.html#term-module">Module</a> and 
+<a href="https://docs.python.org/3/glossary.html#term-package">Package</a>
+
+<p><a href="https://docs.python.org/3/tutorial/classes.html">Classes</a> just like in any <a href="https://en.wikipedia.org/wiki/Object-oriented_programming">OOP</a> languages like C++, Modula-3 etc help to define associated methods & variables primarily. Class get usually mapped to the <a href="https://en.wikipedia.org/wiki/Entity">Entity</a> in the data world. Entity forms the building block of <a href="https://en.wikipedia.org/wiki/Entity–relationship_model">E-R Diagram/ Data Modelling</a> for data design/modelling.
+Python classes provide all standard features of Object Oriented Programming: inheritance, methods overriding, etc. As is true for modules, python classes from the dynamic nature of Python: they are created at runtime, and can be modified further after creation.</p>
+
+<p>Methods are part of <a href="https://docs.python.org/3/tutorial/classes.html">classes</a> just like in any <a href="https://en.wikipedia.org/wiki/Object-oriented_programming">OOP</a> languages like C++, Modula-3 etc. Some difference do apply to variables, objects, interfaces (none in python) etc. Methods & Functions has some interesting <a href="https://stackoverflow.com/questions/155609/difference-between-a-method-and-a-function">differences</a>. Also Methods can be functions but functions cannot be methods. </p>
+
+<p>Functions in python are usually contained in Modules. Python has <a href="https://docs.python.org/3/library/functions.html">Built-in Functions</a> too like many other languages. Python also has extensive <a href="https://docs.python.org/3/library/functional.html">Functional Programming Modules</a> that can help in better exploration and interactive analysis of data.</p>
+
+ </pre></div>
+  </div>
+
+  <div id='div_psj_walkthrough_parent_s'>
+
+<!---------- START of h2-tag-psj-walk -------->
+<div class="h2-tag-psj-walk">
+     <span class="h2-tag-psj-walk-scala">Scala</span>
+     <span class="h2-tag-psj-walk-text">Packages, Interfaces, Modules, Classes, & Functions</span>
+</div>
+<!---------- END of h2-tag-psj-walk -------->
+
+  <div class="div_psj_walkthrough_child_s">
+  <pre>
+<p><a href="http://www.scala-lang.org/old/node/119">Packages</a> in Scala is a special object which defines a set of member classes, objects and packages. Packages can be imported same as in python or java, using <b>import</b> package_name or import package_name.member.</p>
+
+<p>There are no Modules as such in Scala. But scala objects and path dependent types work like Modules</p>
+
+<p><a href="http://docs.scala-lang.org/tutorials/tour/classes.html">Classes</a> in Scala can contain methods, values, variables, types, objects, traits, and classes which are collectively called members.</p>
+
+<p><a href="http://docs.scala-lang.org/tutorials/scala-for-java-programmers.html">Everything is an object in Scala</a> including numbers, functions. Object in Scala is an instance of the class. Methods can work on objects.</p>
+
+<p><a href="https://docs.oracle.com/javase/tutorial/java/concepts/interface.html">Java 8 Interfaces</a> and <a href="http://docs.scala-lang.org/tutorials/tour/traits.html">Scala Traits</a> have lot of similarities. Traits are used to share interfaces and fields between classes.</p>
+
+<p>Methods in Scala (as in Java) are part of a class. It has a name, signature, optionally some annotations. In Scala it is possible to nest function definations called <a href="http://docs.scala-lang.org/tutorials/tour/nested-functions.html">Nested Methods</a></p>
+
+<p>Functions in Scala is a complete object. Function object has methods as an instance of a class that implements one of the traits of the class. Functions in Scala that can take another function as an argument are called <a href="http://docs.scala-lang.org/tutorials/tour/higher-order-functions.html">Higher-order-functions</a>. 
+
+Interesting references over Scala Methods & Functions:</p>
+<a href="https://stackoverflow.com/questions/2529184/difference-between-method-and-function-in-scala">Scala & other languages</a>
+<a href="http://jim-mcbeath.blogspot.in/2009/05/scala-functions-vs-methods.html" target="_blank" title="Underlying concept">Underlying concept</a> 
+<a href="https://softwarecorner.wordpress.com/2013/09/06/scala-methods-and-functions/" target="_blank" title="Code sample">Code sample</a> 
+<a href="blog.vmoroz.com/posts/2016-06-01-scala-should-i-use-a-method-or-a-function.html" target="_blank" title="What to use">What to use</a>
+<a href="japgolly.blogspot.com/2013/10/scala-methods-vs-functions.html" target="_blank" title="Differences & performance">Differences & performance</a>
+
+  </pre></div>
+  </div>
+
+
+  <div id='div_psj_walkthrough_parent_j'>
+
+<!---------- START of h2-tag-psj-walk -------->
+<div class="h2-tag-psj-walk">
+     <span class="h2-tag-psj-walk-java">Java</span>
+     <span class="h2-tag-psj-walk-text">Packages, Interfaces, Modules, Classes, & Functions</span>
+</div>
+<!---------- END of h2-tag-psj-walk -------->
+
+  <div class="div_psj_walkthrough_child_j">
+  <pre>
+<p><a href="https://docs.oracle.com/javase/tutorial/java/concepts/package.html">Packages</a> in Java are namespaces which can contain multiple packages, classes and <a href="https://docs.oracle.com/javase/tutorial/java/concepts/interface.html">interfaces</a>. This collection of package can also be called an API. A package in Java is a directory. <a href="https://www.learnpython.org/en/Modules_and_Packages">Packages</a> can be imported the same way a module can be imported. We can have different directories dedicated to specific packages for better organization of code stack across different application areas.</p>
+
+<p>Module in many languages like Java, Modula, C#, C++, Haskell, Scala have same meaning as Package. Only exception being python.</p>
+
+<p><a href="https://docs.oracle.com/javase/tutorial/java/concepts/class.html">Classes</a> work same in all <p><a href="https://en.wikipedia.org/wiki/Object-oriented_programming">OOP</a> languages like Java, C++, Modula-3 etc. (refer Python section above)</p>
+
+<p>Object is an instance of the class. Methods can work on objects. </p>
+
+<p><a href="https://docs.oracle.com/javase/tutorial/java/concepts/interface.html">Interfaces</a> in java contains single line declarations of methods. They help Class to <b>implement<b> the core idea of methods. Python does not use much of this.</p>
+
+<p>Methods are same as Scala. (refer Scala section above)</p>
+
+<p>Functions are same as Scala (refer Scala section above) from Java 8.</p>
+  </pre></div>
+  </div>
+
+</div>  
+<!--------------- END of div_psj_walkthrough --------------->
+
+
+<!--------------- START of div_psj_walkthrough --------------->
+<div class="div_psj_walkthrough" id="env-inst-pkgs">  
+
+<div>
+<span class="h1-tag h1-tag-psj-walk">Development</span> 
+</div>
+
+  <div id='div_psj_walkthrough_parent_p'>
+
+<!---------- START of h2-tag-psj-walk -------->
+<div class="h2-tag-psj-walk">
+     <span class="h2-tag-psj-walk-python">Python</span>
+     <span class="h2-tag-psj-walk-text">Installing Packages</span>
+</div>
+<!---------- END of h2-tag-psj-walk -------->
+
+
+  <div class="div_psj_walkthrough_child_p">
+  <pre>
+<p># this is single line comment in python</p>
+
+<p>"""
+    this is multi-line comment in python started with """ above and ending with """ (below) 
+    this can also be used for documenting code like packages or modules or functions
+"""</p>
+<p>Content between """ and """ is called docstring. Usually used for creating code level documentation. It can be accessed by using __doc__ as below:</p>
+
+python3.6.0> import sys    <p># we can check documentation of sys package</p>
+python3.6.0> print (sys.__doc__)    <p># Will list: </p>
+                                         <p> Dynamic objects: </p>
+                                          <p>.</p>
+                                          <p>.</p>
+                                         <p> Static objects: </p>
+                                          <p>.</p>
+                                          <p>.</p>
+                                         <p> Functions: </p>
+                                          <p>.</p>
+                                          <p>.</p>
+
+ </pre></div>
+  </div>
+
+  <div id='div_psj_walkthrough_parent_s'>
+
+<!---------- START of h2-tag-psj-walk -------->
+<div class="h2-tag-psj-walk">
+     <span class="h2-tag-psj-walk-scala">Scala</span>
+     <span class="h2-tag-psj-walk-text">Comment and Code block</span>
+</div>
+<!---------- END of h2-tag-psj-walk -------->
+
+  <div class="div_psj_walkthrough_child_s">
+  <pre>
+<p>// this is single line comment in Scala and Java</p>
+
+<p>/*
+    this is multi-line comment in Scala and Java started with /* above and ending with */ (below) 
+    this can also be used for documenting code like packages or modules or functions
+*/
+</p>
+  </pre></div>
+  </div>
+
+
+  <div id='div_psj_walkthrough_parent_j'>
+
+<!---------- START of h2-tag-psj-walk -------->
+<div class="h2-tag-psj-walk">
+     <span class="h2-tag-psj-walk-java">Java</span>
+     <span class="h2-tag-psj-walk-text">Comment and Code block</span>
+</div>
+<!---------- END of h2-tag-psj-walk -------->
+
+  <div class="div_psj_walkthrough_child_j">
+  <pre>
+<p>// this is single line comment in Scala and Java</p>
+<p>
+/*
+    this is multi-line comment in Scala and Java started with /* above and ending with */ (below) 
+    this can also be used for documenting code like packages or modules or functions
+*/</p>
+
+<p>// Content between /* and */ can be accessed by using javadoc utility as below. pitaLib.html will be prepared by this command line. This can be easily used for code documentation in Scala and Java.</p>
+<!----
+<img class="img_display_noborder" src="https://1.bp.blogspot.com/-r6eN3Q_KdVU/WNLJJLCb4wI/AAAAAAAAGYU/6EXOSRzE8SobXJfWtJAUFdpu1hXkOdRLQCLcB/s320/pita-javadoc.png"> 
+---->
+<scan>
+H:\Home\Hapslab\dev> javadoc pitaLib.java
+Loading source file pitaLib.java...
+Constructing Javadoc information...
+Standard Doclet version 1.7.0_10
+Building tree for all the packages and classes...
+<p>Generating \pitaLib.html...</p>
+.
+.
+Lists warning, Generating & Building index messages
+.
+.
+H:\Home\Hapslab\dev> 
+</scan>
+  </pre></div>
+  </div>
+
+</div>  
+<!--------------- END of div_psj_walkthrough --------------->
+
+
+<!--------------- START of div_psj_walkthrough --------------->
+<div class="div_psj_walkthrough" id="env-comm-code">  
+
+<div>
+<span class="h1-tag h1-tag-psj-walk">Environment </span> 
+</div>
+
+  <div id='div_psj_walkthrough_parent_p'>
+
+<!---------- START of h2-tag-psj-walk -------->
+<div class="h2-tag-psj-walk">
+     <span class="h2-tag-psj-walk-python">Python</span>
+     <span class="h2-tag-psj-walk-text">Comment and Code block</span>
+</div>
+<!---------- END of h2-tag-psj-walk -------->
+
+
+  <div class="div_psj_walkthrough_child_p">
+  <pre>
+<p># this is single line comment in python</p>
+
+<p>"""
+    this is multi-line comment in python started with """ above and ending with """ (below) 
+    this can also be used for documenting code like packages or modules or functions
+"""</p>
+<p>Content between """ and """ is called docstring. Usually used for creating code level documentation. It can be accessed by using __doc__ as below:</p>
+
+python3.6.0> import sys    <p># we can check documentation of sys package</p>
+python3.6.0> print (sys.__doc__)    <p># Will list: </p>
+                                         <p> Dynamic objects: </p>
+                                          <p>.</p>
+                                          <p>.</p>
+                                         <p> Static objects: </p>
+                                          <p>.</p>
+                                          <p>.</p>
+                                         <p> Functions: </p>
+                                          <p>.</p>
+                                          <p>.</p>
+
+ </pre></div>
+  </div>
+
+  <div id='div_psj_walkthrough_parent_s'>
+
+<!---------- START of h2-tag-psj-walk -------->
+<div class="h2-tag-psj-walk">
+     <span class="h2-tag-psj-walk-scala">Scala</span>
+     <span class="h2-tag-psj-walk-text">Comment and Code block</span>
+</div>
+<!---------- END of h2-tag-psj-walk -------->
+
+  <div class="div_psj_walkthrough_child_s">
+  <pre>
+<p>// this is single line comment in Scala and Java</p>
+
+<p>/*
+    this is multi-line comment in Scala and Java started with /* above and ending with */ (below) 
+    this can also be used for documenting code like packages or modules or functions
+*/
+</p>
+  </pre></div>
+  </div>
+
+
+  <div id='div_psj_walkthrough_parent_j'>
+
+<!---------- START of h2-tag-psj-walk -------->
+<div class="h2-tag-psj-walk">
+     <span class="h2-tag-psj-walk-java">Java</span>
+     <span class="h2-tag-psj-walk-text">Comment and Code block</span>
+</div>
+<!---------- END of h2-tag-psj-walk -------->
+
+  <div class="div_psj_walkthrough_child_j">
+  <pre>
+<p>// this is single line comment in Scala and Java</p>
+<p>
+/*
+    this is multi-line comment in Scala and Java started with /* above and ending with */ (below) 
+    this can also be used for documenting code like packages or modules or functions
+*/</p>
+
+<p>// Content between /* and */ can be accessed by using javadoc utility as below. pitaLib.html will be prepared by this command line. This can be easily used for code documentation in Scala and Java.</p>
+<!----
+<img class="img_display_noborder" src="https://1.bp.blogspot.com/-r6eN3Q_KdVU/WNLJJLCb4wI/AAAAAAAAGYU/6EXOSRzE8SobXJfWtJAUFdpu1hXkOdRLQCLcB/s320/pita-javadoc.png"> 
+---->
+<scan>
+H:\Home\Hapslab\dev> javadoc pitaLib.java
+Loading source file pitaLib.java...
+Constructing Javadoc information...
+Standard Doclet version 1.7.0_10
+Building tree for all the packages and classes...
+<p>Generating \pitaLib.html...</p>
+.
+.
+Lists warning, Generating & Building index messages
+.
+.
+H:\Home\Hapslab\dev> 
+</scan>
+  </pre></div>
+  </div>
+
+</div>  
+<!--------------- END of div_psj_walkthrough --------------->
+
+
+
+
+
+<h6 class="wip">work in progress</h6>
+
+<div style="position:relative; float:left; clear:both; margin-left:8%; margin-top:6%; margin-bottom:.25%;">
+<h1>HTAG</h1>
+<h2>HTAG</h2>
+<h3>HTAG</h3>
+<h4>HTAG</h4>
+<h5>HTAG</h5>
+<h6>HTAG</h6>
+</div>
+
+<div style="position:relative; float:left; clear:both; margin-left:8%; margin-top:6%; margin-bottom:.25%;">
+     <h6 style="font-size:10px; color:#3d2800; display:inline; background:#f4f1cc;"> DISCLAIMER: Products and Logos are of the respective products. No intentional change has been made. Information here is presented from the web, books and from experience solely for the education purpose only. </h6>
+</div>
+
+
+
+
+
+<!----
+<a href="https://4.bp.blogspot.com/-6QsYgryfVng/WMfiM_aGx8I/AAAAAAAAGWo/kchnX64oMIkl0dKcqLWxhY_MjMTnFsLLwCLcB/s1600/python-logo.png" imageanchor="1" ><img border="0" src="https://4.bp.blogspot.com/-6QsYgryfVng/WMfiM_aGx8I/AAAAAAAAGWo/kchnX64oMIkl0dKcqLWxhY_MjMTnFsLLwCLcB/s320/python-logo.png" width="320" height="94" /></a>
+
+<a href="https://4.bp.blogspot.com/-J2pEAgXD_W8/WMfkr1feiSI/AAAAAAAAGW0/BicLfVDdY6ox3iX6TDEBjEX3clZ6OAJEACLcB/s1600/scala-logo.png" imageanchor="1" ><img border="0" src="https://4.bp.blogspot.com/-J2pEAgXD_W8/WMfkr1feiSI/AAAAAAAAGW0/BicLfVDdY6ox3iX6TDEBjEX3clZ6OAJEACLcB/s320/scala-logo.png" width="320" height="107" /></a>
+
+<a href="https://4.bp.blogspot.com/-pqg2-z9Sxoc/WMfk2wWcCnI/AAAAAAAAGW4/FSkFvBlxMaIn0413agw0cu4iaRF64LJ_ACLcB/s1600/java-logo.png" imageanchor="1" ><img border="0" src="https://4.bp.blogspot.com/-pqg2-z9Sxoc/WMfk2wWcCnI/AAAAAAAAGW4/FSkFvBlxMaIn0413agw0cu4iaRF64LJ_ACLcB/s320/java-logo.png" width="320" height="119" /></a>
+
+<a href="https://3.bp.blogspot.com/-x6h06wpPzI0/WMgbNgbCYcI/AAAAAAAAGXQ/fjlhBSjC3nMVl2L4CQqdy6ZGhibEuKmDwCLcB/s1600/psj-logo.png" imageanchor="1" ><img border="0" src="https://3.bp.blogspot.com/-x6h06wpPzI0/WMgbNgbCYcI/AAAAAAAAGXQ/fjlhBSjC3nMVl2L4CQqdy6ZGhibEuKmDwCLcB/s320/psj-logo.png" width="320" height="105" /></a>
+---->
+
+
+</body>
+</html>
