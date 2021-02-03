@@ -33,32 +33,13 @@ const getJSON = async url => {
 console.log("Fetching data...");
 getJSON(HLURL)
   .then ( jsondata => document.getElementById("demo").innerHTML = ' v2 - '+ jsondata) );
-    
-/*
-console.log(jsondata);
-
-let xmlhttp = new XMLHttpRequest();
-xmlhttp.onreadystatechange = function () {
-        if (this.readyState = 4 && this.status == 200)
-        {
-            let jsondata = JSON.parse( this.responseText )
-            document.getElementById("demo").innerHTML = ' v2 - '+ jsondata;
-        }
-};
-
-xmlhttp.open(
-        "GET",
-        "https://spreadsheets.google.com/feeds/cells/1N_l-ZLwYsIllwauqCZzcYBm0gt1WDO-d4RC09hWlgyc/1/public/full?alt=json",
-        true
-        );
-xmlhttp.send();
-*/
    
 </script>
-
+<body>
 <h1> product released released</h1>
 <a class="a-border" href="psj.html" title="Languages">Github - Python, Java, Rust(ed), now Go! </a>
 <br><br>
 <a class="a-border" href="https://docs.google.com/document/d/e/2PACX-1vSGVi0zeQIix_0tbkf9R37Lqw8my8MLUNUL_EQNgLBv0R8Xkq36McZ2iCkMyW4rOnNZAqQnFabOj8V6/pub" title="Languages">Google - Python, Java, Rust(ed), now Go! </a>
 <br><br>
 <p id="demo">PARA v1: </p>
+</body>
