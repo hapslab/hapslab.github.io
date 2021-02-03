@@ -10,10 +10,38 @@
 }
 </style>
 
-<script> 
+<script type="text/javascript" src="js/mdb.min.js"></script>
+
+<script type="text/javascript">
+
+var bp_picIDX;
+var datatestLen = datatestJSONArray.length;
+
+// window.alert("Pix: " + picBlogsArrayLen );
+
+for (bp_picIDX = 0; bp_picIDX < datatestLen; bp_picIDX++)
+     window.alert(bp_picIDX ": " + datatest[bp_picIDX].name + ", " + datatest[bp_picIDX].age);
+}
+
+
 HLURL='https://spreadsheets.google.com/feeds/cells/1N_l-ZLwYsIllwauqCZzcYBm0gt1WDO-d4RC09hWlgyc/1/public/full?alt=json'
-var jsontext = JSON.parse(HLURL); 
-document.getElementById("demo").innerHTML = jsontext[0].type +', '+ jsontext[0].desc ;
+
+let xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function () {
+        if (this.readyState = 4 && this.status == 200)
+        {
+            let jsondata = JSON.parse( this.responseText )
+            window.alert (jsondata);
+        }
+};
+
+xmlhttp.open(
+        "GET",
+        "https://spreadsheets.google.com/feeds/cells/1N_l-ZLwYsIllwauqCZzcYBm0gt1WDO-d4RC09hWlgyc/1/public/full?alt=json",
+        true
+        );
+xmlhttp.send();
+
 </script>
 
 <h1> product released released</h1>
