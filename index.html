@@ -1,10 +1,23 @@
 "Hapslab, Data products play. product rel, 2020_06_16-21_48_37" 
-<h1> product released released</h1>
-<a href="psj.html" title="Languages">Github - Python, Java, Rust(ed), now Go! </a>
-<br>
-<a href="https://docs.google.com/document/d/e/2PACX-1vSGVi0zeQIix_0tbkf9R37Lqw8my8MLUNUL_EQNgLBv0R8Xkq36McZ2iCkMyW4rOnNZAqQnFabOj8V6/pub" title="Languages">Google - Python, Java, Rust(ed), now Go! </a>
+<style>
+.a-border
+{
+   color: #414141; /* COLOR FOR BAR MENU, Home.... */
+   font-family: fantasy;
+   font-weight: normal;
+   text-decoration: underline 1px #414141;
+}
+</style>
+
 <script> 
 HLURL='https://spreadsheets.google.com/feeds/cells/1N_l-ZLwYsIllwauqCZzcYBm0gt1WDO-d4RC09hWlgyc/1/public/full?alt=json'
 var jsontext = JSON.parse(HLURL); 
-console.log(jsontext)
+document.getElementById("demo").innerHTML = jsontext.type +', '+ jsontext.desc ;
 </script>
+
+<h1> product released released</h1>
+<a class="a-border" href="psj.html" title="Languages">Github - Python, Java, Rust(ed), now Go! </a>
+<br><br>
+<a class="a-border" href="https://docs.google.com/document/d/e/2PACX-1vSGVi0zeQIix_0tbkf9R37Lqw8my8MLUNUL_EQNgLBv0R8Xkq36McZ2iCkMyW4rOnNZAqQnFabOj8V6/pub" title="Languages">Google - Python, Java, Rust(ed), now Go! </a>
+<br><br>
+<p id="demo"></p>
