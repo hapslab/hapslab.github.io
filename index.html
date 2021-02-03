@@ -12,7 +12,7 @@
 <script> 
 HLURL='https://spreadsheets.google.com/feeds/cells/1N_l-ZLwYsIllwauqCZzcYBm0gt1WDO-d4RC09hWlgyc/1/public/full?alt=json'
 var jsontext = JSON.parse(HLURL); 
-document.getElementById("demo").innerHTML = jsontext.type +', '+ jsontext.desc ;
+document.getElementById("demo").innerHTML = jsontext[0].type +', '+ jsontext[0].desc ;
 </script>
 
 <h1> product released released</h1>
@@ -20,4 +20,4 @@ document.getElementById("demo").innerHTML = jsontext.type +', '+ jsontext.desc ;
 <br><br>
 <a class="a-border" href="https://docs.google.com/document/d/e/2PACX-1vSGVi0zeQIix_0tbkf9R37Lqw8my8MLUNUL_EQNgLBv0R8Xkq36McZ2iCkMyW4rOnNZAqQnFabOj8V6/pub" title="Languages">Google - Python, Java, Rust(ed), now Go! </a>
 <br><br>
-<p id="demo"></p>
+<p id="demo">PARA-</p>
