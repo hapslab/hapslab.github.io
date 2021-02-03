@@ -31,7 +31,7 @@ xmlhttp.onreadystatechange = function () {
         if (this.readyState = 4 && this.status == 200)
         {
             let jsondata = JSON.parse( this.responseText )
-            window.alert (jsondata);
+            document.getElementById("demo").innerHTML = jsontext;
         }
 };
 
