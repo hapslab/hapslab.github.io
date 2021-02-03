@@ -26,6 +26,18 @@ for (bp_picIDX = 0; bp_picIDX < datatestLen; bp_picIDX++)
 
 HLURL='https://spreadsheets.google.com/feeds/cells/1N_l-ZLwYsIllwauqCZzcYBm0gt1WDO-d4RC09hWlgyc/1/public/full?alt=json'
 
+const getJSON = async url => {
+  const response = await fetch(url);
+  return response.json(); // get JSON from the response 
+}
+
+console.log("Fetching data...");
+getJSON(HLURL)
+  .then(jsondata => console.log(jsondata));
+    document.getElementById("demo").innerHTML = ' v2 - '+ jsondata;
+   
+   
+/*
 let xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function () {
         if (this.readyState = 4 && this.status == 200)
@@ -41,7 +53,8 @@ xmlhttp.open(
         true
         );
 xmlhttp.send();
-
+*/
+   
 </script>
 
 <h1> product released released</h1>
