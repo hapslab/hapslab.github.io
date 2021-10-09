@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<title>@Hapslab</title>
+   
+<style>
+.a-border
+{
+   color: #414141; 
+   font-family: fantasy;
+   font-weight: normal;
+   font-size: .8vw;
+   text-decoration: underline 1px #414141;
+}
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis"></script>
+   
+<body>
+<h1>@Hapslab</h1>
+<br>
+<br>
+   
+<h2>Blogs</h2>
+<a class="a-border" href="psj.html" title="Languages">Github - Python, Java, Scala, Rust(ed), now Go! </a>
+<br>
+<br>
+
+<h2>Portfolio Predictions - Line Chart</h2> 
+<canvas id="chartDiv" style="width:100%;max-width:600px"></canvas>
+
+<h2>Portfolio Predictions - TF Graph</h2> 
+<div id="plot1"></div>
+<div id="plot2"></div>
+
+
+<script>
+
+var HLURL='https://spreadsheets.google.com/feeds/cells/1N_l-ZLwYsIllwauqCZzcYBm0gt1WDO-d4RC09hWlgyc/1/public/full?alt=json';
+
+//
+// Google Line Chart
+//
+var xValues   = [100,200,300,400,500,600,700,800,900,1000];
+var datared   = [860,1140,1060,1060,1070,1110,1330,2210,7830,2478];
+var datagreen = [1600,1700,1700,1900,2000,2700,4000,5000,6000,7000];
+var datablue  = [300,700,2000,5000,6000,4000,2000,1000,200,100];
+   
+new Chart("chartDiv", {
+  type: "line",
+  data: {
+    labels: xValues,
+    datasets: [{ 
+      data: datared,
+      borderColor: "red",
+      fill: false
+    }, { 
+      data: datagreen,
+      borderColor: "green",
+      fill: false
+    }, { 
+      data: datablue,
+      borderColor: "blue",
+      fill: false
+    }]
+  },
+  options: {
+    legend: {display: true}
+  }
+});
+  
+//
+// Google TF Graph
+//
+function extractData(obj) 
+{
+         return {x:obj.Horsepower, y:obj.Miles_per_Gallon};
+}
+function removeErrors(obj) 
+{
+         return obj.x != null && obj.y != null;
+}
+
+// Plot Data
+function tfPlot(values, surface) 
+{
+    tfvis.render.scatterplot(surface,
+    {values:values, series:['Original','Predicted']},
+    {xLabel:'Horsepower', yLabel:'MPG',});
+}
+
+// Main Function
+async function runTF() 
+{
+      const jsonData = await fetch("carsdata.json");  
+      let values = await jsonData.json();
+      values = values.map(extractData).filter(removeErrors);
+
+      // Plot the Data
+      const surface1 = document.getElementById("plot1");
+      const surface2 = document.getElementById("plot2");
+      tfPlot(values, surface1);
+
+      // End Main Function
+}
+
+runTF();
+   
+</script>
+</body>
+</html>
