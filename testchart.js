@@ -15,7 +15,7 @@ fetch ('testchart.csv')
 	})
 	.catch(function (error) {
 		//Something went wrong
-		console.log(error);
+		window.alert (error);
 	});
 
 function csvToSeries(text) {
