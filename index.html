@@ -40,9 +40,41 @@ console.log("Fetching data...");
 getJSON(HLURL)
   .then ( jsondata => document.getElementById("demo").innerHTML = ' v2 - '+ jsondata) );
    
+   
+   
+var xValues = [100,200,300,400,500,600,700,800,900,1000];
+
+new Chart("chartDiv", {
+  type: "line",
+  data: {
+    labels: xValues,
+    datasets: [{ 
+      data: [860,1140,1060,1060,1070,1110,1330,2210,7830,2478],
+      borderColor: "red",
+      fill: false
+    }, { 
+      data: [1600,1700,1700,1900,2000,2700,4000,5000,6000,7000],
+      borderColor: "green",
+      fill: false
+    }, { 
+      data: [300,700,2000,5000,6000,4000,2000,1000,200,100],
+      borderColor: "blue",
+      fill: false
+    }]
+  },
+  options: {
+    legend: {display: true}
+  }
+});
+   
+   
+   
 </script>
    </head>
-  
+   
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<body>
+
 <body>
 <h1>@Hapslab</h1>
 <br>
@@ -56,9 +88,7 @@ getJSON(HLURL)
 <br><br>
    
 <h2>Portfolio Predictions</h1> 
-   <div id="chartDiv" style="width:50%; height:300px; margin:0 auto;">Here <a>Here</a></div>
+   <canvas id="chartDiv" style="width:100%;max-width:600px"></canvas>
 
 </body>
-<script src="testcharting.js"></script>
-<script src="testchart.js"</script>
 </html>
