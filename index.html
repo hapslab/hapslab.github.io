@@ -13,9 +13,13 @@
    text-decoration: underline 1px #414141;
 }
 </style>
-  
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 
+// google line chart
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+// google TF graph
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis"></script>
+   
 <body>
 <h1>@Hapslab</h1>
 <br>
@@ -26,13 +30,20 @@
 <br>
 <br>
 
-<h2>Portfolio Predictions</h2> 
-   <canvas id="chartDiv" style="width:100%;max-width:600px"></canvas>
+<h2>Portfolio Predictions - Line Chart</h2> 
+<canvas id="chartDiv" style="width:100%;max-width:600px"></canvas>
 
+<h2>Portfolio Predictions - TF Graph</h2> 
+<div id="plot1"></div>
+<div id="plot2"></div>
+   
 <script>
 
 var HLURL='https://spreadsheets.google.com/feeds/cells/1N_l-ZLwYsIllwauqCZzcYBm0gt1WDO-d4RC09hWlgyc/1/public/full?alt=json';
 
+//
+// Google Line Chart
+//
 var xValues = [100,200,300,400,500,600,700,800,900,1000];
 
 new Chart("chartDiv", {
@@ -58,6 +69,43 @@ new Chart("chartDiv", {
   }
 });
   
+//
+// Google TF Graph
+//
+function extractData(obj) 
+{
+         return {x:obj.Horsepower, y:obj.Miles_per_Gallon};
+}
+function removeErrors(obj) 
+{
+         return obj.x != null && obj.y != null;
+}
+
+// Plot Data
+function tfPlot(values, surface) 
+{
+    tfvis.render.scatterplot(surface,
+    {values:values, series:['Original','Predicted']},
+    {xLabel:'Horsepower', yLabel:'MPG',});
+}
+
+// Main Function
+async function runTF() 
+{
+      const jsonData = await fetch("cardata.json");  
+      let values = await jsonData.json();
+      values = values.map(extractData).filter(removeErrors);
+
+      // Plot the Data
+      const surface1 = document.getElementById("plot1");
+      const surface2 = document.getElementById("plot2");
+      tfPlot(values, surface1);
+
+      // End Main Function
+}
+
+runTF();
+   
 </script>
    
 </body>
