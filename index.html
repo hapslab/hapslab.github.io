@@ -16,32 +16,10 @@
 }
 </style>
 
-<script type="text/javascript" src="js/mdb.min.js"></script>
-
 <script type="text/javascript">
-
-var bp_picIDX;
-var datatestLen = datatestJSONArray.length;
-
-// window.alert("Pix: " + picBlogsArrayLen );
-
-for (bp_picIDX = 0; bp_picIDX < datatestLen; bp_picIDX++)
-     window.alert(bp_picIDX ": " + datatest[bp_picIDX].name + ", " + datatest[bp_picIDX].age);
-}
-
 
 HLURL='https://spreadsheets.google.com/feeds/cells/1N_l-ZLwYsIllwauqCZzcYBm0gt1WDO-d4RC09hWlgyc/1/public/full?alt=json'
 
-const getJSON = async url => {
-  const response = await fetch(url);
-  return response.json(); // get JSON from the response 
-}
-console.log("Fetching data...");
-getJSON(HLURL)
-  .then ( jsondata => document.getElementById("demo").innerHTML = ' v2 - '+ jsondata) );
-   
-   
-   
 var xValues = [100,200,300,400,500,600,700,800,900,1000];
 
 new Chart("chartDiv", {
@@ -66,14 +44,12 @@ new Chart("chartDiv", {
     legend: {display: true}
   }
 });
-   
-   
-   
+  
 </script>
-   </head>
+   
+</head>
    
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-<body>
 
 <body>
 <h1>@Hapslab</h1>
