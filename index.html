@@ -65,10 +65,22 @@ new Chart("chartDiv", {
       data: datablue,
       borderColor: "blue",
       fill: false
-    }]
+    }, {
+            data: [500,1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500, 5000, 5500, 6000,6500, 7000, 7500, 8000, 8500, 9000, 9500, 10000, 10500, 11000],
+            label: 'Right dataset',
+            // This binds the dataset to the right y axis
+            yAxisID: 'right-y-axis',
+        }]
   },
   options: {
-    legend: {display: true}
+  scales: {
+            yAxes: [{
+                display: true,
+                id: 'right-y-axis',
+                type: 'linear',
+                position: 'right'
+            }]
+          }
   }
 });
   
