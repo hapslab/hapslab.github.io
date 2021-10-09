@@ -5,7 +5,7 @@ fetch ('https://data.cdc.gov/resource/w9j2-ggv5.csv')
 https://github.com/hapslab/hapslab.github.io
 https://github.com/hapslab/hapslab.github.io/blob/master/testchart.csv
 */
-fetch ('https://data.cdc.gov/resource/w9j2-ggv5.csv')
+fetch ('https://github.com/hapslab/hapslab.github.io/blob/master/testchart.csv')
 	.then(function (response) {
 		return response.text();
 	})
