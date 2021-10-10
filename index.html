@@ -97,7 +97,7 @@ new Chart("chartDiv", {
                   ticks: {
         beginAtZero: true,
         max: 100,
-        min: -5,
+        min: 0,
         stepSize: 5
       }
                },
@@ -106,13 +106,21 @@ new Chart("chartDiv", {
                 display: true,
                 id: 'right-y-axis',
                 type: 'linear',
-                position: 'right'
+                position: 'right',
+                  ticks: {
+        beginAtZero: true,
+        max: maxPrice,
+        min: minPrice,
+        stepSize: 50
+      }
                }
             ]
           }
   }
 });
-  
+
+var maxPrice = 1000;
+var minPrice = 500;
 //
 // Google TF Graph
 //
