@@ -51,8 +51,8 @@ var datablue  = [500,700,2000,5000,6000,4000,2000,1000,200,100];
    
 new Chart("chartDiv", {
   type: "line",
-   
-  data: {
+
+   data: {
     labels: xValues,
     datasets: [{ 
       data: datared,
@@ -67,6 +67,7 @@ new Chart("chartDiv", {
       borderColor: "blue",
       fill: false
     }]}, 
+   /*
     data: {
     labels: yValues,
     datasets: [{
@@ -81,7 +82,8 @@ new Chart("chartDiv", {
             // This binds the dataset to the right y axis
             yAxisID: 'right-y-axis',
         }]
-  },
+  }, 
+  */
   options: {
   scales: {
             yAxes: 
