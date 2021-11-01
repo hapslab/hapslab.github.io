@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+
+<title>@Hapslab | Data anything</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta property="og:locale" content="en_US" />
+<meta property="og:image" content="hapslab-logo.jpg">
+<meta property="og:site_name" content="hapslab">
+<meta property="og:title" content="Have fun @hapslab" />
+<meta property="og:url" content="" />
+<meta property="og:description" content="Data Products, Services, Solutions & Architecture Of Any Scale & Latency. Developing & Productionizing Products With Big Data, Data Analytics, Data Science, Artificial Intelligence. Data Compute Via ETL, Streaming Or Realtime. Cloud Presence. Point In Time Data Delivery Via Microservices. Security & Page Portals">
+
+<style>     
+
+table { margin:1.5% 3% 1.5% 3%; }     
+
+table, th, td { font-family:verdana; border: 1px solid black; text-align:left; width:95%; }      
+
+.table-header  { font-size:90%; font-weight:bold; }       
+
+.table-rows    { font-size:60%; font-weight:normal; }     
+
+a.a-tag { color:#000033; text-decoration:none; border-bottom:.1px solid #000033; }     
+
+a.a-algoname { color:#660000; text-decoration:none; border-bottom:.1px solid #660000; font-size:150%; }     
+
+a.a-algodesc { color:#660000; font-size:120%; }     
+
+</style>     
+
+<body>
+
+<table cellpadding="5"> 
+<tr><th class="table-header" style="width: 1%; ">PATTERN_TYPE</th>
+<th class="table-header" style="width: 15%;">DESIGN PATTERN</th>
+<th class="table-header" style="width: 10%;">TOOLS USED</th>
+<th class="table-header" style="width: 40%;">DESCRIPTION</th>
+<th class="table-header" style="width: 30%;">EXAMPLES</th>
+
+
+</tr>
+<tr><td class="table-rows" style="width: 1%; ">Decomposition</td>
+<td class="table-rows" style="width: 15%;">Decompose by Business Capability</td>
+<td class="table-rows" style="width: 10%;"></td>
+<td class="table-rows" style="width: 40%;">Business capability comes from business architecture modeling</td>
+<td class="table-rows" style="width: 30%;">Like Order Mgt -> Order, Customer Mgt -> Customer</td>
+
+
+</tr>
+<tr><td class="table-rows" style="width: 1%; ">Decomposition</td>
+<td class="table-rows" style="width: 15%;">Decompose by Subdomain</td>
+<td class="table-rows" style="width: 10%;"></td>
+<td class="table-rows" style="width: 40%;">Helps any business function spread across different microservices. Domain-Driven Design (DDD) emphasizes biz domain has subdomains</td>
+<td class="table-rows" style="width: 30%;">Entities like Order, Rating for Item and Seller in a retail appln</td>
+
+
+</tr>
+<tr><td class="table-rows" style="width: 1%; ">Decomposition</td>
+<td class="table-rows" style="width: 15%;">Decompose by Txns/Two-phase commit (2pc)</td>
+<td class="table-rows" style="width: 10%;"></td>
+<td class="table-rows" style="width: 40%;">Spreading a transactions across multiple services can have high transaction latency hence this is NOT used much</td>
+<td class="table-rows" style="width: 30%;">NOT Recommended, Use SAGA Design Pattern instead.</td>
+
+
+</tr>
+<tr><td class="table-rows" style="width: 1%; ">Decomposition</td>
+<td class="table-rows" style="width: 15%;">Decompose by Strangler</td>
+<td class="table-rows" style="width: 10%;"></td>
+<td class="table-rows" style="width: 40%;">Creates 2 apps that live side by side in the same URI space. App1; App2; [Primary <=> Secondary] Over time, the new appln strangles or replaces the old appln. Hence we can shut off monolithic appln.</td>
+<td class="table-rows" style="width: 30%;">Helps in M2M. 80% of MS work is with Brownfield apps. -> huge monolithic apps (Greenfield apps)</td>
+
+
+</tr>
+<tr><td class="table-rows" style="width: 1%; ">Decomposition/HA</td>
+<td class="table-rows" style="width: 15%;">Decompose by Bulkhead</td>
+<td class="table-rows" style="width: 10%;"></td>
+<td class="table-rows" style="width: 40%;">Partitioning or Isolating ALL the services into different Groups or Pools based on TPS, Availability. Pool1 [Serv1, Serv2]; Pool2 [Serve3, Serv4, Serv5]</td>
+<td class="table-rows" style="width: 30%;">Like Order Mgt -> Order, Customer Mgt -> Customer</td>
+
+
+</tr>
+<tr><td class="table-rows" style="width: 1%; ">Decomposition/HA</td>
+<td class="table-rows" style="width: 15%;">Decompose by Sidecar</td>
+<td class="table-rows" style="width: 10%;"></td>
+<td class="table-rows" style="width: 40%;">Deploy components of existing appln into a separate processor or container for isolation and encapsulation. New side app can have heterogeneous comp. and tech. but follows life cycle of old app. Cont1 [Comp1, Comp2]; Cont2 [Comp3, Comp4, Comp5]</td>
+<td class="table-rows" style="width: 30%;">Like Order Mgt -> Order, Customer Mgt -> Customer</td>
+
+
+</tr>
+<tr><td class="table-rows" style="width: 1%; ">Database</td>
+<td class="table-rows" style="width: 15%;">Database per Service</td>
+<td class="table-rows" style="width: 10%;"></td>
+<td class="table-rows" style="width: 40%;">1 Database = 1 Microservice accessed by Microservice API ONLY. Can use pvt-tables/service, schema/service, or db-server/service.</td>
+<td class="table-rows" style="width: 30%;"></td>
+
+
+</tr>
+<tr><td class="table-rows" style="width: 1%; ">Database</td>
+<td class="table-rows" style="width: 15%;">Shared Database per Service</td>
+<td class="table-rows" style="width: 10%;"></td>
+<td class="table-rows" style="width: 40%;">M2M usually has shared db/service then moved to 1 db/service.</td>
+<td class="table-rows" style="width: 30%;">ANTIPATTERN for brownfield applications. Must have 1 db/service for MSA</td>
+
+
+</tr>
+<tr><td class="table-rows" style="width: 1%; ">Database</td>
+<td class="table-rows" style="width: 15%;">Cmd Qry Responsibility Segregation (CQRS)</td>
+<td class="table-rows" style="width: 10%;"></td>
+<td class="table-rows" style="width: 40%;">With 1 db/service, query requiring combined data from many services have to be split into two: Command side has CUD requests & Query (Read) via materialized views.</td>
+<td class="table-rows" style="width: 30%;">USES Event Sourcing for aggregation.</td>
+
+
+</tr>
+<tr><td class="table-rows" style="width: 1%; ">Database</td>
+<td class="table-rows" style="width: 15%;">Event Sourcing</td>
+<td class="table-rows" style="width: 10%;"></td>
+<td class="table-rows" style="width: 40%;">Events created for any data changes. Updating Materialized views by subscribing to the stream of events.</td>
+<td class="table-rows" style="width: 30%;"></td>
+
+
+</tr>
+<tr><td class="table-rows" style="width: 1%; ">Database</td>
+<td class="table-rows" style="width: 15%;">SAGA/Compensating Txn (For 2PC)</td>
+<td class="table-rows" style="width: 10%;"></td>
+<td class="table-rows" style="width: 40%;">[Event]    Action1 -> Action2 -> Action3 -> Action4</td>
+<td class="table-rows" style="width: 30%;"></td>
+
+
+</tr>
+<tr><td class="table-rows" style="width: 1%; "></td>
+<td class="table-rows" style="width: 15%;"></td>
+<td class="table-rows" style="width: 10%;"></td>
+<td class="table-rows" style="width: 40%;">[De-Event] Action1 <- Action2 <- Action3 <- Action4</td>
+<td class="table-rows" style="width: 30%;"></td>
+
+
+</tr>
+<tr><td class="table-rows" style="width: 1%; ">Integration</td>
+<td class="table-rows" style="width: 15%;">API Gateway</td>
+<td class="table-rows" style="width: 10%;"></td>
+<td class="table-rows" style="width: 40%;">API Gateway be SPOE for a call for underlying MSs</td>
+<td class="table-rows" style="width: 30%;">Helps in M2M. API Gateway OR Aggregator per MS Architecture needs</td>
+
+
+</tr>
+<tr><td class="table-rows" style="width: 1%; ">Integration</td>
+<td class="table-rows" style="width: 15%;">API Gateway</td>
+<td class="table-rows" style="width: 10%;"></td>
+<td class="table-rows" style="width: 40%;">API Gateway be SPOE for a call for underlying MSs. It can work as a proxy service to route a request to desired MS. Send back aggregated results from underlying different MSs. Convert incoming protocols Requests (Supported or NOT) & Respond. Do Authentication/Authorization responsibility of the MSs.</td>
+<td class="table-rows" style="width: 30%;">Helps in M2M. API Gateway OR Aggregator per MS Architecture needs</td>
+
+
+</tr>
+<tr><td class="table-rows" style="width: 1%; ">Integration</td>
+<td class="table-rows" style="width: 15%;">Aggregator</td>
+<td class="table-rows" style="width: 10%;"></td>
+<td class="table-rows" style="width: 40%;">Make calls to all the required MSs transform & cumulate data respond.</td>
+<td class="table-rows" style="width: 30%;">Helps in M2M. API Gateway OR Aggregator per MS Architecture needs</td>
+
+
+</tr>
+<tr><td class="table-rows" style="width: 1%; ">Integration</td>
+<td class="table-rows" style="width: 15%;">Sidecar Proxy</td>
+<td class="table-rows" style="width: 10%;">Ngnix</td>
+<td class="table-rows" style="width: 40%;">One Sidecar Proxy (SCP) runs by the side of each Instance or pod. Protocol conversion & Customizing Security via API Gateway pattern. APIs (Mobile, Browser, Public/3rd party) via API Gateway.</td>
+<td class="table-rows" style="width: 30%;"></td>
+
+
+</tr>
+<tr><td class="table-rows" style="width: 1%; ">Integration</td>
+<td class="table-rows" style="width: 15%;">API Gateway</td>
+<td class="table-rows" style="width: 10%;">Ngnix. gRPC API <b>preferred</b> over REST API (http + JSON).</td>
+<td class="table-rows" style="width: 40%;">Does ALL the request routing. To scale well we might setup a separate reverse proxy server. Reduces network hops to all the Microservices by accepting requests and reverting responses to and from FE apps. API Gateway helps in implementing several other design patterns like Aggregator, Chained, Circuit breaker/Retry AND Security at API Gateway with public IP. Rather than ALL Microservices pods with public IP making complete application itself INSECURE. Hence API Gateway helps in Security, Scaling, Low latency.</td>
+<td class="table-rows" style="width: 30%;"></td>
+
+
+</tr>
+<tr><td class="table-rows" style="width: 1%; "></td>
+<td class="table-rows" style="width: 15%;"></td>
+<td class="table-rows" style="width: 10%;"></td>
+<td class="table-rows" style="width: 40%;"></td>
+<td class="table-rows" style="width: 30%;"></td>
+
+
+</tr>
+<tr><td class="table-rows" style="width: 1%; ">Integration</td>
+<td class="table-rows" style="width: 15%;">Chained</td>
+<td class="table-rows" style="width: 10%;"></td>
+<td class="table-rows" style="width: 40%;">MS1 ->calls-> MS2 => Aggregate/Txfm. These services are synchronous. To scale well we might setup a separate reverse proxy server.</td>
+<td class="table-rows" style="width: 30%;"></td>
+
+
+</tr>
+<tr><td class="table-rows" style="width: 1%; "></td>
+<td class="table-rows" style="width: 15%;"></td>
+<td class="table-rows" style="width: 10%;"></td>
+<td class="table-rows" style="width: 40%;"></td>
+<td class="table-rows" style="width: 30%;"></td>
+
+
+</tr>
+<tr><td class="table-rows" style="width: 1%; ">Integration</td>
+<td class="table-rows" style="width: 15%;">Branch</td>
+<td class="table-rows" style="width: 10%;"></td>
+<td class="table-rows" style="width: 40%;">Mix of Aggregator & Chained pattern</td>
+<td class="table-rows" style="width: 30%;"></td>
+
+
+</tr>
+<tr><td class="table-rows" style="width: 1%; ">Integration</td>
+<td class="table-rows" style="width: 15%;">Service Mesh</td>
+<td class="table-rows" style="width: 10%;">Uses Istio for Control Plane and Envoy for Data Plane.</td>
+<td class="table-rows" style="width: 40%;">Helps in M2M for difft code stacks. Service Mesh is implemented by <b>Sidecar Proxy</b> (SCP) pattern for each Microservice. Sidecars sits by the side of each Instance or pods handling <b>Network-based Inter Process Communication</b> (NIPC), Monitoring, Tracebility, Dynamic traffic routing. SCP routes, or forward proxy traffic with other SCPs. Control plane in a service mesh that distributes config across SCPs in the data plane. 
+<b>Service Mesh provides several design patterns:</b>
+Service Discovery (Provides Instances or pods the interface for DNS queries helping in finding available instances or pods. In Microservices instances have >=1 Microservices. ), Load Balancing (Service Mesh implements better LB, with richer algorithms and powerful traffic management. LB parameters can be modified via API, making it possible to orchestrate blue?green or canary deployments), Encryption (mutual TLS (mTLS), where a public key infrastructure (PKI) generates and distributes certificates and keys for use by the sidecar proxies), Security (Authentication and Authorization of intra and inter services), Support for Circuit Breaker pattern (It isolates unhealthy instances, then gradually brings them back into the healthy instance pool if warranted).</td>
+<td class="table-rows" style="width: 30%;">Helps in M2M. <b>Not recommended for:</b>
+High-performance environments. Functionally diverse environments†like, realtime requests, transaction processing, data analytics and streaming services. Structurally diverse environments†like multitude of stakeholders. Technologically diverse environments†like different generations or owners of systems. 
+Developers can handle Development, Support, and Maintenance for the application code in the Microservices. <b>AND</b> DevOps or Ops teams can maintain the Service Mesh and run the application.</td>
+
+
+</tr>
+<tr><td class="table-rows" style="width: 1%; ">Service Discovery</td>
+<td class="table-rows" style="width: 15%;">Client Side Discovery/Load Balancing</td>
+<td class="table-rows" style="width: 10%;"></td>
+<td class="table-rows" style="width: 40%;">Netflix Ribbon (2012), Zuul, Feign</td>
+<td class="table-rows" style="width: 30%;"></td>
+
+
+</tr>
+<tr><td class="table-rows" style="width: 1%; ">Service Discovery</td>
+<td class="table-rows" style="width: 15%;">Server Side Discovery/Load Balancing</td>
+<td class="table-rows" style="width: 10%;"></td>
+<td class="table-rows" style="width: 40%;">Netflix Ribbon (2012), Zuul, Feign</td>
+<td class="table-rows" style="width: 30%;"></td>
+
+
+</tr>
+<tr><td class="table-rows" style="width: 1%; ">Cross Cutting Concern - CCC</td>
+<td class="table-rows" style="width: 15%;"></td>
+<td class="table-rows" style="width: 10%;"></td>
+<td class="table-rows" style="width: 40%;"></td>
+<td class="table-rows" style="width: 30%;"></td>
+
+
+</tr>
+<tr><td class="table-rows" style="width: 1%; ">HA/CCC</td>
+<td class="table-rows" style="width: 15%;">Circuit Breaker</td>
+<td class="table-rows" style="width: 10%;">Spring Cloud (Netflix Hystrix 2012)</td>
+<td class="table-rows" style="width: 40%;">Avoids cascading microservices failures (MS1 down -> MS2 down). Moment MS1 goes down, MS2 is routed to work with a replica of MS1.</td>
+<td class="table-rows" style="width: 30%;"></td>
+
+
+</tr>
+<tr><td class="table-rows" style="width: 1%; ">HA/CCC</td>
+<td class="table-rows" style="width: 15%;">External Configuration</td>
+<td class="table-rows" style="width: 10%;"></td>
+<td class="table-rows" style="width: 40%;">Keep ALL external config (Dev, Prod, QA, RND) into one Service</td>
+<td class="table-rows" style="width: 30%;"></td>
+
+
+</tr>
+<tr><td class="table-rows" style="width: 1%; ">HA/CCC</td>
+<td class="table-rows" style="width: 15%;">Service Discovery</td>
+<td class="table-rows" style="width: 10%;">Client-side: Netflix Eureka; Server-side: AWS ALB.</td>
+<td class="table-rows" style="width: 40%;">Due to dynamic IP allotment to container and service going bad, a Service Registry keeps details of all the container/service/IP</td>
+<td class="table-rows" style="width: 30%;"></td>
+
+
+</tr>
+<tr><td class="table-rows" style="width: 1%; ">HA/CCC</td>
+<td class="table-rows" style="width: 15%;">Blue-Green Deployment</td>
+<td class="table-rows" style="width: 10%;"></td>
+<td class="table-rows" style="width: 40%;">Prod must have two copies (hot and cold) to failover and failback</td>
+<td class="table-rows" style="width: 30%;"></td>
+
+
+</tr>
+
+</table>
+
+</body>
+</html>
+
