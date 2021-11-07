@@ -1,0 +1,60 @@
+ReadHeaderFooterJSONFile([
+{
+"type": "all", "name": "hapslab", "need": "y", "desc": "Data Products, Services, Solutions & Architecture of any scale & latency. Developing & Productionizing Products with Big Data, Data Analytics, Data Science, Artificial Intelligence. Data Compute via ETL, Streaming or Realtime. Cloud Presence. Point In Time Data Delivery via Microservices. Security & Page Portals", "webpage": "https://hapslab.github.io", "divid": "#header", "divclass": "menu-box-header-container", "jsfunction": "funcHapslabHeaderFooterHeader", "jsfunctiondep": "", "jsdatastructure": "HeaderFooterJSONArray", "jsfileprocedure": "ReadHeaderFooterJSONFile", "jsfile": "hapslabHeaderFooter.js", "reason": "", "color": "magenta", "fontfamily": "arial", "fontsize": "3.5", "fontstyle": "normal", "fontweight": "bold" },
+{
+"type": "all", "name": "moto", "need": "y", "desc": "Data play", "webpage": "none", "divid": "#footer", "divclass": "menu-box-footer-container", "jsfunction": "funcHapslabHeaderFooterFooter", "jsfunctiondep": "populateEnvVariables", "jsdatastructure": "", "jsfileprocedure": "", "jsfile": "", "reason": "", "color": "navyblue", "fontfamily": "arial", "fontsize": "1.5", "fontstyle": "normal", "fontweight": "bold" },
+{
+"type": "all", "name": "logo", "need": "n", "desc": "logo", "webpage": "hapslab-logo.jpg", "divid": "#blank", "divclass": "blank", "jsfunction": "populateEnvVariables", "jsfunctiondep": "", "jsdatastructure": "", "jsfileprocedure": "", "jsfile": "", "reason": "", "color": "", "fontfamily": "", "fontsize": "", "fontstyle": "", "fontweight": "" },
+{
+"type": "header", "name": "home", "need": "y", "desc": "Home", "webpage": "https://hapslab.github.io/index.html", "divid": "#home", "divclass": "trends-homes-container", "jsfunction": "funcHapslabHeaderFooterHome", "jsfunctiondep": "", "jsdatastructure": "", "jsfileprocedure": "", "jsfile": "", "reason": "", "color": "", "fontfamily": "", "fontsize": "", "fontstyle": "", "fontweight": "" },
+{
+"type": "header", "name": "productsservices", "need": "n", "desc": "Products & Services", "webpage": "#productsservices", "divid": "#productsservices", "divclass": "trends-products-container", "jsfunction": "funcHapslabHeaderFooterProduct", "jsfunctiondep": "", "jsdatastructure": "ProductsJSONArray", "jsfileprocedure": "ReadHeaderProductsJSONFile", "jsfile": "hapslabProducts.js", "reason": "", "color": "", "fontfamily": "", "fontsize": "", "fontstyle": "", "fontweight": "" },
+{
+"type": "header", "name": "products", "need": "n", "desc": "Products", "webpage": "#products", "divid": "#products", "divclass": "trends-products-container", "jsfunction": "funcHapslabHeaderFooterProduct", "jsfunctiondep": "", "jsdatastructure": "ProductsJSONArray", "jsfileprocedure": "ReadHeaderProductsJSONFile", "jsfile": "hapslabProducts.js", "reason": "", "color": "", "fontfamily": "", "fontsize": "", "fontstyle": "", "fontweight": "" },
+{
+"type": "header", "name": "platforms", "need": "y", "desc": "Platforms", "webpage": "#platforms", "divid": "#platforms", "divclass": "trends-platforms-container", "jsfunction": "funcHapslabHeaderFooterPlatform", "jsfunctiondep": "", "jsdatastructure": "PlatformsJSONArray", "jsfileprocedure": "ReadHeaderPlatformsJSONFile", "jsfile": "hapslabPlatforms.js", "reason": "", "color": "", "fontfamily": "", "fontsize": "", "fontstyle": "", "fontweight": "" },
+{
+"type": "header", "name": "data", "need": "y", "desc": "Data", "webpage": "#data", "divid": "#data", "divclass": "trends-datas-container", "jsfunction": "funcHapslabHeaderFooterData", "jsfunctiondep": "", "jsdatastructure": "DatasJSONArray", "jsfileprocedure": "ReadHeaderDatasJSONFile", "jsfile": "hapslabDatas.js", "reason": "", "color": "", "fontfamily": "", "fontsize": "", "fontstyle": "", "fontweight": "" },
+{
+"type": "header", "name": "services", "need": "n", "desc": "Services", "webpage": "#services", "divid": "#services", "divclass": "trends-services-container", "jsfunction": "funcHapslabHeaderFooterService", "jsfunctiondep": "", "jsdatastructure": "ServicesJSONArray", "jsfileprocedure": "ReadHeaderServicesJSONFile", "jsfile": "hapslabServices.js", "reason": "", "color": "", "fontfamily": "", "fontsize": "", "fontstyle": "", "fontweight": "" },
+{
+"type": "header", "name": "blogs", "need": "y", "desc": "Blogs", "webpage": "#blogs", "divid": "#blogs", "divclass": "trends-blogspage-container", "jsfunction": "funcHapslabHeaderFooterBlog", "jsfunctiondep": "", "jsdatastructure": "PictureBlogsJSONArray", "jsfileprocedure": "ReadHeaderPictureBlogsJSONFile", "jsfile": "hapslabPictureBlogs.js", "reason": "", "color": "", "fontfamily": "", "fontsize": "", "fontstyle": "", "fontweight": "" },
+{
+"type": "header", "name": "datablogs", "need": "n", "desc": "Data blogs", "webpage": "#datablogs", "divid": "#datablogs", "divclass": "trends-datablogs-container", "jsfunction": "funcHapslabHeaderFooterDataBlogs", "jsfunctiondep": "", "jsdatastructure": "DataBlogsJSONArray", "jsfileprocedure": "ReadHeaderDataBlogsJSONFile", "jsfile": "hapslabDataBlogs.js", "reason": "", "color": "", "fontfamily": "", "fontsize": "", "fontstyle": "", "fontweight": "" },
+{
+"type": "header", "name": "portfolio", "need": "n", "desc": "Portfolio", "webpage": "#portfolio", "divid": "#portfolio", "divclass": "trends-deals-container", "jsfunction": "funcHapslabHeaderFooterDeals", "jsfunctiondep": "", "jsdatastructure": "DealsJSONArray", "jsfileprocedure": "ReadHeaderDealsJSONFile", "jsfile": "hapslabDeals.js", "reason": "", "color": "", "fontfamily": "", "fontsize": "", "fontstyle": "", "fontweight": "" },
+{
+"type": "header", "name": "partnerscustomers", "need": "n", "desc": "Partners & Customers", "webpage": "#partnerscustomers", "divid": "#partnerscustomers", "divclass": "trends-partners-container", "jsfunction": "funcHapslabHeaderFooterPartner", "jsfunctiondep": "", "jsdatastructure": "PartnersJSONArray", "jsfileprocedure": "ReadHeaderPartnersJSONFile", "jsfile": "hapslabPartners.js", "reason": "", "color": "", "fontfamily": "", "fontsize": "", "fontstyle": "", "fontweight": "" },
+{
+"type": "header", "name": "partners", "need": "y", "desc": "Partners", "webpage": "#partners", "divid": "#partners", "divclass": "trends-partners-container", "jsfunction": "funcHapslabHeaderFooterPartner", "jsfunctiondep": "", "jsdatastructure": "PartnersJSONArray", "jsfileprocedure": "ReadHeaderPartnersJSONFile", "jsfile": "hapslabPartners.js", "reason": "", "color": "", "fontfamily": "", "fontsize": "", "fontstyle": "", "fontweight": "" },
+{
+"type": "header", "name": "customers", "need": "n", "desc": "Customers", "webpage": "#customers", "divid": "#customers", "divclass": "trends-customers-container", "jsfunction": "funcHapslabHeaderFooterCustomer", "jsfunctiondep": "", "jsdatastructure": "CustomersJSONArray", "jsfileprocedure": "ReadHeaderCustomersJSONFile", "jsfile": "hapslabCustomers.js", "reason": "", "color": "", "fontfamily": "", "fontsize": "", "fontstyle": "", "fontweight": "" },
+{
+"type": "header", "name": "help", "need": "y", "desc": "Help da planet", "webpage": "#help", "divid": "#help", "divclass": "trends-helps-container", "jsfunction": "funcHapslabHeaderFooterHelp", "jsfunctiondep": "", "jsdatastructure": "HelpsJSONArray", "jsfileprocedure": "ReadHeaderHelpsJSONFile", "jsfile": "hapslabHelps.js", "reason": "", "color": "", "fontfamily": "", "fontsize": "", "fontstyle": "", "fontweight": "" },
+{
+"type": "header", "name": "contact", "need": "n", "desc": "Contact", "webpage": "#contact", "divid": "#contact", "divclass": "trends-contacts-container", "jsfunction": "funcHapslabHeaderFooterContact", "jsfunctiondep": "", "jsdatastructure": "ContactsJSONArray", "jsfileprocedure": "ReadHeaderContactsJSONFile", "jsfile": "hapslabContacts.js", "reason": "", "color": "", "fontfamily": "", "fontsize": "", "fontstyle": "", "fontweight": "" },
+{
+"type": "footer", "name": "careers", "need": "y", "desc": "Careers", "webpage": "https://hapslab.github.io/hl-careers.html", "divid": "#careers", "divclass": "", "jsfunction": "", "jsfunctiondep": "", "jsdatastructure": "", "jsfileprocedure": "", "jsfile": "", "reason": "", "color": "", "fontfamily": "", "fontsize": "", "fontstyle": "", "fontweight": "" },
+{
+"type": "footer", "name": "legal", "need": "y", "desc": "Legal", "webpage": "https://hapslab.github.io/hl-legal.html", "divid": "#legal", "divclass": "", "jsfunction": "", "jsfunctiondep": "", "jsdatastructure": "", "jsfileprocedure": "", "jsfile": "", "reason": "", "color": "", "fontfamily": "", "fontsize": "", "fontstyle": "", "fontweight": "" },
+{
+"type": "footer", "name": "terms", "need": "y", "desc": "Terms", "webpage": "https://hapslab.github.io/hl-terms.html", "divid": "#terms", "divclass": "", "jsfunction": "", "jsfunctiondep": "", "jsdatastructure": "", "jsfileprocedure": "", "jsfile": "", "reason": "", "color": "", "fontfamily": "", "fontsize": "", "fontstyle": "", "fontweight": "" },
+{
+"type": "footer", "name": "privacy", "need": "y", "desc": "Disclaimer", "webpage": "https://hapslab.github.io/hl-privacy.html", "divid": "#privacy", "divclass": "", "jsfunction": "", "jsfunctiondep": "", "jsdatastructure": "", "jsfileprocedure": "", "jsfile": "", "reason": "", "color": "", "fontfamily": "", "fontsize": "", "fontstyle": "", "fontweight": "" },
+{
+"type": "footer", "name": "facebook", "need": "y", "desc": "Facebook", "webpage": "https://www.facebook.com/hapslab", "divid": "#facebook", "divclass": "", "jsfunction": "", "jsfunctiondep": "", "jsdatastructure": "", "jsfileprocedure": "", "jsfile": "", "reason": "", "color": "", "fontfamily": "", "fontsize": "", "fontstyle": "", "fontweight": "" },
+{
+"type": "footer", "name": "linkedin", "need": "y", "desc": "Linkedin", "webpage": "https://www.linkedin.com/in/hapslab", "divid": "#linkedin", "divclass": "", "jsfunction": "", "jsfunctiondep": "", "jsdatastructure": "", "jsfileprocedure": "", "jsfile": "", "reason": "", "color": "", "fontfamily": "", "fontsize": "", "fontstyle": "", "fontweight": "" },
+{
+"type": "footer", "name": "twitter", "need": "y", "desc": "Twitter", "webpage": "https://twitter.com/hapslab?lang=en", "divid": "#twitter", "divclass": "", "jsfunction": "", "jsfunctiondep": "", "jsdatastructure": "", "jsfileprocedure": "", "jsfile": "", "reason": "", "color": "", "fontfamily": "", "fontsize": "", "fontstyle": "", "fontweight": "" },
+{
+"type": "footer", "name": "google", "need": "n", "desc": "Google", "webpage": "none", "divid": "#google", "divclass": "", "jsfunction": "", "jsfunctiondep": "", "jsdatastructure": "", "jsfileprocedure": "", "jsfile": "", "reason": "", "color": "", "fontfamily": "", "fontsize": "", "fontstyle": "", "fontweight": "" },
+{
+"type": "footer", "name": "youtube", "need": "y", "desc": "Youtube", "webpage": "https://www.youtube.com/watch?v=Tj1fYp9rthk", "divid": "#youtube", "divclass": "", "jsfunction": "", "jsfunctiondep": "", "jsdatastructure": "", "jsfileprocedure": "", "jsfile": "", "reason": "", "color": "", "fontfamily": "", "fontsize": "", "fontstyle": "", "fontweight": "" },
+{
+"type": "footer", "name": "instagram", "need": "y", "desc": "Instagram", "webpage": "https://instagram.com/hapslab", "divid": "#instagram", "divclass": "", "jsfunction": "", "jsfunctiondep": "", "jsdatastructure": "", "jsfileprocedure": "", "jsfile": "", "reason": "", "color": "", "fontfamily": "", "fontsize": "", "fontstyle": "", "fontweight": "" },
+{
+"type": "footer", "name": "telegram", "need": "y", "desc": "Telegram", "webpage": "https://twitter.com/hapslab?lang=en", "divid": "#telegram", "divclass": "", "jsfunction": "", "jsfunctiondep": "", "jsdatastructure": "", "jsfileprocedure": "", "jsfile": "", "reason": "", "color": "", "fontfamily": "", "fontsize": "", "fontstyle": "", "fontweight": "" },
+{
+"type": "footer", "name": "pinterest", "need": "y", "desc": "Pinterest", "webpage": "https://www.pinterest.com/hapslab/", "divid": "#pinterest", "divclass": "", "jsfunction": "", "jsfunctiondep": "", "jsdatastructure": "", "jsfileprocedure": "", "jsfile": "", "reason": "", "color": "", "fontfamily": "", "fontsize": "", "fontstyle": "", "fontweight": "" }
+]);
