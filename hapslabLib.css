@@ -5,7 +5,7 @@ html
     background-color: #F6F6F6;     /* #E9E9E9; #DCDCDC #FBFBFB; #FCFBFB; #F6F5F5; PAGE color background color */
     width: 99.15vw;
     color: #01014c;                /* #020273 #01015f; #01014c;, #555555 perfect grey, #13133a; in BLOG */
-    font-family: fantasy;
+    font-family: arial; // fantasy;
     font-weight: normal;
     font-style: normal;
     text-align: left;
