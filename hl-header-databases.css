@@ -1,0 +1,409 @@
+<style>
+/* =========================================================================
+   1. CORE GLOBAL STYLES
+   ========================================================================= */
+html {
+    background-color: #FCFBFB;
+    width: 100%;             /* 🌟 THE FIX: Switch from 99vw to 100% so it respects window boundaries */
+    max-width: 100%;
+    overflow-x: hidden;      /* 🌟 Kills horizontal overflow strings cleanly */
+    color: #01014c;
+    font-family: fantasy, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    text-align: left;
+    vertical-align: text-bottom;
+    scroll-behavior: smooth; 
+}
+/* --- TEXT ALIGNMENT & LINK MAPS --- */
+.a-blog { font-size: 110%; color: #13133a; border-bottom: .1px normal #13133a; }
+.a-cat { color: #660000; border-bottom: .1px normal #660000; }
+.a-by { color: #000033; border-bottom: .1px normal #000033; }
+.a-noborder { color: #414141; font-family: fantasy; font-weight: normal; text-decoration: none; }
+.left { text-align: left; }
+.right { text-align: right; }
+h4 { text-align: right; }
+.inactive-link { pointer-events: none; cursor: default; }
+
+/* =========================================================================
+   2. DOM STRUCTURAL CORE TEMPLATE HEADER & FOOTER (FIXED ALIGNMENT)
+   ========================================================================= */
+/* =========================================================================
+   2. DOM STRUCTURAL CORE TEMPLATE HEADER & FOOTER (SAFE RESTORED FIX)
+   ========================================================================= */
+.org-ddm { 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    
+    /* 🌟 THE SAFE FIX: Increased height from 4vh to 8vh and padding to push the line down */
+    height: 8vh !important; 
+    padding-top: 2vh; 
+    margin-bottom: 10vh; 
+    
+    /* This silver line will now safely sit well below your text */
+    border-bottom: 2px solid silver; 
+    width: 100%;             
+    box-sizing: border-box;
+}
+
+/* 🌟 RESTORED EXACTLY: Back to your original positional settings so nothing else moves */
+.org-NameMotoHeader { position: relative; -moz-user-select: none; -khtml-user-select: none; text-decoration-style: solid; top: .75vh; vertical-align: middle; font-family: fantasy; }
+.org-NameHeader { position: relative; color: #855800; font-weight: bold; font-size: 1.75vw; font-family: fantasy; text-decoration: none; top: -.9vh; }
+.org-MotoHeader { position: relative; color: #4a6f2c; font-weight: normal; font-size: 1.1vw; font-family: fantasy; }
+.menu-box-container { position: relative; z-index: 552; display: flex; flex-flow: row nowrap; left: 4vw; width: 95vw; padding-bottom: .5vh; }
+.menu-box-respo { padding-left: 35vw; }
+.menu-box { font-size: 1vw; font-weight: normal; margin-right: 2.5vw; }
+
+
+div.org-NameMotoFooter { font-size: .5vw; text-align: center; padding-top: 1vh; border-top: 2px solid silver; }
+div span.org-NameFooter a { position: relative; top: 0; left: 0; text-decoration: none; color: #855800; font-family: fantasy; font-weight: normal; font-size: 1.2vw; }
+div span.org-MotoFooter { position: relative; left: 0; color: #4a6f2c; vertical-align: 0px; font-family: fantasy; font-weight: normal; font-size: 1vw; }
+.micro-display { font-size: .2vw; }
+.micro-display-tm { font-size: .4vw; }
+div a.org-url { color: #6B4700; }
+
+#bottom-footer-id { position: relative; width: 100%; height: 20%; top: 240%; left: 0; float: left; text-align: center; }
+.bottom-footer-links-class { position: relative; float: center; color: #414141; font-size: .6vw; font-weight: normal; }
+.bottom-footer-links-class li { display: inline; margin: 3px; }
+.bottom-footer-links-class span a { color: #414141; }
+.bottom-footer-share-class { position: relative; float: right; color: #414141; font-size: .8vw; font-weight: normal; text-transform: capitalize; }
+.bottom-footer-share-class span a { color: #414141; }
+.share-contactus .share-facebook .share-linkedin .share-twitter .share-googlep .share-youtube { font-size: .7vw; }
+
+/* =========================================================================
+   3. LANDING DISPLAY SLIDER PANES
+   ========================================================================= */
+#display-picture-id { position: relative; margin-top: .3vh; left: 0; height: 60vh; width: 99vw; background-size: 69.5vw 60vh; background-repeat: no-repeat; opacity: 0.9; z-index: -1; }
+#display-picture-id-img { background-position: center; background-repeat: no-repeat; background-size: cover; height: 60vh; width: 69.5vw; z-index: -1; }
+#display-picture-text-container { position: absolute; top: 0; left: 69.5vw; height: 60vh; width: 29.6vw; background: rgb(0, 0, 0); background: rgba(0, 0, 0, 0.65); }
+#display-picture-text { position: relative; top: 0; left: 1vw; height: auto; padding-right: 2vw; color: #F6F5F5; font: normal .80vw verdana, sans-serif; padding-right: 3.5vw; letter-spacing: 0; line-height: 125%; }
+#display-picture-slider-right { position: absolute; top: 7.5vh; left: 27.75vw; padding: 0; }
+.display-picture-slider-circle { display: block; position: relative; color: olive; width: .416vw; height: .416vw; border-radius: .416vw; border: .208vw double #ccc; background: #F6F5F5; margin-bottom: 1.75vh; }
+
+/* =========================================================================
+   4. DYNAMIC BLOG ENGINE & PROFILE ELEMENT FRAMEWORK
+   ========================================================================= */
+/* 🌟 UPDATED: Swapped margin-top for padding-top to force a secure layout buffer zone */
+.trends-blogspage-container { 
+    margin-left: 17vw !important; 
+    width: 78vw !important; 
+    
+    /* 🌟 THE FIX: Creates solid spacing at the top that absolute headers cannot clip */
+    padding-top: 8vh !important; 
+}
+
+/* Clear the old margin rules from the title class since the container padding handles it now */
+.trends-blogspage-title { 
+    margin-top: 12vh !important; 
+    margin-bottom: 8vh !important; 
+    font-size: 3vw; 
+    text-align: center; 
+}
+
+.trends-blogspage-title-paragraph { margin: 6vh 24vh 10vh 24vh; padding: 4vh 6vh 4vh 6vh; font-size: 1.2vw; background-color: #f8f9fa; border: 1px solid #e9ecef; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.02); text-align: center; }
+
+.trends-blogs-header { font-family: Verdana, sans-serif; font-size: 2.5vw; font-weight: bold; text-align: center; padding-top: 6vh; margin-bottom: -2vh !important;}
+
+.trends-blogs-category { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; font-size: .6vw; font-weight: normal; margin-bottom: 4vh; text-align: center; }
+
+/* 🌟 UPDATED: Uses responsive margins so description headers format accurately over the new layout lane */
+.trends-blogs-description { 
+    font-family: Verdana, sans-serif; 
+    font-size: 1.1vw; 
+    font-weight: normal; 
+    margin: .2vh auto 4vh auto;  
+    width: 75%;
+    text-align: center; 
+}
+
+.trends-blogs-faq { 
+    font-family: Verdana, sans-serif; 
+    font-size: 1.1vw; 
+    font-weight: normal; 
+    margin: .2vh auto 4vh auto;  
+    width: 75%;
+    text-align: center; 
+white-space: pre-wrap;
+}
+
+.trends-blogs-subheader { font-size: 1.2vw; font-weight: bold; text-align: center; padding-top: 3vh; padding-bottom: 2vh; }
+
+.trends-blogpage-container {
+    position: relative;
+    background-color: #FBFCFC;
+    height: auto;
+    display: flex !important;
+    flex-direction: column !important; /* Stack items vertically natively */
+    align-items: center !important;
+    font-size: 1.2vw;
+    padding: 3vh 2vw 5vh 2vw;
+    margin-bottom: 8vh;
+}
+
+/* --- NEW FIXED ANCHOR ENGINE (WRAPS IMAGE NATIVELY) --- */
+.trends-blogpage-atag { 
+    display: block !important;
+    position: relative !important;
+    width: auto;
+    height: auto;
+    margin-bottom: 5vh !important; 
+    text-align: center;
+}
+
+/* =========================================================================
+   4. DYNAMIC IMAGE SCALING ENGINE (40% LARGER VIEW)
+   ========================================================================= */
+
+/* =========================================================================
+   4. DYNAMIC IMAGE SCALING ENGINE (CLEAN LARGE DISPLAY WITHOUT SCROLLBAR)
+   ========================================================================= */
+.trends-blogpage-img-container { 
+    display: flex !important; 
+    justify-content: center !important; 
+    align-items: center !important; 
+    
+    /* 🌟 THE SAFE BOOST: Spans wide across the browser space natively */
+    width: 85% !important; 
+    max-width: 1100px !important; /* Prevents it from getting absurdly huge on ultra-wide screens */
+    margin: 4vh auto 5vh auto !important;
+}
+
+.trends-blogpage-img { 
+    display: block !important;
+    width: 100% !important;         
+    height: auto !important;        
+    object-fit: contain;             
+    border: .2vw solid silver;
+    box-sizing: border-box;         /* Prevents the silver border from blowing out the width */
+    cursor: zoom-in;                
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Premium hover lift effect */
+.trends-blogpage-img:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* --- LIGHTBOX OVERLAY EFFECT STYLES --- */
+.db-lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(1, 1, 76, 0.95); /* Matches your signature deep navy theme color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    cursor: zoom-out;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.db-lightbox-overlay img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    border-radius: 4px;
+}
+
+/* --- TEXT BLOCKS INSIDE BLOG ENTRIES --- */
+.trends-blogpage-text-container {
+    position: relative;
+    height: auto;
+    width: 80vw !important; 
+    font-size: 1vw;    
+    margin-left: 0 !important;
+    margin-bottom: 5vh;
+    word-spacing: .25vw;    
+    text-align: left;
+    padding: 3vh 2vw 1.5vh 0;
+}
+.trends-blogpage-title { position: relative; height: auto; font-size: 2vw; word-spacing: .25vw; margin-top: 3vh; margin-bottom: 2vh; text-align: left; }
+.trends-blogpage-details { position: relative; text-align: right; height: 1vh; top: .5vh; right: .25vw; width: auto; color: #414141; word-spacing: 0; font-family: fantasy, sans-serif; font-size: .6vw; font-weight: normal; }
+.trends-blogpage-style { position: relative; text-align: right; height: 1vh; top: .5vh; right: .25vw; width: auto; color: #414141; font-size: .6vw; font-weight: bold; font-style: normal; }
+.trends-blogpage-desc { position: relative; height: auto; font-size: 1vw; top: 1vh; word-spacing: .25vw; text-align: left; }
+.trends-blogs-details { position: relative; float: center; color: #414141; font-size: .6vw; font-weight: normal; padding-top: .5vh; padding-bottom: 8vh; }
+
+/* =========================================================================
+   5.1 NARROW DATABASE TABLES
+   ========================================================================= */
+.trends-blogpage-table-wrapper {
+    position: relative;
+    height: auto;
+    width: 65% !important;         /* Makes the database metric block narrow and tight */
+    margin: 2vh auto 4vh auto !important; /* Perfect display centering mechanism */
+    text-align: left;
+    border-collapse: collapse !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    
+    /* 🌟 UPDATED: Adds padding offset so jumps clear website headers cleanly */
+    scroll-margin-top: 15vh;
+}
+
+.trends-blogpage-table-wrapper th, 
+.trends-blogpage-table-wrapper td {
+    border: 1px solid #bdc3c7 !important;
+    padding: 4px 8px !important;  /* Maximizes row density fields counts */
+    font-size: 11px !important;
+    line-height: 1 !important;
+    vertical-align: middle;
+    white-space: normal !important;
+}
+
+.trends-blogpage-table-wrapper tr th:first-child,
+.trends-blogpage-table-wrapper tr td:first-child {
+    width: 30% !important;          /* Parameter Label Column Constraint */
+}
+
+.trends-blogpage-table-wrapper tr th:last-child,
+.trends-blogpage-table-wrapper tr td:last-child {
+    width: 70% !important;          /* Architectural Detail Value Column Constraint */
+}
+
+/* =========================================================================
+5.2 AREA JUST BELOW DATABASE TABLES END
+========================================================================= /
+
+/* =========================================================================
+6. FOOTER SITE CARD GRIDS
+========================================================================= */
+.trends-box-header { color: #F6F5F5; font-size: 1.5vw; text-align: center; padding-top: 6vh; margin-bottom: 4vh; }
+.trends-box-container-bak { position: relative; background-color: white; left: 0; height: auto; width: 99vw; padding-bottom: 6vh; margin-top: 5vh; margin-bottom: 20vh; }
+.trends-box-container { position: relative; background-color: white; display: flex; flex-flow: row nowrap; margin-left: 5vw; width: 90vw; }
+.trends-box { height: auto; width: 40vw; margin-right: .9vw; overflow: hidden; text-overflow: ellipsis; }
+.trends-box-img { width: 100%; height: 70%; border: 0; margin: 0; }
+.trends-box-text-top { font-style: oblique; font-size: 1vw; }
+.trends-box-text-bottom { font-size: .9vw; width: auto; }
+#trends-columns-container { position: relative; background-color: white; height: auto; width: 80vw; font-family: Arial, sans-serif; margin-left: 10vw; margin-bottom: 6vh; }
+#trends-columns { display: flex; flex-wrap: wrap; align-content: space-between; background-color: white; height: auto; padding-left: 6vw; padding-bottom: 6vh; }
+#trends-columns div { list-style-type: none; float: left; width: 8.5vw; padding-left: 1vw; }
+#trends-columns div li { font-size: .9vw; font-weight: normal; font-family: arial, sans-serif; text-decoration: none; }
+#trends-columns div li a { color: #3E3E3E; text-align: left; margin: 0; padding: 0; text-decoration: none; }
+#trends-columns div li a:hover { text-decoration: underline #1709f6 solid; }
+#trends-columns div li p { text-transform: uppercase; font-weight: bold; color: #F6F5F5; text-align: left; margin-top: .08vh; margin-bottom: .02vh; }
+/* =========================================================================
+7. RESPONSIVE BREAKPOINT QUERY RE-OVERRIDES
+========================================================================= */
+@media (max-width: 1200px) {
+.org-ddm { padding-top: 1vh; height: 3vh; }
+.org-NameHeader { top: -.75vh; }
+.trends-box-header { margin-bottom: 0; }
+.trends-box-container { display: flex; flex-flow: wrap; text-align: left; }
+.trends-box { width: 40vw; max-width: 39vw; margin-top: 4vh; text-align: left; }
+}
+@media (max-width: 900px) {
+.org-ddm { padding-top: 1vh; height: 2vh; }
+.org-NameHeader { top: -.55vh; }
+.menu-box-respo { padding-left: 30vw; }
+#display-picture-id { height: 45.5vh; width: 99vw; background-size: 75.5vw 45.5vh; }
+#display-picture-id-img { height: 45.5vh; width: 75.5vw; }
+#display-picture-text-container { top: 0; left: 75.5vw; height: 45.5vh; width: 21.5vw; }
+#display-picture-text { left: 1vw; height: auto; width: 18vw; font: normal .9vw fantasy, sans-serif; padding-right: 1.75vw; }
+#display-picture-slider-right { top: 7.25vh; left: 19.75vw; }
+.display-picture-slider-circle { margin-bottom: 1.75vh; }
+.trends-blogpage-container-old { padding: 1vh 2vw 1.5vh 2vw; margin-bottom: 5vh; }
+.trends-box-container-bak { padding-bottom: 3vh; padding-left: 4vw; width: 50%; margin: auto; margin-top: 3.5vh; margin-bottom: 10vh; }
+.trends-box-header { padding-top: 3vh; margin-bottom: 1vh; }
+#trends-columns { padding-left: 4vw; padding-bottom: 0; }
+#trends-columns-container { padding-bottom: 3vh; width: 50%; margin: auto; margin-bottom: 0; }
+}
+@media (max-width: 600px) {
+.org-ddm { padding-top: .75vh; height: 1.5vh; }
+.menu-box-respo { padding-left: 25vw; }
+.org-NameHeader { top: -.15vh; }
+#display-picture-id { height: 31.5vh; width: 99vw; background-size: 75.5vw 31.5vh; }
+#display-picture-id-img { height: 31.5vh; width: 75.5vw; }
+#display-picture-text-container { top: 0; left: 75.5vw; height: 31.5vh; width: 21.5vw; }
+#display-picture-text { left: 1vw; height: auto; width: 17vw; font: normal .9vw fantasy, sans-serif; padding-right: 1.75vw; }
+#display-picture-slider-right { top: 4.75vh; left: 18.5vw; }
+.display-picture-slider-circle { margin-bottom: 1.25vh; }
+.trends-blogpage-atag {
+position: relative !important;
+display: block !important;
+margin-bottom: 5vh !important;
+text-align: center;
+}
+.trends-blogpage-container { padding: 1vh 2vw 1.5vh 2vw; margin-bottom: 5vh; }
+.trends-blogpage-text-container { margin-left: 4vw; margin-bottom: 2.5vh; padding: 3vh 2vw 1.5vh 0; }
+.trends-box-container { display: flex; flex-flow: wrap; text-align: left; }
+.trends-box { height: 20vh; width: 75vw; max-height: 25vh; max-width: 125vw; margin-top: 1vh; text-align: left; }
+.trends-box-container-bak { padding-bottom: 0; padding-left: 4vw; width: 50%; margin: auto; margin-top: 2.5vh; margin-bottom: 10vh; }
+.trends-box-header { padding-top: 3vh; margin-bottom: 1vh; }
+#trends-columns { padding-left: 4vw; padding-bottom: 0; }
+#trends-columns-container { padding-bottom: 3vh; width: 50%; margin: auto; margin-bottom: 0; }
+}
+
+/* =========================================================================
+   8. STANDALONE BOTTOM FAQ SHEET STYLING
+   ========================================================================= */
+.faq-outer-section-wrapper {
+    /* 🌟 THE GRID MATCH: Shifts the entire row rightward past the sidebar */
+    margin-left: 17vw !important; 
+    
+    /* 🌟 THE WIDTH COPIER: Matches the layout footprints of your content blocks */
+    width: 78vw !important; 
+    margin-top: 8vh !important;
+    margin-bottom: 12vh !important;
+    box-sizing: border-box;
+}
+
+.faq-section-title {
+    font-family: Verdana, sans-serif; 
+    font-size: 2vw; 
+    font-weight: bold;
+    color: #01014c;
+    text-align: center;
+    margin-bottom: 4vh;
+}
+
+.faq-content-card {
+    /* 🌟 MATCHES TABLE WIDTH: Aligns card edges perfectly with your data matrix lanes */
+    width: 65% !important; 
+    margin: 0 auto !important; /* Centers it smoothly within the 78vw lane width */
+    
+    padding: 4vh 6vh; 
+    background-color: #f8f9fa; 
+    border: 1px solid #e9ecef; 
+    border-radius: 6px; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02); 
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.faq-content-text {
+    font-family: Verdana, sans-serif;
+    font-size: 11px !important; /* Echoes the tight readability of your database rows */
+    line-height: 1.6 !important;
+    color: #01014c;
+    margin-top: 2vh;
+    margin-bottom: 0;
+    
+    /* 🌟 UNBREAKABLE AUTO-WRAPPING ENGINE FOR LONG TEXT BLOCKS */
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    word-break: normal !important;
+}
+
+code {
+font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+font-size: 1vw;
+}
+code.bold-text {
+/*
+   => display: block; or display: inline-block; to the CSS rule. 
+   This tells the browser to treat the code tag like a structural block, 
+   which instantly unlocks the vertical margins.
+*/
+display: block;
+margin-top: 2vh;
+font-weight: 700; / Changes the text to bold /
+color: #212529;   / Crisp dark charcoal for premium readability */
+}
+
+
+</style>
