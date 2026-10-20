@@ -2665,12 +2665,12 @@ function hapslabWrapper()
 
              if (hfja_type == 'all' && hfja_need == 'y')
              {
-
+/*
                  if ( !AllPageClassesArray.includes(hfja_divclass) )
                  {
                       window.alert('ERROR: hapslabWrapper(): HTML Page code is missing div class, '+hfja_divclass);
                  }
-
+*/
                  argsToFunction.push(hfja_desc);
                  argsToFunction.push(hfja_divid);
                  argsToFunction.push(hfja_divclass);
