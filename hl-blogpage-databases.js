@@ -1,4 +1,3 @@
-
 /* 
 ------------------------------------ HOME PAGE JavaScript / jQuery -----------------------------
 ------------------------------------ HOME PAGE JavaScript / jQuery -----------------------------
@@ -107,8 +106,9 @@ function HapslabPixDatabaseBlogsStart()
     baseRootContainer.appendChild(indexWrapper); // Appends the completed index container to the top!
 
 
-///////////////////////////////////////////////
+/*********  STOPPED 19-Oct-2026 per @Anushka's input */
 
+///////////////////////////////////////////////
 //
 // 1., 2., & 3. (below) CREATING THE FIXED SIDEBAR DATABASE NAVIGATION INDEX
 //
@@ -117,17 +117,17 @@ function HapslabPixDatabaseBlogsStart()
     if (!baseRootContainer || databaseArrayLen === 0) return;
 
     // 1. CREATE THE SIDEBAR WRAPPER (Pinned to the left viewport boundary)
-    var indexWrapper = document.createElement('div');
-    indexWrapper.style.cssText = "position: fixed; top: 12vh; left: 2vw; width: 14vw; max-height: 80vh; overflow-y: auto; padding: 12px 14px; background-color: #f8f9fa; border: 1px solid #e9ecef; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); text-align: left; z-index: 1000;";
+    var indexWrapperSidebar = document.createElement('div');
+    indexWrapperSidebar.style.cssText = "position: fixed; top: 12vh; left: 2vw; width: 14vw; max-height: 80vh; overflow-y: auto; padding: 12px 14px; background-color: #f8f9fa; border: 1px solid #e9ecef; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); text-align: left; z-index: 1000;";
 
-    var indexTitle = document.createElement('h4');
-    indexTitle.style.cssText = "text-align: left; margin: 0 0 10px 0; font-size: 11px; color: #01014c; font-family: Verdana, sans-serif; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid #dee2e6; padding-bottom: 6px;";
-    indexTitle.appendChild(document.createTextNode("Database Navigation"));
-    indexWrapper.appendChild(indexTitle);
+    var indexTitleSidebar = document.createElement('h4');
+    indexTitleSidebar.style.cssText = "text-align: left; margin: 0 0 10px 0; font-size: 11px; color: #01014c; font-family: Verdana, sans-serif; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid #dee2e6; padding-bottom: 6px;";
+    indexTitleSidebar.appendChild(document.createTextNode("Database Navigation"));
+    indexWrapperSidebar.appendChild(indexTitleSidebar);
 
     // 2. CREATE A VERTICAL STRAIGHT LIST (Removed multi-column rules)
-    var indexList = document.createElement('ul');
-    indexList.style.cssText = "margin: 0; padding: 0; list-style-type: none;";
+    var indexListSidebar = document.createElement('ul');
+    indexListSidebar.style.cssText = "margin: 0; padding: 0; list-style-type: none;";
 
     // 3. LOOP 1: BUILD THE ENTIRE INDEX AS A PURE VERTICAL STACK
     for (var idx = 0; idx < databaseArrayLen; idx++) {
@@ -156,14 +156,18 @@ function HapslabPixDatabaseBlogsStart()
 
         anchorLink.appendChild(document.createTextNode(itemDBName));
         listItem.appendChild(anchorLink);
-        indexList.appendChild(listItem);
+        indexListSidebar.appendChild(listItem);
     }
-    indexWrapper.appendChild(indexList);
+    indexWrapperSidebar.appendChild(indexListSidebar);
+
     
     // Instead of pushing inside the container layout, append it directly to the body or main shell 
     // so it handles independent page positioning safely
-    document.body.appendChild(indexWrapper); 
+    document.body.appendChild(indexWrapperSidebar); 
 
+/*
+STOPPED 19-Oct-2026 per @Anushka's input 
+******************************************/
 
     //
     // 4. LOOP 2: NOW RUN THE EXISTING LOGIC TO INJECT ALL 25 TABLES BENEATH IT
@@ -249,28 +253,211 @@ function HapslabPixDatabaseBlogsStart()
         document.head.appendChild(metaKeywordsElement);
 
 
-        // 1. TITLE INJECTION
+        /************************
+        *
+        //
+        // 1 & 2 & 3. CORRECTED SEPARATE ELEMENT INJECTION (CSS CONFLICT PROTECTED)
+        //
+       
+            COMPLETE SCOPE OF CHANGES on 20-Oct-2026
+
+            Currently, the layout feels slightly uneven because the text blocks span the full width of the view, 
+            while the data table is abruptly narrow and centered. Furthermore, the icons (like the large blue "GO" circle) 
+            create visual distraction rather than structural utility.
+            Here is an design critique along with the specific adjustments to make it a premium reading experience:
+
+            🔍 UI/UX Design Critique
+
+            1. The Table Width vs. Text Width Mismatch (High Priority):
+            Your text paragraphs are wide, but your data table is constrained to 65% and centered. This forces the 
+            reader's eyes to constantly shift focus back and forth between a wide layout style and a narrow layout lane, 
+            causing reading fatigue over a 25-database list.
+            2. The Blue "GO" Button Issue:
+            The large circular blue icon floating right between the quote block and the table looks out of place. 
+            It functions like an action button but does not do anything, which breaks clean content flow.
+            3. The Text Line Length is Too Wide:
+            The description spans nearly all the way across the layout screen container. For long blogs, 
+            text lines that are too wide are difficult to read because the eye struggles to find the start of the next line.
+            4. Missing Architectural Polish:
+            The data table borders look a bit raw, and the layout needs a cleaner transition between the text 
+            components and the database grids.
+
+        **********/
+        
+        // =========================================================================
+        // A. TEXT PARSING MECHANICS
+        // =========================================================================
+        var sentences = dbDescription.trim().split(/\.(?=\s|[A-Z]|\$)/);
+        var cleanSentences = sentences.filter(function(s) { return s.trim().length > 0; });
+        var lastSentence = cleanSentences.pop().trim() + ".";
+        var mainParagraph = cleanSentences.join(". ").trim() + ".";
+
+        var targetContainer = document.getElementsByClassName("trends-blogspage-container");
+
+        // Create a unified section container card for each database entry to keep layout solid
+        var dbBlockWrapper = document.createElement('div');
+        dbBlockWrapper.classList.add("db-architecture-card"); // 🌟 THE MAGIC CLASS NAME
+        dbBlockWrapper.style.setProperty('width', '56.5vw', 'important'); // Matches your perfect intro text width!
+        dbBlockWrapper.style.setProperty('margin', '0 auto 8vh auto', 'important'); // Balanced spacing between databases
+        dbBlockWrapper.style.setProperty('font-family', "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif", 'important');
+        dbBlockWrapper.style.setProperty('text-align', 'left', 'important');
+
+        // =========================================================================
+        // B. HEADER & TEXT COMPONENT INJECTION
+        // =========================================================================
+
+        // 1. Category Badge
+        var categoryWrapper = document.createElement('div');
+        categoryWrapper.style.setProperty('margin', '0 0 12px 0', 'important');
+        
+        var categoryElement = document.createElement('span');
+        categoryElement.classList.add("trends-blogs-category");
+        categoryElement.style.setProperty('background-color', '#EFF6FF', 'important');
+        categoryElement.style.setProperty('color', '#1D4ED8', 'important');
+        categoryElement.style.setProperty('font-size', '11px', 'important');
+        categoryElement.style.setProperty('font-weight', '700', 'important');
+        categoryElement.style.setProperty('text-transform', 'uppercase', 'important');
+        categoryElement.style.setProperty('letter-spacing', '0.05em', 'important');
+        categoryElement.style.setProperty('padding', '6px 10px', 'important');
+        categoryElement.style.setProperty('border-radius', '4px', 'important');
+        categoryElement.style.setProperty('display', 'inline-block', 'important');
+        categoryElement.style.setProperty('font-family', 'inherit', 'important');
+        categoryElement.appendChild(document.createTextNode(dbCategory));
+        categoryWrapper.appendChild(categoryElement);
+        dbBlockWrapper.appendChild(categoryWrapper);
+
+        // 2. Database Title
         var headerElement = document.createElement('h2');
-        headerElement.classList.add("trends-blogs-header"); 
-        var headerNodeText = document.createTextNode(dbName);
-        headerElement.appendChild(headerNodeText);
-        document.getElementsByClassName("trends-blogspage-container")[0].appendChild(headerElement);
+        headerElement.classList.add("trends-blogs-header");
+        headerElement.style.setProperty('font-size', '28px', 'important');
+        headerElement.style.setProperty('font-weight', '700', 'important');
+        headerElement.style.setProperty('color', '#0F172A', 'important');
+        headerElement.style.setProperty('margin', '0 0 16px 0', 'important');
+        headerElement.style.setProperty('padding', '0', 'important');
+        headerElement.style.setProperty('text-align', 'left', 'important');
+        headerElement.style.setProperty('letter-spacing', '-0.02em', 'important');
+        headerElement.style.setProperty('font-family', 'inherit', 'important');
+        headerElement.appendChild(document.createTextNode(dbName));
+        dbBlockWrapper.appendChild(headerElement);
 
-        // 2. CATEGORY INJECTION
-        var categoryElement = document.createElement('h5');
-        categoryElement.classList.add("trends-blogs-category"); 
-        var categoryNodeText = document.createTextNode("Category: "+dbCategory);
-        categoryElement.appendChild(categoryNodeText);
-        document.getElementsByClassName("trends-blogspage-container")[0].appendChild(categoryElement);
+        // 3. Main Description Paragraph
+        var descriptionElement = document.createElement('p');
+        descriptionElement.classList.add("trends-blogs-description");
+        descriptionElement.style.setProperty('font-size', '15px', 'important');
+        descriptionElement.style.setProperty('line-height', '1.7', 'important');
+        descriptionElement.style.setProperty('color', '#334155', 'important');
+        descriptionElement.style.setProperty('margin', '0 0 20px 0', 'important');
+        descriptionElement.style.setProperty('text-align', 'left', 'important');
+        descriptionElement.style.setProperty('width', '100%', 'important');
+        descriptionElement.style.setProperty('font-family', 'inherit', 'important');
+        descriptionElement.appendChild(document.createTextNode(mainParagraph));
+        dbBlockWrapper.appendChild(descriptionElement);
 
-        // 3. DESCRIPTION INJECTION
-        var descriptionElement = document.createElement('h3');
-        descriptionElement.classList.add("trends-blogs-description"); 
-        var descriptionNodeText = document.createTextNode(dbDescription);
-        descriptionElement.appendChild(descriptionNodeText);
-        document.getElementsByClassName("trends-blogspage-container")[0].appendChild(descriptionElement);
+        // 4. Premium Editorial Hook Block
+        var hookWrapper = document.createElement('div');
+        hookWrapper.style.setProperty('background', '#F8FAFC', 'important');
+        hookWrapper.style.setProperty('border-left', '4px solid #0077b5', 'important');
+        hookWrapper.style.setProperty('padding', '16px 20px', 'important');
+        hookWrapper.style.setProperty('border-radius', '0 8px 8px 0', 'important');
+        hookWrapper.style.setProperty('margin', '0 0 32px 0', 'important');
+        hookWrapper.style.setProperty('width', '100%', 'important');
+        hookWrapper.style.setProperty('box-sizing', 'border-box', 'important');
 
+        var hookText = document.createElement('p');
+        hookText.style.setProperty('font-size', '15px', 'important');
+        hookText.style.setProperty('line-height', '1.6', 'important');
+        hookText.style.setProperty('color', '#1E293B', 'important');
+        hookText.style.setProperty('font-weight', '600', 'important');
+        hookText.style.setProperty('font-style', 'italic', 'important');
+        hookText.style.setProperty('margin', '0', 'important');
+        hookText.style.setProperty('font-family', 'inherit', 'important');
+        hookText.appendChild(document.createTextNode(lastSentence));
+        hookWrapper.appendChild(hookText);
+        dbBlockWrapper.appendChild(hookWrapper);
+
+        // Calculate layout Anchor ID cleanly
+        var m1AnchorID;
+        const m2AnchorID = dbName.split(" ");
+        if (m2AnchorID.length > 2) {
+            m1AnchorID = m2AnchorID[1]+m2AnchorID[2];
+        }
+        else {
+            m1AnchorID = m2AnchorID[1];
+        }
+        var dbTableAnchorID = "db-profile-" + m1AnchorID.toLowerCase();
+
+        // ================================================
+        // C. CLEAN CONSOLIDATED DATA MATRIX TABLE CONSTRUCT
+        // ================================================
+        var nativeTable = document.createElement('table');
+        nativeTable.classList.add("trends-blogpage-table-wrapper");
+        nativeTable.id = dbTableAnchorID;
+       //  nativeTable.style.setProperty('width', '100%', 'important');
+
+        var tableHead = document.createElement('thead');
+        var headerRow = document.createElement('tr');
+      
+        var th1 = document.createElement('th');
+        th1.appendChild(document.createTextNode("Feature Parameter"));
+         
+        var th2 = document.createElement('th');
+        th2.innerHTML = "<b>Database Architectural Details</b>"; // Locked-in step 1 bold fix
+        
+        headerRow.appendChild(th1);
+        headerRow.appendChild(th2);
+        tableHead.appendChild(headerRow);
+        nativeTable.appendChild(tableHead);
+
+        var tableBody = document.createElement('tbody');
+
+        var fieldIdx;
+        for (fieldIdx = 3; fieldIdx < targetLabels.length; fieldIdx++) 
+        {
+            var dataRow = document.createElement('tr');
+            
+            // 1. Calculate the alternating zebra background shade value cleanly
+            var rowColor = ((fieldIdx - 3) % 2 === 0) ? '#F1F5F9' : '#FFFFFF';
+
+            // Left Cell: Feature Parameter
+            var cellLabel = document.createElement('td');
+            // 2. Apply background styling directly to the cell element surfaces
+            cellLabel.style.setProperty('background-color', rowColor, 'important');
+            cellLabel.appendChild(document.createTextNode(targetLabels[fieldIdx]));
+            dataRow.appendChild(cellLabel);
+
+            // Right Cell: Architectural Details
+            var cellValue = document.createElement('td');
+            // 3. Apply background styling directly to the cell element surfaces
+            cellValue.style.setProperty('background-color', rowColor, 'important');
+            cellValue.innerHTML = dbValuesArray[fieldIdx] || "N/A"; 
+            dataRow.appendChild(cellValue);
+            
+            tableBody.appendChild(dataRow);
+        }
+
+        nativeTable.appendChild(tableBody);
+        
+        // 🌟 THE CRITICAL FIX: Append the completed table directly inside our structural wrapper card
+        // This ensures the table and its inline row styles belong safely to the active database entry!
+        dbBlockWrapper.appendChild(nativeTable);
+
+        // Safely append the entire compiled card block into index 0 of your main page lane
+        // document.getElementsByClassName("trends-blogspage-container")[0].appendChild(dbBlockWrapper);
+
+        // FIX: Added [0] to target the active page container directly
+        var pageContainers = document.getElementsByClassName("trends-blogspage-container");
+        if (pageContainers && pageContainers[0]) {
+            pageContainers[0].appendChild(dbBlockWrapper);
+        }
+
+
+/***************************
+*
+       STOPPED 20-Oct-2026 due to above design changes suggested by Google Gemini 3 coding model
+
+        //
         // 4. GEOMETRIC LOGO GENERATOR ENGINE
+        //
         var logoWrapperDiv = document.createElement('div');
         logoWrapperDiv.style.textAlign = "center";
         logoWrapperDiv.style.marginTop = "2vh";
@@ -302,86 +489,20 @@ function HapslabPixDatabaseBlogsStart()
         logoWrapperDiv.appendChild(genericLogoCircle);
         document.getElementsByClassName("trends-blogspage-container")[0].appendChild(logoWrapperDiv);
 
+****************/
+
+        //
         // 5. STORAGE INNER CONTAINER LAYOUT HOOK
+        //
+/*
         var tableContainerDiv = document.createElement('div');
         tableContainerDiv.classList.add("trends-blogpage-container"); 
         document.getElementsByClassName("trends-blogspage-container")[0].appendChild(tableContainerDiv);
 
-        var m1AnchorID;
-        const m2AnchorID = dbName.split(" ");
-        if (m2AnchorID.length > 2) {
-            m1AnchorID = m2AnchorID[1]+m2AnchorID[2];
-        }
-        else {
-            m1AnchorID = m2AnchorID[1];
-        }
-        var dbTableAnchorID = "db-profile-" + m1AnchorID.toLowerCase();
-
-
-        // 6. MATRIX TABLE CONSTRUCT
-        var nativeTable = document.createElement('table');
-        nativeTable.classList.add("trends-blogpage-table-wrapper"); 
-        // Assign the generated anchor identifier as the table ID (Without the '#' symbol)
-        nativeTable.id = dbTableAnchorID;
-        nativeTable.style.borderCollapse = "collapse"; 
-        nativeTable.style.width = "100%";
-        nativeTable.style.marginBottom = "25px";
-
-        var tableHead = document.createElement('thead');
-        var headerRow = document.createElement('tr');
-        
-        // JAVASCRIPT FIRST ROW VERDANA SELECTOR LOOKUP DESIGN
-        headerRow.style.fontFamily = "Verdana, Geneva, sans-serif";
-        headerRow.style.fontWeight = "bold";
-        headerRow.style.color = "Navy"; /* FIXED: Capital C fixed to lower color */
-      
-        var th1 = document.createElement('th');
-        th1.appendChild(document.createTextNode("Feature Parameter"));
-        th1.style.width = "21%";
-         
-        var th2 = document.createElement('th');
-        th2.appendChild(document.createTextNode("Database Architectural Details"));
-
-// 🌟 THE CORRECTION: Force the 16px font sizing directly onto the <th> cells
-        th1.style.setProperty('font-size', '14px', 'important');
-        th2.style.setProperty('font-size', '14px', 'important');
-        
-        headerRow.appendChild(th1);
-        headerRow.appendChild(th2);
-        tableHead.appendChild(headerRow);
-        nativeTable.appendChild(tableHead);
-
-        var tableBody = document.createElement('tbody');
-
-        var fieldIdx;
-        for (fieldIdx = 0; fieldIdx < targetLabels.length; fieldIdx++) 
-        {
-            var dataRow = document.createElement('tr');
-
-            var cellLabel = document.createElement('td');
-            cellLabel.style.fontFamily = "Verdana, Geneva, sans-serif";
-            cellLabel.style.fontSize = "10px";
-            cellLabel.style.fontWeight = "bold";
-            cellLabel.style.backgroundColor = "#f0f2f5"; 
-            cellLabel.style.textAlign = "left";      
-            cellLabel.style.verticalAlign = "middle";  
-            
-            cellLabel.appendChild(document.createTextNode(targetLabels[fieldIdx]));
-            dataRow.appendChild(cellLabel);
-
-            var cellValue = document.createElement('td');
-            cellValue.style.fontFamily = "Verdana, Geneva, sans-serif";
-            cellValue.style.fontSize = "12px";
-            cellValue.style.lineHeight = "1.4";
-            cellValue.innerHTML = dbValuesArray[fieldIdx]; 
-            
-            dataRow.appendChild(cellValue);
-            tableBody.appendChild(dataRow);
-        }
-
         nativeTable.appendChild(tableBody);
         document.getElementsByClassName("trends-blogpage-container")[loopIdx].appendChild(nativeTable);
-        loopIdx = loopIdx + 1; 
+        loopIdx = loopIdx + 1;
+*/
 
 // =========================================================================
 // PREMIUM CLICK-TO-ENLARGE LIGHTBOX ENGINE
@@ -717,13 +838,6 @@ function ReadShowDynamicBlogPageJSONFile(picBlogsArray)
          {
             window.alert("ERROR: Not an array");
          }
-/*
-         var arrLen = showPictureBlogsJSONArray.length;
-         window.alert("arrLen: " + arrLen);
-         window.alert(showPictureBlogsJSONArray[2].name + ",  " 
-                       + showPictureBlogsJSONArray[2].title + ",  "
-                       + showPictureBlogsJSONArray[2].author);
-*/
 }
 
 
@@ -740,13 +854,6 @@ function ReadShowPartitionBlogPageJSONFile(picBlogsArray)
          {
             window.alert("ERROR: Not an array");
          }
-/*
-         var arrLen = showPictureBlogsJSONArray.length;
-         window.alert("arrLen: " + arrLen);
-         window.alert(showPictureBlogsJSONArray[2].name + ",  " 
-                       + showPictureBlogsJSONArray[2].title + ",  "
-                       + showPictureBlogsJSONArray[2].author);
-*/
 }
 
 
@@ -781,4 +888,3 @@ function isanArray(objectArray) {
             return false;
          }
 }
-

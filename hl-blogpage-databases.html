@@ -6,7 +6,7 @@
 <title>@hapslab | _data play with data science</title>
 
     <!-- Call your CSS file here         -->
-    <link rel="stylesheet" href="hl-header-databases.css">
+    <link rel="stylesheet" href="hl-blogpage-databases.css">
 
     <!-- Call your JavaScript file here -->
     <script src="hl-blogpage-databases.js" defer></script> 
@@ -56,27 +56,82 @@ Why inline onload approach is the best choice here:
 
 <div class="trends-blogspage-container">
 
-<h1 class="trends-blogspage-title"; text-align: center;>Databases Architecture Blog</h1>
+<!-- 🌟 TITLE & METADATA WRAPPER CONTAINER -->
+<div style="display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; width: 100% !important; padding-top: 15vh !important; margin-bottom: 0px !important;">
 
-<!-- 🌟 NEW SYMMETRICAL SUB-HEADER ROW: Puts LinkedIn on the left and Date on the right -->
-<div style="display: flex !important; justify-content: space-between !important; margin-left: 21vw !important; margin-right: 22.5vw !important; margin-top: -9vh !important; margin-bottom: 8vh !important; font-family: Verdana, sans-serif; font-size: .9vw;">
+    <!-- Title Element (Now styled completely via your clean CSS above) -->
+    <h1 class="trends-blogspage-title" style="font-family: 'Montserrat', sans-serif !important; font-size: 4.5vw !important; line-height: 1.2 !important; text-align: center !important; margin: 0px !important;">Databases Architecture Blog</h1>
+
+    <!-- Symmetrical Sub-Header Row -->
+    <div style="
+        display: flex !important; 
+        justify-content: space-between !important; 
+        width: 58.5vw !important; 
+        font-family: Verdana, sans-serif !important; 
+        font-size: 0.9vw !important;
+        margin: -4vh 0px 0 -6vh !important;
+        padding-top: 2.5vh !important; /* Creates the polished vertical gap */
+    ">
+        <!-- Left Side: Date -->
+        <span style="color: #666666;">Created 17-Oct-2026</span>
+        <!-- Right Side: LinkedIn Link -->
+        <a href="https://www.linkedin.com/in/ritendrasrivastava/" target="_blank" style="font-size: 1vw !important; text-decoration: none; color: #0077b5;">Like the Blog? LinkedIn</a>
+    </div>
     
-    <!-- Left Anchor Edge -->
-    <span style="color: #666666; font-weight: normal;">Created 17-Oct-2026</span>
-    
-    <!-- Right Anchor Edge -->
-    <a href="https://www.linkedin.com/in/ritendrasrivastava/" target="_blank" class="a-linkedin-top" style="font-weight: normal;">Like the Blog? LinkedIn?</a>
+</div>
+
+
+<!-- 2. FEATURED IMAGE (Placed Above the Introduction) -->
+<div style="display: block !important; width: 56.5vw !important; margin: 5vh auto  !important ; padding-top: 7vh !important; padding-bottom: 8vh !important; text-align: center !important;">
+    <img src="hl-global-database-technology-landscape.jpg" alt="Database Architecture Diagram" style="width: 100%; height: auto; border-radius: 8px;">
+
+<!-- Premium Styled Attribution Caption -->
+<p style="text-align: center !important; font-family: 'Montserrat', sans-serif !important; font-size: 0.85vw !important; color: #64748B !important; margin-top: .5vh !important; font-style: italic !important; letter-spacing: 0.5px !important;">
+    Visual Analytics Architecture Generated Courtesy of Google Gemini Model
+</p>
 
 </div>
 
-<h3 class="trends-blogspage-title-paragraph"; text-align: center;>"The modern enterprise data ecosystem is undergoing a massive, decentralized transformation. Driven by the rise of non-deterministic AI agents, distributed cloud topologies, and the constant demand for sub-second streaming analytics, the traditional approach of relying on a single, monolithic database is no longer viable. Today's software architects must navigate a complex, highly specialized data terrain where transaction safety, flexible data schemas, and analytical processing speed are constantly competing for priority. 
-Whether your system requires the strict, uncompromised ACID compliance of traditional RDBMS, the elastic horizontal scaling of modern distributed SQL, the low-latency flexibility of document stores, or the raw computing power of vectorized real-time OLAP engines, making the right choice is critical to operational success. In this comprehensive technical guide, we open up the engineering core of the industry's 25 most impactful databases, mapping out their unique internal storage frameworks, specialized indexing mechanics, and exact production use cases to help you choose the ideal data engine for your workload."</h3>
+<!-- 3. BLOG INTRODUCTION TEXT -->
+<div style="
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important; 
+    line-height: 1.7 !important; 
+    color: #334155 !important; /* Premium slate charcoal that matches your new floating cards */
+    width: 64.5vw !important;  /* Fixed the width syntax error completely */
+    max-width: 100% !important;
+    margin: 0 auto 6vh auto !important; /* Perfect horizontal centering with a healthy bottom buffer */
+    font-size: 1.1rem !important;      /* Optimized text reading layout density */
+    text-align: left !important;
+">    
+    <!-- Paragraph 1: The Hook -->
+    <p style="margin-bottom: 1.5rem;">
+        The modern enterprise data ecosystem is undergoing a massive, decentralized transformation. Driven by the rise of <strong>non-deterministic AI agents</strong>, distributed cloud topologies, and the constant demand for sub-second streaming analytics, the traditional approach of relying on a single, monolithic database is no longer viable. 
+    </p>
 
+    <!-- Paragraph 2: The Core Problem -->
+    <p style="margin-bottom: 1.8rem;">
+        Today's software architects must navigate a complex, highly specialized data terrain where <strong>transaction safety</strong>, <strong>flexible data schemas</strong>, and <strong>analytical processing speed</strong> are constantly competing for priority.
+    </p>
 
-<div class="trends-blogpage-img-container">
-       <img id="database-landscape-hero" class="trends-blogpage-img" src="hl-global-database-technology-landscape.jpg" alt="">
+    <!-- Visual Divider / Transition Statement -->
+    <p style="font-weight: 600; margin-bottom: 1rem; color: #1A202C;">
+        Whether your system requires:
+    </p>
+
+    <!-- Clean Bulleted List for Scannability -->
+    <ul style="list-style-type: square; margin-left: 1.5rem; margin-bottom: 1.8rem; padding-left: 0;">
+        <li style="margin-bottom: 0.5rem;">The strict, uncompromised <strong>ACID compliance</strong> of traditional RDBMS</li>
+        <li style="margin-bottom: 0.5rem;">The elastic horizontal scaling of modern <strong>distributed SQL</strong></li>
+        <li style="margin-bottom: 0.5rem;">The low-latency flexibility of <strong>document stores</strong></li>
+        <li style="margin-bottom: 0.5rem;">The raw computing power of vectorized <strong>real-time OLAP engines</strong></li>
+    </ul>
+
+    <!-- Final Call to Action Paragraph -->
+    <p style="border-left: 4px solid #0077b5; padding-left: 1rem; italic; color: #4A5568; margin-top: 1.5rem;">
+        Making the right choice is critical to operational success. In this comprehensive technical guide, we open up the engineering core of the <strong>industry's 25 most impactful databases</strong>—mapping out their unique internal storage frameworks, specialized indexing mechanics, and exact production use cases to help you choose the ideal data engine for your workload.
+    </p>
+    
 </div>
-
 
 <!--
       <img src="images\space-images\image0_cosmic_structures_9x_of_milkyway.jpg" alt="">
@@ -137,31 +192,36 @@ text of table should be shrunk
             1. What is the fundamental difference between Distributed SQL (NewSQL) and traditional RDBMS?
         </code>
         <p class="faq-content-text">
-            Traditional RDBMS systems (like Oracle or PostgreSQL) are fundamentally built for scale-up architectures, relying on single-node dominance or primary-replica replication where write workloads hit a single primary instance. Distributed SQL (like YugabyteDB or TiDB) splits computing from storage entirely and shards rows natively across an entire multi-node cluster using consensus protocols like Raft. This allows Distributed SQL to deliver horizontal scale-out write capacity and continuous multi-region fault tolerance without losing the strict transactional ACID compliance that traditional databases provide.
+            Traditional RDBMS systems (like Oracle or PostgreSQL) are fundamentally built for scale-up architectures, relying on single-node dominance or primary-replica replication where write workloads hit a single primary instance. Distributed SQL (like YugabyteDB or TiDB) splits computing from storage entirely and shards rows natively across an entire multi-node cluster using consensus protocols like Raft. This allows 
+Distributed SQL to deliver horizontal scale-out write capacity and continuous multi-region fault tolerance without losing the strict transactional ACID compliance that traditional databases provide.
         </p>
         <code class="bold-text">
             2. When should I choose a Document NoSQL database over a relational database?
         </code>
         <p class="faq-content-text">
-            You should select a Document NoSQL database (like MongoDB or Couchbase) when your data model is fluid, rapidly evolving, or inherently hierarchical (such as e-commerce product catalogs or dynamic user profiles). Because Document stores save data in native JSON or BSON formats, they eliminate the strict schema migrations, table joins, and object-relational mapping (ORM) bottlenecks found in relational setups. However, if your application relies on complex multi-table relationships, strict financial balances, and absolute consistency across multiple unrelated entities, a relational database remains the safer choice.
+            You should select a Document NoSQL database (like MongoDB or Couchbase) when your data model is fluid, rapidly evolving, or inherently hierarchical (such as e-commerce product catalogs or dynamic user profiles). Because Document stores save data in native JSON or BSON formats, they eliminate the strict schema migrations, table joins, and object-relational mapping (ORM) bottlenecks found in relational setups. 
+However, if your application relies on complex multi-table relationships, strict financial balances, and absolute consistency across multiple unrelated entities, a relational database remains the safer choice.
         </p>
         <code class="bold-text">
             3. Why are real-time OLAP engines like ClickHouse replacing traditional Data Warehouses for live metrics?
         </code>
         <p class="faq-content-text">
-            Traditional cloud data warehouses (like Google BigQuery or Amazon Redshift) are optimized for large-scale, historical, batch-processed analytical queries, where computing power is scaled up to scan petabytes of data on demand. Real-time OLAP engines (like ClickHouse, Apache Pinot, or StarRocks) are specialized for streaming ingestion and immediate analytics, utilizing vectorized execution (SIMD instructions) and specialized columnar indexing to run aggregations over billions of rows in sub-seconds. This makes them ideal for live analytics like clickstream trackers, network security dashboards, and real-time fraud engines where waiting for a batch process is impossible.
+            Traditional cloud data warehouses (like Google BigQuery or Amazon Redshift) are optimized for large-scale, historical, batch-processed analytical queries, where computing power is scaled up to scan petabytes of data on demand. Real-time OLAP engines (like ClickHouse, Apache Pinot, or StarRocks) are specialized for streaming ingestion and immediate analytics, utilizing vectorized execution (SIMD instructions) and specialized columnar indexing to run aggregations over billions of rows in sub-seconds. 
+This makes them ideal for live analytics like clickstream trackers, network security dashboards, and real-time fraud engines where waiting for a batch process is impossible.
         </p>
         <code class="bold-text">
             4. How do In-Memory databases guarantee data durability if the server crashes?
         </code>
         <p class="faq-content-text">
-            While traditional caching layers store data strictly in volatile RAM and risk losing data during power losses, modern enterprise In-Memory databases (like Amazon MemoryDB) implement a multi-layered durability model. They keep the active state in memory for ultra-fast, microsecond-level read execution, but write every transaction to a durable, distributed write-ahead log (WAL) on disk before sending a success confirmation back to the application. If a node crashes, the system automatically rebuilds the database state by replaying the disk-bound log, giving you caching speeds with database reliability.
+            While traditional caching layers store data strictly in volatile RAM and risk losing data during power losses, modern enterprise In-Memory databases (like Amazon MemoryDB) implement a multi-layered durability model. They keep the active state in memory for ultra-fast, microsecond-level read execution, but write every transaction to a durable, distributed write-ahead log (WAL) on disk before sending a success confirmation back to the application. 
+If a node crashes, the system automatically rebuilds the database state by replaying the disk-bound log, giving you caching speeds with database reliability.
         </p>
         <code class="bold-text">
             5. What architectural challenge does an integrated data fabric like Microsoft Fabric solve?
         </code>
         <p class="faq-content-text">
-            The biggest challenge in enterprise analytics is data fragmentation, where identical data is copied, transformed, and moved between isolated storage silos (like data lakes, engineering spaces, and analytical data warehouses), causing massive storage costs and sync delays. An integrated data fabric solves this by introducing a unified, central data lake storage layer (such as OneLake) that stores all enterprise data exactly once in an open format like Apache Iceberg or Delta Lake. Different analytical tools can then query the exact same file simultaneously, eliminating slow ETL pipelines, lowering cloud storage costs, and ensuring uniform data governance across the company.
+            The biggest challenge in enterprise analytics is data fragmentation, where identical data is copied, transformed, and moved between isolated storage silos (like data lakes, engineering spaces, and analytical data warehouses), causing massive storage costs and sync delays. An integrated data fabric solves this by introducing a unified, central data lake storage layer (such as OneLake) that stores all enterprise data exactly once in an open format like Apache Iceberg or Delta Lake. 
+Different analytical tools can then query the exact same file simultaneously, eliminating slow ETL pipelines, lowering cloud storage costs, and ensuring uniform data governance across the company.
        </p>
     </div>
 </div>
