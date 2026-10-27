@@ -1,11 +1,9 @@
-// jhnkb
-
 html 
 {
     background-color: #F6F6F6;     /* #E9E9E9; #DCDCDC #FBFBFB; #FCFBFB; #F6F5F5; PAGE color background color */
     width: 99.15vw;
     color: #01014c;                /* #020273 #01015f; #01014c;, #555555 perfect grey, #13133a; in BLOG */
-    font-family: arial; // fantasy;
+    font-family: arial; 
     font-weight: normal;
     font-style: normal;
     text-align: left;
@@ -79,7 +77,7 @@ h4
    top:0;
    left:0; 
    height: 4vh;                /* REDUCED THE HEIGHT OF TOP LOGO AREA FROM 6em */
-   // width:98.75vw;           /* REFER width in html{} */
+             /* REFER width in html{} */
    padding-top: 1vh;
    margin-bottom: 10vh;
    border-bottom: 2px solid silver;
@@ -104,8 +102,7 @@ h4
    font-size: 1.75vw;
    font-family: fantasy;        /* "Great Vibes", cursive; fantasy;  Comic Sans, Florence; */
    text-decoration: none;
-   // top: -.9vh;
-}
+  }
 
 .org-MotoHeader 
 {
@@ -114,7 +111,7 @@ h4
    font-weight: normal;
    font-size: 1.1vw;            /* FONTSIZE of top HEADER */
    font-family: fantasy;        /* Comic Sans, Florence, fantasy; */
-   // top: .4vh;
+
 }
 
 
@@ -122,15 +119,14 @@ h4
 .menu-box-container OLD  */
 .menu-box-header-container
 { 
-//  position: relative;
+
   position: fixed;
   z-index: 552;
   display: flex;
   flex-flow: row nowrap;
   left: 9vw; 
   width: 85vw; 
-//  padding-bottom: .5vh;
-// border: 1px solid blue;
+
 }
 
 /*
@@ -163,8 +159,7 @@ h4
   position: relative;
   font-size: 1.1vw; 
   font-weight: normal;
-//  margin-right: 2.4vw;          
-// border: 1px solid green;
+
 }
 
 .menu-box-header-right
@@ -190,7 +185,7 @@ h4
   z-index: 555;
   display: flex;
   flex-wrap: wrap;
- // flex-flow: row nowrap;
+
 /*
   left: 20vw; 
   width: 60vw; 
@@ -211,7 +206,6 @@ h4
 .menu-box-footer-container-two
 { 
   position: relative;
-//  left: 30vw;
   z-index: 565;
   display: flex;
   flex-flow: row nowrap;
@@ -224,10 +218,9 @@ h4
    text-align: center; 
    float: right;
    margin: auto;
-//   padding-left: 25vw;
    padding-bottom: .25vw;
    width: 45vw;
-// border: 1px solid red;
+
 }
 
 /* 
@@ -258,7 +251,7 @@ div.org-NameMotoFooter OLD*/
    font-family: verdana;
    font-weight:normal;
    margin-right: .35vw;
-   text-align: left;      // center-div is float: center
+   text-align: left;      
 }
 
 /*
@@ -273,14 +266,12 @@ a.atitle:hover {
 a.atitle {
   position: relative;
   display: inline-block;
-//  margin-top: 20px;
 }
 
 
 a {
   position: relative;
   display: inline-block;
-//  margin-top: 20px;
 }
 
 a[title]:hover::after {
@@ -324,15 +315,13 @@ a[title]:hover::after {
    font-family: fantasy;
    font-weight: normal;
    font-size: .9vw;             /* FONTSIZE of top HEADER */
-//   text-align: right;
 }
 
 
 .org-DevelopedBy-margin
 {
      text-align: right;
-     float: right;          // center-div is float: center
-//   margin-left: 9vw;
+     float: right;          
 }
 
 
@@ -427,7 +416,6 @@ margin: 4%;
   flex-flow: row wrap;
   max-width: 100%;            /* old 50% Makes pictures right sized in the gallery */ 
   height: auto;
-//  border: 1px solid red;
 }
 
 .pixcolgrid
@@ -478,7 +466,6 @@ margin: 4%;
   flex-flow: row wrap;
   max-width: 100%;            /* old 50% Makes pictures right sized in the gallery */ 
   height: auto;
-//  border: 1px solid red;
 }
 
 .pixcolgridproduct
@@ -531,7 +518,6 @@ margin: 4%;
   flex-flow: row wrap;
   max-width: 100%;            /* old 50% Makes pictures right sized in the gallery */ 
   height: auto;
-//  border: 1px solid red;
 }
 
 .pixcolgridplatform
@@ -578,12 +564,10 @@ margin: 4%;
 {
   position: relative;
   margin-left: 2vw;
-// float: center;
   display: flex;
   flex-flow: row wrap;
   max-width: 100%;            /* old 50% Makes pictures right sized in the gallery */ 
   height: auto;
-//  border: 1px solid red;
 }
 
 .pixcolgriddata
@@ -641,9 +625,6 @@ margin: 4%;
 */
     margin-top: 20vh;             /* GAP OUTSIDE below trends-columns-container */
     padding: 2vh 3vw 12vh 3vw;
-
-//    background-image: linear-gradient(#FF9933, #FFFFFF, #138808);
-
 /*
     padding: 2vh 12vw 12vh 12vw;
 */
@@ -675,9 +656,6 @@ margin: 4%;
 */
     margin-top: 20vh;             /* GAP OUTSIDE below trends-columns-container */
     padding: 2vh 3vw 12vh 3vw;
-
-//    background-image: linear-gradient(#FF9933, #FFFFFF, #138808);
-
 /*
     padding: 2vh 12vw 12vh 12vw;
 */
@@ -702,15 +680,11 @@ margin: 4%;
 {
     position: relative;
     background-color: white;      /* background color for the container #f3e7ff #8000ff */
-//    height: auto;                 /* Dimension trends-box-container */
-//    width: auto;                  /* Corrects Trends Column sheet width. 105% includes 1 more colm */
-
     display: flex;
     flex-wrap: wrap;
 
 
     font-family: Arial;
-//    text-align: center;
     margin-left: 25vw;             
     margin-right: 25vw;
     margin-top: 20vh;             /* GAP OUTSIDE below trends-columns-container */
@@ -789,7 +763,6 @@ margin: 4%;
    float: center;            /* DO NOT CHANGE    */
    padding-top: 1vh;         /* GAP inside above */
    padding-bottom: 3vh;      /* GAP inside below */
-//   border: 1px solid blue;
 }
 
 
@@ -798,9 +771,8 @@ margin: 4%;
     position: relative;
     margin-left: auto;      /* Centers image */
     margin-right: auto;     /* Centers image */
-//    object-fit: fill;
     border: .1vw solid silver;
-    max-width: 100%; // 100%
+    max-width: 100%; 
     width: 14.5vw;
     height: 11vh;
 /*
@@ -825,15 +797,10 @@ margin: 4%;
 {
     position: relative;
     background-color: white;      /* background color for the container #f3e7ff #8000ff */
-//    height: auto;                 /* Dimension trends-box-container */
-//    width: auto;                  /* Corrects Trends Column sheet width. 105% includes 1 more colm */
-
     display: flex;
     flex-wrap: wrap;
 
     font-family: Arial;
-//    text-align: right;
-//    text-align: center;
     margin-left: 25vw;             
     margin-right: 25vw;
     margin-top: 20vh;             /* GAP OUTSIDE below trends-columns-container */
@@ -853,8 +820,6 @@ margin: 4%;
 
     font-size: 1.2vw;
     margin: 0;
-//    background-color: #FAFDFD; /* #FCFBFB */ 
-// border: 1px solid blue;
 }
 
 
@@ -867,11 +832,7 @@ margin: 4%;
 
     display: flex;                  /* CSS wraps div inside trends-platforms-container */
     flex-wrap: wrap;                /* CSS wraps div inside trends-platforms-container */
-
-//    padding: 1.25vh .75vw 1.75vh .75vw;
-    margin: 1.5vh 1vw 1.5vh 1vw;   // space taken by each picture on all sides
-//    background-color: #EFEDF9; 
-// border: 1px solid red;
+    margin: 1.5vh 1vw 1.5vh 1vw;   
 }
 
 
@@ -893,7 +854,7 @@ margin: 4%;
     margin-right: auto;     /* Centers image */
     
     border: .1vw solid silver;
-    max-width: 100%; // 100%
+    max-width: 100%; 
     width: 8.75vw;
     height: 12.75vh;
 }
@@ -941,21 +902,16 @@ margin: 4%;
 {
     position: relative;
     background-color: white;      /* background color for the container #f3e7ff #8000ff */
-//    height: auto;                 /* Dimension trends-box-container */
-//    width: auto;                  /* Corrects Trends Column sheet width. 105% includes 1 more colm */
-
     display: flex;
     flex-wrap: wrap;
 
 
     font-family: Arial;
     text-align: center;
-//    text-align: center;
     margin-left: 25vw;             
     margin-right: 25vw;
     margin-top: 20vh;             /* GAP OUTSIDE below trends-columns-container */
     padding: 2vh 3vw 12vh 3vw;
-//    padding: 2vh 1.5vw 12vh 1.5vw;
     border: 1px solid #f2f3f4;
 }
 
@@ -986,9 +942,6 @@ margin: 4%;
 */
     margin-top: 20vh;             /* GAP OUTSIDE below trends-columns-container */
     padding: 2vh 3vw 12vh 3vw;
-
-//    background-image: linear-gradient(#FF9933, #FFFFFF, #138808);
-
 /*
     padding: 2vh 12vw 12vh 12vw;
 */
@@ -1004,7 +957,6 @@ margin: 4%;
     margin-right: 25vw;
     margin-top: 20vh;             /* GAP OUTSIDE below trends-columns-container */
     padding: 2vh 3vw 12vh 3vw;
-//    border: 1px solid #f2f3f4;
 }
 
 .trends-contact-box
@@ -1015,7 +967,6 @@ margin: 4%;
     word-wrap: break-word;
     font-weight: normal;
     line-height: 1.5;
-//    padding-bottom: 5vh;
 }
 
 
@@ -1025,15 +976,9 @@ margin: 4%;
 {
     position: relative;
     background-color: white;      /* background color for the container #f3e7ff #8000ff */
-//    height: auto;                 /* Dimension trends-box-container */
-//    width: auto;                  /* Corrects Trends Column sheet width. 105% includes 1 more colm */
-
     display: flex;
     flex-wrap: wrap;
-
-
     font-family: Arial;
-//    text-align: center;
     margin-left: 25vw;             
     margin-right: 25vw;
     margin-top: 20vh;             /* GAP OUTSIDE below trends-columns-container */
@@ -1112,7 +1057,6 @@ margin: 4%;
    float: center;            /* DO NOT CHANGE    */
    padding-top: 1vh;         /* GAP inside above */
    padding-bottom: 3vh;      /* GAP inside below */
-//   border: 1px solid blue;
 }
 
 
@@ -1121,9 +1065,8 @@ margin: 4%;
     position: relative;
     margin-left: auto;      /* Centers image */
     margin-right: auto;     /* Centers image */
-//    object-fit: fill;
     border: .1vw solid silver;
-    max-width: 100%; // 100%
+    max-width: 100%; 
     width: 5vw;
     height: 5vh;
 /*
@@ -1141,15 +1084,11 @@ margin: 4%;
 {
     position: relative;
     background-color: white;      /* background color for the container #f3e7ff #8000ff */
-//    height: auto;                 /* Dimension trends-box-container */
-//    width: auto;                  /* Corrects Trends Column sheet width. 105% includes 1 more colm */
-
     display: flex;
     flex-wrap: wrap;
 
 
     font-family: Arial;
-//    text-align: center;
     margin-left: 25vw;             
     margin-right: 25vw;
     margin-top: 20vh;             /* GAP OUTSIDE below trends-columns-container */
@@ -1174,9 +1113,6 @@ margin: 4%;
     flex-wrap: wrap;                /* CSS wraps div inside trends-customers-container */
     
     font-size: 1.2vw;
-//    background-color: #FAFDFD; /* #FCFBFB */ 
-
-// border: 1px solid blue;
 }
 
 
@@ -1187,7 +1123,6 @@ margin: 4%;
     font-size: 1.2vw;
     padding: 1.25vh .75vw 1.75vh .75vw;
     margin: 3vh 5vw 3vh 5vw;
-//    background-color: #EFEDF9; 
 }
 
 
@@ -1230,7 +1165,6 @@ margin: 4%;
    float: center;            /* DO NOT CHANGE    */
    padding-top: 1vh;         /* GAP inside above */
    padding-bottom: 3vh;      /* GAP inside below */
-//   border: 1px solid blue;
 }
 
 
@@ -1242,7 +1176,6 @@ margin: 4%;
     margin-right: auto;     /* Centers image */
     width: 15vw;            /* ALL same sized centered Images */
     height: 15vh;           /* ALL same sized centered Images */
-//    max-width: 100%;        /* ALL same sized centered Images */
     border-radius: 40%;
 }
 
@@ -1280,8 +1213,6 @@ display: flex;
     padding: 2vh 3vw 12vh 3vw;
 
     margin-top: 20vh;             /* GAP OUTSIDE below trends-columns-container */
-//    margin-bottom: 30vh;          /* GAP OUTSIDE below trends-columns-container */
-//    padding: 4vh 5vw 5vh 5vw;
     border: 1px solid #f2f3f4;
 }
 
@@ -1321,12 +1252,11 @@ display: flex;
 .trends-blogpage-container
 {
     position: relative;
-    background-color: #EFEDF9; // FAFDFD; /* #FCFBFB */ 
+    background-color: #EFEDF9; 
     height: auto;
     display: flex;
     align-items: stretch;
     font-size: 1.2vw;
-//    padding: 3vh 2vw 5vh 2vw;
     padding: .75vh .5vw .75vh .5vw;
     margin-bottom: 2vh;            /* 8vh GAP between blog boxes */
     border: 1px solid #e8f4f8;     /* #d4ebf2; #add8e6 #ace5ee; f2f3f4l;  #f8f8ff; */
@@ -1342,7 +1272,7 @@ display: flex;
     margin-bottom: 2.5vh;   
     word-spacing: .25vw;    /* To read the para-text-blog-desc text clearly and easily */
     text-align: left;
-    padding: 1.5vh 2vw .5vh 0;   //     padding: 1.5vh 2vw 1.5vh 0;
+    padding: 1.5vh 2vw .5vh 0;  
 }
 
 .trends-blogpage-details
@@ -1429,7 +1359,6 @@ display: flex;
 
 .trends-blogs-header-only
 {
-//   position: relative;
    font-size: 1.5vw; 
    color: #000066;
    font-weight: bold;
@@ -1440,12 +1369,10 @@ display: flex;
 
 .trends-blogs-header-margin
 {
-//   width: auto;
 display: block;
    margin-top: 5vh;
    margin-bottom: 8vh;
    text-align: center;
-// border: 1px solid red;
 }
 
 
@@ -1464,7 +1391,6 @@ display: block;
     height: 55vh;         
     max-width: 100%;        /* ALL same sized centered Images */
     border-radius: 50%;
-//    border: 2px solid silver;
 }
 
 .trends-blogs-img         /* + or - SIZE of image #HACK #TRICK*/
@@ -1679,7 +1605,6 @@ max-width: 25%;
 
   .org-NameHeader
   {
-//     top: -.45vh;
   }
 
   .trends-blogs-details-container
@@ -1745,7 +1670,7 @@ max-width: 25%;
 
   .org-NameHeader
   {
-//     top: -.15vh;
+
   }
 
   #display-picture-id
