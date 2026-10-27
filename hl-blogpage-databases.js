@@ -55,11 +55,6 @@ function HapslabPixDatabaseBlogsStart()
 //
 // 1., 2., & 3. (below) CREATING THE DATABASES INDEX CARD
 //
-
-             // 🎯 FIX: Added [0] back to the end of this line
-    var baseRootContainer = document.getElementsByClassName("trends-blogspage-container")[0];
-    if (!baseRootContainer || databaseArrayLen === 0) return;
-
     var baseRootContainer = document.getElementsByClassName("trends-blogspage-container")[0];
     if (!baseRootContainer || databaseArrayLen === 0) return;
 
