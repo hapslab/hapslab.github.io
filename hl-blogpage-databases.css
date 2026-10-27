@@ -451,57 +451,93 @@ white-space: pre-wrap;
 //
 // CHANGED to STOP Right Shifting Margin of around 10-15vh 
 //
-@media (max-width: 768px) {
-    /* --- Your Original Mobile Layout Rules Restored Safely --- */
-    .org-ddm { padding-top: .75vh; height: 1.5vh; }
-    .menu-box-respo { padding-left: 25vw; }
-    .org-NameHeader { top: -.15vh; }
-    #display-picture-id { height: 31.5vh; width: 99vw; background-size: 75.5vw 31.5vh; }
-    #display-picture-id-img { height: 31.5vh; width: 75.5vw; }
-    #display-picture-text-container { top: 0; left: 75.5vw; height: 31.5vh; width: 21.5vw; }
-    #display-picture-text { left: 1vw; height: auto; width: 17vw; font: normal .9vw fantasy, sans-serif; padding-right: 1.75vw; }
-    #display-picture-slider-right { top: 4.75vh; left: 18.5vw; }
-    .display-picture-slider-circle { margin-bottom: 1.25vh; }
-    .trends-blogpage-atag { position: relative !important; display: block !important; margin-bottom: 5vh !important; text-align: center; }
-    .trends-blogpage-container { padding: 1vh 2vw 5vh 2vw; margin-bottom: 5vh; }
-    .trends-blogpage-text-container { margin-left: 4vw; margin-bottom: 2.5vh; padding: 3vh 2vw 1.5vh 0; }
-    .trends-box-container { display: flex; flex-flow: wrap; text-align: left; }
-    .trends-box { height: 20vh; width: 75vw; max-height: 25vh; max-width: 125vw; margin-top: 1vh; text-align: left; }
-    .trends-box-container-bak { padding-bottom: 0; padding-left: 4vw; width: 50%; margin: auto; margin-top: 2.5vh; margin-bottom: 10vh; }
-    .trends-box-header { padding-top: 3vh; margin-bottom: 1vh; }
-    #trends-columns { padding-left: 4vw; padding-bottom: 0; }
-    #trends-columns-container { padding-bottom: 3vh; width: 50%; margin: auto; margin-bottom: 0; }
+/* =========================================================================
+   1. ISOLATED DESKTOP SIDEBAR CORE (Fires only on laptops viewing this blog)
+   ========================================================================= */
+.db-sidebar-navigation-pane {
+    position: fixed !important; 
+    top: 12vh !important; 
+    left: 2vw !important; 
+    width: 14vw !important; 
+    max-height: 80vh !important; 
+    overflow-y: auto !important; 
+    padding: 12px 14px !important; 
+    background-color: #f8f9fa !important; 
+    border: 1px solid #e9ecef !important; 
+    border-radius: 6px !important; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important; 
+    text-align: left !important; 
+    z-index: 1000 !important;
+}
 
-    /* --- The Layout Realignment Overrides --- */
+/* =========================================================================
+   2. ISOLATED MOBILE MEDIA BREAKPOINT (Surgical updates for phones under 768px)
+   ========================================================================= */
+@media (max-width: 768px) {
+    /* Reset layout container widths from global desktop margins on mobile */
     .trends-blogspage-container,
+    .blog-header-wrapper,
+    .blog-introduction-container,
     .faq-outer-section-wrapper { 
         margin-left: 0 !important; 
+        margin-right: 0 !important;
         width: 100% !important; 
-        padding-top: 3vh !important; 
+        padding-left: 4vw !important;
+        padding-right: 4vw !important;
+        box-sizing: border-box !important;
     }
 
+    /* Force the main landscape hero title to center on phone viewports */
+    .trends-blogspage-title {
+        font-size: 28px !important;
+        text-align: center !important;
+        width: 100% !important;
+        margin: 4vh 0 2vh 0 !important;
+    }
+
+    /* Unfreeze the sidebar layout so it rolls smoothly inline with text content */
+    .db-sidebar-navigation-pane {
+        position: relative !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        max-height: 240px !important;
+        margin: 2vh 0 4vh 0 !important;
+        overflow-y: auto !important;
+        display: block !important;
+        box-shadow: none !important;
+        background-color: #f8f9fa !important;
+    }
+
+    .db-sidebar-navigation-pane ul {
+        column-count: 2 !important;
+        column-gap: 15px !important;
+        padding-left: 20px !important;
+    }
+
+    /* Keep database white editorial profile cards centered down phone screens */
     .db-architecture-card {
-        width: 92vw !important;
-        margin: 0 auto 4vh auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto 3vh auto !important;
         padding: 24px 20px !important; 
+        box-sizing: border-box !important;
     }
 
-    .blog-introduction-container,
+    /* Force details layout tables to fit cleanly within card limits */
     .blog-featured-image-container,
-    .trends-blogs-description,
+    .trends-blogpage-img-container,
+    .trends-blogpage-table-wrapper,
     .faq-content-card {
         width: 100% !important;
         margin-left: 0 !important;
         margin-right: 0 !important;
     }
 
-    .trends-blogpage-table-wrapper {
-        width: 100% !important;               
-        margin: 4vh 0 2vh 0 !important; 
-    }
-
-    .db-sidebar-navigation-pane {
-        display: none !important;
+    .blog-featured-image-container img,
+    .trends-blogpage-img {
+        width: 100% !important;
+        height: auto !important;
     }
 }
 
