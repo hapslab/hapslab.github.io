@@ -451,8 +451,8 @@ white-space: pre-wrap;
 //
 // CHANGED to STOP Right Shifting Margin of around 10-15vh 
 //
-@media (max-width: 600px) {
-    /* --- Your Existing Mobile Layout Rules --- */
+@media (max-width: 768px) {
+    /* --- Your Original Mobile Layout Rules Restored Safely --- */
     .org-ddm { padding-top: .75vh; height: 1.5vh; }
     .menu-box-respo { padding-left: 25vw; }
     .org-NameHeader { top: -.15vh; }
@@ -472,11 +472,7 @@ white-space: pre-wrap;
     #trends-columns { padding-left: 4vw; padding-bottom: 0; }
     #trends-columns-container { padding-bottom: 3vh; width: 50%; margin: auto; margin-bottom: 0; }
 
-    /* =========================================================================
-       🎯 NEW MOBILE SURGICAL ALIGNMENT FIXES (Add these inside the query)
-       ========================================================================= */
-
-    /* 1. Reset the layout lane from the 17vw sidebar displacement */
+    /* --- The Layout Realignment Overrides --- */
     .trends-blogspage-container,
     .faq-outer-section-wrapper { 
         margin-left: 0 !important; 
@@ -484,14 +480,12 @@ white-space: pre-wrap;
         padding-top: 3vh !important; 
     }
 
-    /* 2. Expand white architectural cards to fit beautifully on small screens */
     .db-architecture-card {
         width: 92vw !important;
         margin: 0 auto 4vh auto !important;
-        padding: 24px 20px !important; /* Tighter padding so text doesn't feel cramped */
+        padding: 24px 20px !important; 
     }
 
-    /* 3. Force headers, intro paragraphs, and custom images to use full card width */
     .blog-introduction-container,
     .blog-featured-image-container,
     .trends-blogs-description,
@@ -501,18 +495,15 @@ white-space: pre-wrap;
         margin-right: 0 !important;
     }
 
-    /* 4. FIXES THE TABLE BLOWOUT: Corrects your desktop 110% width and negative margins */
     .trends-blogpage-table-wrapper {
         width: 100% !important;               
-        margin: 4vh 0 2vh 0 !important; /* Eliminates the -5vh offset that shoves tables off-screen */
+        margin: 4vh 0 2vh 0 !important; 
     }
 
-    /* 5. Hide the fixed desktop sidebar so it doesn't stick over text layout layers */
     .db-sidebar-navigation-pane {
         display: none !important;
     }
 }
-
 
 
 /* =========================================================================
