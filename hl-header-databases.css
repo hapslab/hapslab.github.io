@@ -312,30 +312,98 @@ white-space: pre-wrap;
 #trends-columns { padding-left: 4vw; padding-bottom: 0; }
 #trends-columns-container { padding-bottom: 3vh; width: 50%; margin: auto; margin-bottom: 0; }
 }
-@media (max-width: 600px) {
-.org-ddm { padding-top: .75vh; height: 1.5vh; }
-.menu-box-respo { padding-left: 25vw; }
-.org-NameHeader { top: -.15vh; }
-#display-picture-id { height: 31.5vh; width: 99vw; background-size: 75.5vw 31.5vh; }
-#display-picture-id-img { height: 31.5vh; width: 75.5vw; }
-#display-picture-text-container { top: 0; left: 75.5vw; height: 31.5vh; width: 21.5vw; }
-#display-picture-text { left: 1vw; height: auto; width: 17vw; font: normal .9vw fantasy, sans-serif; padding-right: 1.75vw; }
-#display-picture-slider-right { top: 4.75vh; left: 18.5vw; }
-.display-picture-slider-circle { margin-bottom: 1.25vh; }
-.trends-blogpage-atag {
-position: relative !important;
-display: block !important;
-margin-bottom: 5vh !important;
-text-align: center;
-}
-.trends-blogpage-container { padding: 1vh 2vw 1.5vh 2vw; margin-bottom: 5vh; }
-.trends-blogpage-text-container { margin-left: 4vw; margin-bottom: 2.5vh; padding: 3vh 2vw 1.5vh 0; }
-.trends-box-container { display: flex; flex-flow: wrap; text-align: left; }
-.trends-box { height: 20vh; width: 75vw; max-height: 25vh; max-width: 125vw; margin-top: 1vh; text-align: left; }
-.trends-box-container-bak { padding-bottom: 0; padding-left: 4vw; width: 50%; margin: auto; margin-top: 2.5vh; margin-bottom: 10vh; }
-.trends-box-header { padding-top: 3vh; margin-bottom: 1vh; }
-#trends-columns { padding-left: 4vw; padding-bottom: 0; }
-#trends-columns-container { padding-bottom: 3vh; width: 50%; margin: auto; margin-bottom: 0; }
+@media (max-width: 768px) {
+    /* --- Your Original Mobile Layout Rules Restored Safely --- */
+    .org-ddm { padding-top: .75vh; height: 1.5vh; }
+    .menu-box-respo { padding-left: 25vw; }
+    .org-NameHeader { top: -.15vh; }
+    #display-picture-id { height: 31.5vh; width: 99vw; background-size: 75.5vw 31.5vh; }
+    #display-picture-id-img { height: 31.5vh; width: 75.5vw; }
+    #display-picture-text-container { top: 0; left: 75.5vw; height: 31.5vh; width: 21.5vw; }
+    #display-picture-text { left: 1vw; height: auto; width: 17vw; font: normal .9vw fantasy, sans-serif; padding-right: 1.75vw; }
+    #display-picture-slider-right { top: 4.75vh; left: 18.5vw; }
+    .display-picture-slider-circle { margin-bottom: 1.25vh; }
+    .trends-blogpage-atag { position: relative !important; display: block !important; margin-bottom: 5vh !important; text-align: center; }
+    .trends-blogpage-container { padding: 1vh 2vw 5vh 2vw; margin-bottom: 5vh; }
+    .trends-blogpage-text-container { margin-left: 4vw; margin-bottom: 2.5vh; padding: 3vh 2vw 1.5vh 0; }
+    .trends-box-container { display: flex; flex-flow: wrap; text-align: left; }
+    .trends-box { height: 20vh; width: 75vw; max-height: 25vh; max-width: 125vw; margin-top: 1vh; text-align: left; }
+    .trends-box-container-bak { padding-bottom: 0; padding-left: 4vw; width: 50%; margin: auto; margin-top: 2.5vh; margin-bottom: 10vh; }
+    .trends-box-header { padding-top: 3vh; margin-bottom: 1vh; }
+    #trends-columns { padding-left: 4vw; padding-bottom: 0; }
+    #trends-columns-container { padding-bottom: 3vh; width: 50%; margin: auto; margin-bottom: 0; }
+
+    /* =========================================================================
+       🎯 CORRECTED MOBILE ALIGNMENT OVERRIDES (Fixes Title & Description Drift)
+       ========================================================================= */
+
+    /* 1. Reset base page containers to full width and eliminate left offsets */
+    .trends-blogspage-container,
+    .faq-outer-section-wrapper,
+    .blog-header-wrapper { 
+        margin-left: 0 !important; 
+        margin-right: 0 !important;
+        width: 100% !important; 
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 2. Fix the extreme top title sizing so it doesn't wrap aggressively */
+    .trends-blogspage-title {
+        font-size: 32px !important;
+        text-align: center !important;
+        width: 100% !important;
+        margin: 4vh 0 !important;
+    }
+
+    /* 3. Keep white profile cards beautifully balanced on phone viewports */
+    .db-architecture-card {
+        width: 92vw !important;
+        max-width: 92vw !important;
+        margin: 0 auto 4vh auto !important;
+        padding: 24px 20px !important; 
+        box-sizing: border-box !important;
+    }
+
+    /* 4. Force elements inside the profile cards to snap to left-aligned reading flow */
+    .db-architecture-card .trends-blogs-header {
+        font-size: 22px !important;
+        text-align: left !important;
+        margin: 0 0 12px 0 !important;
+        width: 100% !important;
+    }
+
+    .db-architecture-card .trends-blogs-description,
+    .blog-introduction-container {
+        font-size: 14px !important;
+        line-height: 1.6 !important;
+        text-align: left !important;
+        width: 100% !important;
+        margin: 0 0 16px 0 !important;
+    }
+
+    /* 5. Clean up the standalone elements and bottom FAQ sections */
+    .blog-featured-image-container,
+    .faq-content-card,
+    .trends-blogs-description {
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    /* 6. Lock down data table sizing strictly within the card frame walls */
+    .trends-blogpage-table-wrapper {
+        width: 100% !important;               
+        margin: 4vh 0 2vh 0 !important; 
+    }
+
+    /* 7. Drop the fixed sidebar completely */
+    .db-sidebar-navigation-pane {
+        display: none !important;
+    }
 }
 
 /* =========================================================================
