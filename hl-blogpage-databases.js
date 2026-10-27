@@ -56,6 +56,10 @@ function HapslabPixDatabaseBlogsStart()
 // 1., 2., & 3. (below) CREATING THE DATABASES INDEX CARD
 //
 
+             // 🎯 FIX: Added [0] back to the end of this line
+    var baseRootContainer = document.getElementsByClassName("trends-blogspage-container")[0];
+    if (!baseRootContainer || databaseArrayLen === 0) return;
+
     var baseRootContainer = document.getElementsByClassName("trends-blogspage-container")[0];
     if (!baseRootContainer || databaseArrayLen === 0) return;
 
@@ -63,9 +67,6 @@ function HapslabPixDatabaseBlogsStart()
     var indexWrapper = document.createElement('div');
     indexWrapper.style.cssText = "width: 65%; margin: 15vh auto 10vh auto; padding: 15px 20px; background-color: #f8f9fa; border: 1px solid #e9ecef; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.02); text-align: left;";
    // indexWrapper.style.setProperty('margin-top', '15vh', 'important');
-
-             // 🎯 INSERT THE LINE EXACTLY HERE:
-    indexWrapperSidebar.classList.add("db-sidebar-navigation-pane");
 
     var indexTitle = document.createElement('h4');
     indexTitle.style.cssText = "text-align: center; margin: 6px 0 16px 0; font-size: 14px; color: #01014c; font-family: Verdana, sans-serif; font-weight: bold;";
@@ -123,6 +124,9 @@ function HapslabPixDatabaseBlogsStart()
     var indexWrapperSidebar = document.createElement('div');
     indexWrapperSidebar.style.cssText = "position: fixed; top: 12vh; left: 2vw; width: 14vw; max-height: 80vh; overflow-y: auto; padding: 12px 14px; background-color: #f8f9fa; border: 1px solid #e9ecef; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); text-align: left; z-index: 1000;";
 
+             // 🎯 INSERT THE LINE EXACTLY HERE:
+    indexWrapperSidebar.classList.add("db-sidebar-navigation-pane");
+         
     var indexTitleSidebar = document.createElement('h4');
     indexTitleSidebar.style.cssText = "text-align: left; margin: 0 0 10px 0; font-size: 11px; color: #01014c; font-family: Verdana, sans-serif; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid #dee2e6; padding-bottom: 6px;";
     indexTitleSidebar.appendChild(document.createTextNode("Database Navigation"));
