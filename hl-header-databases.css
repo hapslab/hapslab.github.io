@@ -211,6 +211,26 @@ white-space: pre-wrap;
     border-radius: 4px;
 }
 
+/* =========================================================================
+   1. OUTSIDE THE BLOCK (For Laptops and Desktops)
+   ========================================================================= */
+/* This tells regular computers to show the sidebar on the left side */
+.db-sidebar-navigation-pane {
+    position: fixed !important; 
+    top: 12vh !important; 
+    left: 2vw !important; 
+    width: 14vw !important; 
+    max-height: 80vh !important; 
+    overflow-y: auto !important; 
+    padding: 12px 14px !important; 
+    background-color: #f8f9fa !important; 
+    border: 1px solid #e9ecef !important; 
+    border-radius: 6px !important; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important; 
+    text-align: left !important; 
+    z-index: 1000 !important;
+}
+
 /* --- TEXT BLOCKS INSIDE BLOG ENTRIES --- */
 .trends-blogpage-text-container {
     position: relative;
