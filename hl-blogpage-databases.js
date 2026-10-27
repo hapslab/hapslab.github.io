@@ -117,7 +117,7 @@ function HapslabPixDatabaseBlogsStart()
 
     // 1. CREATE THE SIDEBAR WRAPPER (Pinned to the left viewport boundary)
     var indexWrapperSidebar = document.createElement('div');
-    indexWrapperSidebar.style.cssText = "position: fixed; top: 12vh; left: 2vw; width: 14vw; max-height: 80vh; overflow-y: auto; padding: 12px 14px; background-color: #f8f9fa; border: 1px solid #e9ecef; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); text-align: left; z-index: 1000;";
+    // indexWrapperSidebar.style.cssText = "position: fixed; top: 12vh; left: 2vw; width: 14vw; max-height: 80vh; overflow-y: auto; padding: 12px 14px; background-color: #f8f9fa; border: 1px solid #e9ecef; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); text-align: left; z-index: 1000;";
 
              // 🎯 INSERT THE LINE EXACTLY HERE:
     indexWrapperSidebar.classList.add("db-sidebar-navigation-pane");
