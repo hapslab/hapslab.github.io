@@ -64,6 +64,9 @@ function HapslabPixDatabaseBlogsStart()
     indexWrapper.style.cssText = "width: 65%; margin: 15vh auto 10vh auto; padding: 15px 20px; background-color: #f8f9fa; border: 1px solid #e9ecef; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.02); text-align: left;";
    // indexWrapper.style.setProperty('margin-top', '15vh', 'important');
 
+             // 🎯 INSERT THE LINE EXACTLY HERE:
+    indexWrapperSidebar.classList.add("db-sidebar-navigation-pane");
+
     var indexTitle = document.createElement('h4');
     indexTitle.style.cssText = "text-align: center; margin: 6px 0 16px 0; font-size: 14px; color: #01014c; font-family: Verdana, sans-serif; font-weight: bold;";
     indexTitle.appendChild(document.createTextNode("Database Navigation Index"));
