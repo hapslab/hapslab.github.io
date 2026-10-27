@@ -448,31 +448,72 @@ white-space: pre-wrap;
 #trends-columns { padding-left: 4vw; padding-bottom: 0; }
 #trends-columns-container { padding-bottom: 3vh; width: 50%; margin: auto; margin-bottom: 0; }
 }
+//
+// CHANGED to STOP Right Shifting Margin of around 10-15vh 
+//
 @media (max-width: 600px) {
-.org-ddm { padding-top: .75vh; height: 1.5vh; }
-.menu-box-respo { padding-left: 25vw; }
-.org-NameHeader { top: -.15vh; }
-#display-picture-id { height: 31.5vh; width: 99vw; background-size: 75.5vw 31.5vh; }
-#display-picture-id-img { height: 31.5vh; width: 75.5vw; }
-#display-picture-text-container { top: 0; left: 75.5vw; height: 31.5vh; width: 21.5vw; }
-#display-picture-text { left: 1vw; height: auto; width: 17vw; font: normal .9vw fantasy, sans-serif; padding-right: 1.75vw; }
-#display-picture-slider-right { top: 4.75vh; left: 18.5vw; }
-.display-picture-slider-circle { margin-bottom: 1.25vh; }
-.trends-blogpage-atag {
-position: relative !important;
-display: block !important;
-margin-bottom: 5vh !important;
-text-align: center;
+    /* --- Your Existing Mobile Layout Rules --- */
+    .org-ddm { padding-top: .75vh; height: 1.5vh; }
+    .menu-box-respo { padding-left: 25vw; }
+    .org-NameHeader { top: -.15vh; }
+    #display-picture-id { height: 31.5vh; width: 99vw; background-size: 75.5vw 31.5vh; }
+    #display-picture-id-img { height: 31.5vh; width: 75.5vw; }
+    #display-picture-text-container { top: 0; left: 75.5vw; height: 31.5vh; width: 21.5vw; }
+    #display-picture-text { left: 1vw; height: auto; width: 17vw; font: normal .9vw fantasy, sans-serif; padding-right: 1.75vw; }
+    #display-picture-slider-right { top: 4.75vh; left: 18.5vw; }
+    .display-picture-slider-circle { margin-bottom: 1.25vh; }
+    .trends-blogpage-atag { position: relative !important; display: block !important; margin-bottom: 5vh !important; text-align: center; }
+    .trends-blogpage-container { padding: 1vh 2vw 5vh 2vw; margin-bottom: 5vh; }
+    .trends-blogpage-text-container { margin-left: 4vw; margin-bottom: 2.5vh; padding: 3vh 2vw 1.5vh 0; }
+    .trends-box-container { display: flex; flex-flow: wrap; text-align: left; }
+    .trends-box { height: 20vh; width: 75vw; max-height: 25vh; max-width: 125vw; margin-top: 1vh; text-align: left; }
+    .trends-box-container-bak { padding-bottom: 0; padding-left: 4vw; width: 50%; margin: auto; margin-top: 2.5vh; margin-bottom: 10vh; }
+    .trends-box-header { padding-top: 3vh; margin-bottom: 1vh; }
+    #trends-columns { padding-left: 4vw; padding-bottom: 0; }
+    #trends-columns-container { padding-bottom: 3vh; width: 50%; margin: auto; margin-bottom: 0; }
+
+    /* =========================================================================
+       🎯 NEW MOBILE SURGICAL ALIGNMENT FIXES (Add these inside the query)
+       ========================================================================= */
+
+    /* 1. Reset the layout lane from the 17vw sidebar displacement */
+    .trends-blogspage-container,
+    .faq-outer-section-wrapper { 
+        margin-left: 0 !important; 
+        width: 100% !important; 
+        padding-top: 3vh !important; 
+    }
+
+    /* 2. Expand white architectural cards to fit beautifully on small screens */
+    .db-architecture-card {
+        width: 92vw !important;
+        margin: 0 auto 4vh auto !important;
+        padding: 24px 20px !important; /* Tighter padding so text doesn't feel cramped */
+    }
+
+    /* 3. Force headers, intro paragraphs, and custom images to use full card width */
+    .blog-introduction-container,
+    .blog-featured-image-container,
+    .trends-blogs-description,
+    .faq-content-card {
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    /* 4. FIXES THE TABLE BLOWOUT: Corrects your desktop 110% width and negative margins */
+    .trends-blogpage-table-wrapper {
+        width: 100% !important;               
+        margin: 4vh 0 2vh 0 !important; /* Eliminates the -5vh offset that shoves tables off-screen */
+    }
+
+    /* 5. Hide the fixed desktop sidebar so it doesn't stick over text layout layers */
+    .db-sidebar-navigation-pane {
+        display: none !important;
+    }
 }
-.trends-blogpage-container { padding: 1vh 2vw 1.5vh 2vw; margin-bottom: 5vh; }
-.trends-blogpage-text-container { margin-left: 4vw; margin-bottom: 2.5vh; padding: 3vh 2vw 1.5vh 0; }
-.trends-box-container { display: flex; flex-flow: wrap; text-align: left; }
-.trends-box { height: 20vh; width: 75vw; max-height: 25vh; max-width: 125vw; margin-top: 1vh; text-align: left; }
-.trends-box-container-bak { padding-bottom: 0; padding-left: 4vw; width: 50%; margin: auto; margin-top: 2.5vh; margin-bottom: 10vh; }
-.trends-box-header { padding-top: 3vh; margin-bottom: 1vh; }
-#trends-columns { padding-left: 4vw; padding-bottom: 0; }
-#trends-columns-container { padding-bottom: 3vh; width: 50%; margin: auto; margin-bottom: 0; }
-}
+
+
 
 /* =========================================================================
    8. STANDALONE BOTTOM FAQ SHEET STYLING
