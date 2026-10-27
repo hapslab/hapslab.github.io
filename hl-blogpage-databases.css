@@ -23,6 +23,30 @@ html, body, main {
     scroll-behavior: smooth; 
 }
 
+/* =========================================================================
+   🎯 DESKTOP SIDEBAR POSITION FIX (Restores floating layout on laptops)
+   ========================================================================= */
+.db-sidebar-navigation-pane {
+    position: fixed !important; 
+    top: 15vh !important; /* Safely clears the Hapslab top branding header row */
+    left: 2vw !important; 
+    width: 14vw !important; 
+    max-height: 75vh !important; 
+    overflow-y: auto !important; 
+    padding: 12px 14px !important; 
+    background-color: #f8f9fa !important; 
+    border: 1px solid #e9ecef !important; 
+    border-radius: 6px !important; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important; 
+    text-align: left !important; 
+    z-index: 1000 !important;
+}
+
+.db-sidebar-list-container {
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
 
 /* --- TEXT ALIGNMENT & LINK MAPS --- */
 .a-blog { font-size: 110%; color: #13133a; border-bottom: .1px normal #13133a; }
