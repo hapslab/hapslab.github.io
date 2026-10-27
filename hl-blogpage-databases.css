@@ -477,11 +477,14 @@ white-space: pre-wrap;
 /* =========================================================================
    2. ISOLATED MOBILE MEDIA BREAKPOINT (Surgical updates for phones under 768px)
    ========================================================================= */
+/* =========================================================================
+   🎯 DEFINITIVE MOBILE ALIGNMENT SWITCH (Production-Ready Fix for Phones)
+   ========================================================================= */
 @media (max-width: 768px) {
-    /* 1. Reset layout container widths from global desktop margins on mobile */
+    
+    /* 1. FORCE THE CORE WRAPPER TO STRIP DESKTOP LATENCY MARGINS */
     .trends-blogspage-container,
     .blog-header-wrapper,
-    .blog-introduction-container,
     .faq-outer-section-wrapper { 
         margin-left: 0 !important; 
         margin-right: 0 !important;
@@ -489,9 +492,10 @@ white-space: pre-wrap;
         padding-left: 4vw !important;
         padding-right: 4vw !important;
         box-sizing: border-box !important;
+        text-align: left !important;
     }
 
-    /* 2. Force the main landscape hero title to center on phone viewports */
+    /* 2. CENTER THE MAIN LANDING DISPLAY HERO TITLE */
     .trends-blogspage-title {
         font-size: 28px !important;
         text-align: center !important;
@@ -499,49 +503,50 @@ white-space: pre-wrap;
         margin: 4vh 0 2vh 0 !important;
     }
 
-    /* 3. UNFREEZE SIDEBAR LAYOUT (Converts menu into a fluid, scrollable card block) */
+    /* 3. UNPIN THE NAVIGATION SIDEBAR BOX (Allows normal thumb swipes) */
     .db-sidebar-navigation-pane {
-        position: relative !important;   /* Unpins it from freezing on your screen */
+        position: relative !important;   /* Instantly changes it from a frozen overlay into scrollable content */
         top: 0 !important;
         left: 0 !important;
         width: 100% !important;
         max-width: 100% !important;
-        height: auto !important;
-        max-height: none !important;     /* Opens the box up natively to show all data text */
-        overflow: visible !important;    /* Hands scrolling execution back to your thumb */
+        height: auto !important;         /* Forces the box to size itself by its content elements */
+        max-height: none !important;     /* Strips out vertical clipping properties */
+        overflow: visible !important;    /* Hands scrolling control back to the phone screen */
         display: block !important;
         box-shadow: none !important;
         background-color: #f8f9fa !important;
         border: 1px solid #dee2e6 !important;
-        padding: 16px 16px !important;
+        padding: 16px 14px !important;
         margin: 2vh 0 4vh 0 !important;
         box-sizing: border-box !important;
     }
 
-    /* 4. CONSOLIDATED DUAL COLUMN ENGINE (Splits your 25 items index cleanly side-by-side) */
-    .db-sidebar-list-container,
-    .db-sidebar-navigation-pane ul {
+    /* 4. DUAL COLUMN MOBILE MATRIX GRID UNIFICATION */
+    ul.db-sidebar-list-container {
         display: block !important;
-        column-count: 2 !important; 
-        column-gap: 20px !important;
+        column-count: 2 !important;     /* Arrange the 25 items side-by-side perfectly on mobile */
+        column-gap: 15px !important;
         padding-left: 10px !important;
         margin: 0 !important;
         width: 100% !important;
+        height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
         box-sizing: border-box !important;
     }
 
-    /* 5. GIVES LINKS UNIFORM TOUCH SPACE (Prevents text clipping or overlapping lines) */
-    .db-sidebar-list-container li,
-    .db-sidebar-navigation-pane ul li {
+    /* 5. STABILIZE LINK WRAPPING (Prevents words from bleeding into the next column) */
+    ul.db-sidebar-list-container li {
         width: 100% !important;
         display: inline-block !important;
         white-space: nowrap !important;
         overflow: hidden !important;
-        text-overflow: ellipsis !important; /* Trims long profile names beautifully with '...' */
-        margin-bottom: 8px !important;
+        text-overflow: ellipsis !important; /* Adds '...' neatly to long entity strings */
+        margin-bottom: 10px !important;    /* Comfortable spacing for finger taps */
     }
 
-    /* 6. Keep database white editorial profile cards centered down phone screens */
+    /* 6. KEEP MAIN CARD LAYOUTS CENTRED DOWN MOBILE PHONE CANVASES */
     .db-architecture-card {
         width: 100% !important;
         max-width: 100% !important;
@@ -550,7 +555,7 @@ white-space: pre-wrap;
         box-sizing: border-box !important;
     }
 
-    /* 7. Force details layout tables and hero media graphics to fit cleanly */
+    /* 7. RESCALE IMAGES AND DATA MATRIX TABLES TO WINDOW LIMITS */
     .blog-featured-image-container,
     .trends-blogpage-img-container,
     .trends-blogpage-table-wrapper,
@@ -566,7 +571,6 @@ white-space: pre-wrap;
         height: auto !important;
     }
 }
-
 
 /* =========================================================================
    8. STANDALONE BOTTOM FAQ SHEET STYLING
