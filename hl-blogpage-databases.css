@@ -511,7 +511,7 @@ white-space: pre-wrap;
    ========================================================================= */
 @media (max-width: 768px) {
    /* 1.1 Reset header layout dimensions for mobile phones */
-   .org-ddm { margin-bottom: 2vh !important; position: relative !important;}
+   .org-ddm { padding-top: 1vh !important; margin-bottom: 2vh !important; position: relative !important;}
    /*
     .org-ddm {
         height: auto !important;
@@ -545,7 +545,7 @@ white-space: pre-wrap;
         font-size: 28px !important;
         text-align: center !important;
         width: 100% !important;
-        margin: 9vh 0 2vh 0 !important;
+        margin: 12vh 0 2vh 0 !important;
         padding-top: 2vh !important;
     }
 
