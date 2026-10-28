@@ -449,7 +449,7 @@ margin: 4%;
 }
 
                             /* Responsive layout - makes the two columns stack on top of each other */
-@media (max-width: 600px) 
+@media (max-width: 768px) 
 {
   .pixcolgrid {
     flex: 50%;
@@ -500,7 +500,7 @@ margin: 4%;
 }
 
                             /* Responsive layout - makes the two columns stack on top of each other */
-@media (max-width: 600px) 
+@media (max-width: 768px) 
 {
   .pixcolgridproduct {
     flex: 50%;
@@ -551,7 +551,7 @@ margin: 4%;
 }
 
                             /* Responsive layout - makes the two columns stack on top of each other */
-@media (max-width: 600px) 
+@media (max-width: 768px) 
 {
   .pixcolgridplatform {
     flex: 50%;
@@ -602,7 +602,7 @@ margin: 4%;
 }
 
                             /* Responsive layout - makes the two columns stack on top of each other */
-@media (max-width: 600px) 
+@media (max-width: 768px) 
 {
   .pixcolgriddata {
     flex: 50%;
