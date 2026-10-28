@@ -478,6 +478,34 @@ white-space: pre-wrap;
 /* =========================================================================
    2. MOBILE BREAKPOINT MEDIA ENGINE (Surgical Alignment Fixes for Phones)
    ========================================================================= */
+/* =========================================================================
+   1. REGULAR DESKTOP & LAPTOP LAYOUT CONFIGURATION (Fires on Large Screens)
+   ========================================================================= */
+.db-sidebar-navigation-pane {
+    position: fixed !important; 
+    top: 15vh !important; 
+    left: 2vw !important; 
+    width: 14vw !important; 
+    max-height: 75vh !important; 
+    overflow-y: auto !important; 
+    padding: 14px 16px !important; 
+    background-color: #f8f9fa !important; 
+    border: 1px solid #e9ecef !important; 
+    border-radius: 8px !important; 
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05) !important; 
+    text-align: left !important; 
+    z-index: 1000 !important;
+}
+
+.db-sidebar-list-container {
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* =========================================================================
+   2. MOBILE BREAKPOINT MEDIA ENGINE (Surgical Alignment Fixes for Phones)
+   ========================================================================= */
 @media (max-width: 768px) {
     /* 2.1 Force main container to use full horizontal phone screen space */
     .trends-blogspage-container,
@@ -500,32 +528,36 @@ white-space: pre-wrap;
         margin: 4vh 0 2vh 0 !important;
     }
 
-    /* 2.3 UNPIN THE SIDEBAR INDEX BOX (Allows natural thumb scroll swipes) */
+    /* 2.3 🎯 THE CRITICAL COMPONENT FIX: Restricts the box height so it stops covering the screen */
     .db-sidebar-navigation-pane {
-        position: relative !important;   /* Instantly changes it from a frozen overlay into scrollable content */
+        position: relative !important;   /* Unpins it from freezing statically on top of reading text */
         top: 0 !important;
         left: 0 !important;
         width: 100% !important;
         max-width: 100% !important;
-        height: auto !important;         /* Forces the box to size itself by its content elements */
-        max-height: none !important;     /* Strips out vertical clipping properties */
-        overflow: visible !important;    /* Hands scrolling execution back to the browser thumb */
+        
+        /* 🌟 BOUNDARY HOOKS: Caps the container height and enables internal scrolling */
+        height: 220px !important;        
+        max-height: 220px !important;     
+        overflow-y: auto !important;     /* Locks layout expansion; moves items into an isolated vertical scroll lane */
+        overflow-x: hidden !important;
+        
         display: block !important;
-        box-shadow: none !important;
+        box-shadow: inset 0 2px 4px rgba(0,0,0,0.03) !important;
         background-color: #f8f9fa !important;
         border: 1px solid #dee2e6 !important;
-        padding: 16px 14px !important;
+        border-radius: 6px !important;
+        padding: 12px 14px !important;
         margin: 2vh 0 4vh 0 !important;
         box-sizing: border-box !important;
     }
 
-    /* 2.4 DUAL COLUMN MOBILE MATRIX GRID UNIFICATION */
+    /* 2.4 🎯 THE VERTICAL LIST RESTORATION ENGINE */
     .db-sidebar-list-container {
         display: block !important;
-        column-count: 2 !important;     /* Arrange the 25 items side-by-side perfectly on mobile */
-        column-gap: 15px !important;
-        padding-left: 10px !important;
+        column-count: 1 !important;     /* 🌟 REMOVES DUAL COLUMNS: Forces names into a crisp vertical list */
         margin: 0 !important;
+        padding: 0 !important;
         width: 100% !important;
         height: auto !important;
         max-height: none !important;
@@ -533,10 +565,10 @@ white-space: pre-wrap;
         box-sizing: border-box !important;
     }
 
-    /* 2.5 STABILIZE LINK WRAPPING (Prevents words from bleeding into the next column) */
+    /* 2.5 STABILIZE LINK WRAPPING INSIDE THE MOBILE LANE */
     .db-sidebar-list-container li {
         width: 100% !important;
-        display: inline-block !important;
+        display: block !important;
         white-space: nowrap !important;
         overflow: hidden !important;
         text-overflow: ellipsis !important; /* Adds '...' neatly to long entity strings */
@@ -568,6 +600,7 @@ white-space: pre-wrap;
         height: auto !important;
     }
 }
+
 
 /* =========================================================================
    8. STANDALONE BOTTOM FAQ SHEET STYLING
