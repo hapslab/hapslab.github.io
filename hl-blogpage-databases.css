@@ -29,16 +29,16 @@ html, body, main {
 /* This tells regular computers to float the menu fixed on the left track */
 .db-sidebar-navigation-pane {
     position: fixed !important; 
-    top: 15vh !important; 
+    top: 15vh !important; /* Safely clears the Hapslab top branding header row tracks */
     left: 2vw !important; 
     width: 14vw !important; 
     max-height: 75vh !important; 
     overflow-y: auto !important; 
-    padding: 12px 14px !important; 
+    padding: 14px 16px !important; 
     background-color: #f8f9fa !important; 
     border: 1px solid #e9ecef !important; 
-    border-radius: 6px !important; 
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important; 
+    border-radius: 8px !important; 
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05) !important; 
     text-align: left !important; 
     z-index: 1000 !important;
 }
@@ -474,15 +474,12 @@ white-space: pre-wrap;
 #trends-columns-container { padding-bottom: 3vh; width: 50%; margin: auto; margin-bottom: 0; }
 }
 
+
 /* =========================================================================
-   2. ISOLATED MOBILE MEDIA BREAKPOINT (Surgical updates for phones under 768px)
-   ========================================================================= */
-/* =========================================================================
-   🎯 DEFINITIVE MOBILE ALIGNMENT SWITCH (Production-Ready Fix for Phones)
+   2. MOBILE BREAKPOINT MEDIA ENGINE (Surgical Alignment Fixes for Phones)
    ========================================================================= */
 @media (max-width: 768px) {
-    
-    /* 1. FORCE THE CORE WRAPPER TO STRIP DESKTOP LATENCY MARGINS */
+    /* 2.1 Force main container to use full horizontal phone screen space */
     .trends-blogspage-container,
     .blog-header-wrapper,
     .faq-outer-section-wrapper { 
@@ -495,7 +492,7 @@ white-space: pre-wrap;
         text-align: left !important;
     }
 
-    /* 2. CENTER THE MAIN LANDING DISPLAY HERO TITLE */
+    /* 2.2 Centers the large landing article title header */
     .trends-blogspage-title {
         font-size: 28px !important;
         text-align: center !important;
@@ -503,7 +500,7 @@ white-space: pre-wrap;
         margin: 4vh 0 2vh 0 !important;
     }
 
-    /* 3. UNPIN THE NAVIGATION SIDEBAR BOX (Allows normal thumb swipes) */
+    /* 2.3 UNPIN THE SIDEBAR INDEX BOX (Allows natural thumb scroll swipes) */
     .db-sidebar-navigation-pane {
         position: relative !important;   /* Instantly changes it from a frozen overlay into scrollable content */
         top: 0 !important;
@@ -512,7 +509,7 @@ white-space: pre-wrap;
         max-width: 100% !important;
         height: auto !important;         /* Forces the box to size itself by its content elements */
         max-height: none !important;     /* Strips out vertical clipping properties */
-        overflow: visible !important;    /* Hands scrolling control back to the phone screen */
+        overflow: visible !important;    /* Hands scrolling execution back to the browser thumb */
         display: block !important;
         box-shadow: none !important;
         background-color: #f8f9fa !important;
@@ -522,8 +519,8 @@ white-space: pre-wrap;
         box-sizing: border-box !important;
     }
 
-    /* 4. DUAL COLUMN MOBILE MATRIX GRID UNIFICATION */
-    ul.db-sidebar-list-container {
+    /* 2.4 DUAL COLUMN MOBILE MATRIX GRID UNIFICATION */
+    .db-sidebar-list-container {
         display: block !important;
         column-count: 2 !important;     /* Arrange the 25 items side-by-side perfectly on mobile */
         column-gap: 15px !important;
@@ -536,8 +533,8 @@ white-space: pre-wrap;
         box-sizing: border-box !important;
     }
 
-    /* 5. STABILIZE LINK WRAPPING (Prevents words from bleeding into the next column) */
-    ul.db-sidebar-list-container li {
+    /* 2.5 STABILIZE LINK WRAPPING (Prevents words from bleeding into the next column) */
+    .db-sidebar-list-container li {
         width: 100% !important;
         display: inline-block !important;
         white-space: nowrap !important;
@@ -546,7 +543,7 @@ white-space: pre-wrap;
         margin-bottom: 10px !important;    /* Comfortable spacing for finger taps */
     }
 
-    /* 6. KEEP MAIN CARD LAYOUTS CENTRED DOWN MOBILE PHONE CANVASES */
+    /* 2.6 KEEP MAIN CARD LAYOUTS CENTRED DOWN MOBILE PHONE CANVASES */
     .db-architecture-card {
         width: 100% !important;
         max-width: 100% !important;
@@ -555,7 +552,7 @@ white-space: pre-wrap;
         box-sizing: border-box !important;
     }
 
-    /* 7. RESCALE IMAGES AND DATA MATRIX TABLES TO WINDOW LIMITS */
+    /* 2.7 RESCALE IMAGES AND DATA MATRIX TABLES TO WINDOW LIMITS */
     .blog-featured-image-container,
     .trends-blogpage-img-container,
     .trends-blogpage-table-wrapper,
