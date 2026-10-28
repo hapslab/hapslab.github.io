@@ -511,13 +511,14 @@ white-space: pre-wrap;
    ========================================================================= */
 @media (max-width: 768px) {
    /* 1.1 Reset header layout dimensions for mobile phones */
+   /*
     .org-ddm {
         height: auto !important;
         padding-top: 1vh !important;
-        margin-bottom: 2vh !important; /* Pulls the silver divider line up to its proper spot */
+        margin-bottom: 2vh !important; 
         position: relative !important;
     }
-
+*/
    /* 2.1 Reset root canvas layout dimensions for mobile phones */
     html, body {
         width: 100% !important;
@@ -543,7 +544,7 @@ white-space: pre-wrap;
         font-size: 28px !important;
         text-align: center !important;
         width: 100% !important;
-        margin: 24vh 0 2vh 0 !important;
+        margin: 12vh 0 2vh 0 !important;
     }
 
     /* 2.4 🎯 MOBILE INDEX HEIGHT CAPSULE: Restricts the box size so it takes minimal space */
