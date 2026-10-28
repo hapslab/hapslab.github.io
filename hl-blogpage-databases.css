@@ -538,20 +538,18 @@ white-space: pre-wrap;
         margin: 4vh 0 2vh 0 !important;
     }
 
-    /* 2.4 🎯 NARROWED MOBILE INDEX ENGINE: Caps the width and centers the navigation window */
+    /* 2.4 🎯 MOBILE INDEX HEIGHT CAPSULE: Restricts the box size so it takes minimal space */
     .db-sidebar-navigation-pane {
         position: relative !important;   /* Unpins it from freezing statically over reading text */
         top: 0 !important;
         left: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
         
-        /* 🌟 THE WIDTH ACCORDION MODIFICATION: Drops the width to 85% and centers it beautifully */
-        width: 85% !important;           
-        max-width: 85% !important;
-        margin: 2vh auto 4vh auto !important; /* 'auto' left/right centers the narrowed box on your phone */
-        
+        /* 🌟 BOUNDARY HOOKS: Restricts container footprint to 200px and enables standalone scrolling */
         height: 200px !important;        
         max-height: 200px !important;     
-        overflow-y: auto !important;     /* Moves item lists into an isolated vertical scrolling track */
+        overflow-y: auto !important;     /* Moves item lists into an isolated internal scrolling track */
         overflow-x: hidden !important;
         
         display: block !important;
@@ -560,6 +558,7 @@ white-space: pre-wrap;
         border: 1px solid #dee2e6 !important;
         border-radius: 6px !important;
         padding: 12px 14px !important;
+        margin: 2vh 0 4vh 0 !important;
         box-sizing: border-box !important;
     }
 
@@ -592,12 +591,12 @@ white-space: pre-wrap;
         box-sizing: border-box !important;
     }
 
-    /* 2.7 THE TABLE REALIGNMENT ENGINE: Cancels out the -5vh laptop left offset */
+    /* 2.7 🎯 THE TABLE REALIGNMENT ENGINE: Cancels out the -5vh laptop left offset */
     .trends-blogpage-table-wrapper {
         width: 100% !important;
         max-width: 100% !important;               
         
-        /* CENTER TRACK ALIGNMENT: Forces tables to align perfectly with content card borders */
+        /* 🌟 CENTER TRACK ALIGNMENT: Forces tables to align perfectly with content card borders */
         margin: 4vh 0 2vh 0 !important;  /* Sets left/right offsets to 0, stopping the leftward drift! */
         
         border-collapse: separate !important;
