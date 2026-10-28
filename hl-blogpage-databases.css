@@ -543,7 +543,7 @@ white-space: pre-wrap;
         position: relative !important;   /* Unpins it from freezing statically over reading text */
         top: 0 !important;
         left: 0 !important;
-        width: 100% !important;
+        width: 50% !important;
         max-width: 100% !important;
         
         /* 🌟 BOUNDARY HOOKS: Restricts container footprint to 200px and enables standalone scrolling */
