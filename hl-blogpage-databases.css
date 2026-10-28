@@ -510,7 +510,12 @@ white-space: pre-wrap;
    2. MOBILE BREAKPOINT MEDIA ENGINE (Surgical Alignment Fixes for Phones)
    ========================================================================= */
 @media (max-width: 768px) {
-    /* 2.1 Reset root canvas layout dimensions for mobile phones */
+   /* 1.1 Reset header layout dimensions for mobile phones */
+    .org-ddm { padding-top: .75vh; height: 1.5vh; }
+    .menu-box-respo { padding-left: 25vw; }
+    .org-NameHeader { top: -.15vh; }
+
+   /* 2.1 Reset root canvas layout dimensions for mobile phones */
     html, body {
         width: 100% !important;
         max-width: 100% !important;
