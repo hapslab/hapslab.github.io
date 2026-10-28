@@ -520,43 +520,31 @@ white-space: pre-wrap;
         overflow-x: hidden !important;
     }
 
-    /* 2.2 Strip the desktop 25vw left/right margins from parent containers */
-    .trends-blogspage-container,
-    .blog-header-wrapper,
-    .faq-outer-section-wrapper { 
+    /* 2.2 🎯 THE ORDER MECHANISM: Arranges container elements vertically */
+    .trends-blogspage-container {
+        display: flex !important;
+        flex-direction: column !important;
         margin-left: 0 !important; 
         margin-right: 0 !important;
         width: 100% !important; 
         padding-left: 4vw !important;
         padding-right: 4vw !important;
         box-sizing: border-box !important;
-        text-align: left !important;
     }
 
-    /* 2.3 Center the main top branding header row titles */
-    .trends-blogspage-title {
-        font-size: 28px !important;
-        text-align: center !important;
-        width: 100% !important;
-        margin: 4vh 0 2vh 0 !important;
-    }
-
-    /* 2.4 🎯 NARROWED MOBILE INDEX ENGINE: Caps the width and centers the navigation window */
+    /* 2.3 🎯 POSITION MAP 1: Places the Database Navigation card right at the very top */
     .db-sidebar-navigation-pane {
-        position: relative !important;   /* Unpins it from freezing statically over reading text */
+        order: 1 !important;
+        position: relative !important;   
         top: 0 !important;
         left: 0 !important;
-        
-        /* 🌟 THE WIDTH ACCORDION MODIFICATION: Drops the width to 85% and centers it beautifully */
         width: 85% !important;           
         max-width: 85% !important;
-        margin: 2vh auto 4vh auto !important; /* 'auto' left/right centers the narrowed box on your phone */
-        
+        margin: 2vh auto 4vh auto !important; 
         height: 200px !important;        
         max-height: 200px !important;     
-        overflow-y: auto !important;     /* Moves item lists into an isolated vertical scrolling track */
+        overflow-y: auto !important;     
         overflow-x: hidden !important;
-        
         display: block !important;
         box-shadow: inset 0 2px 5px rgba(0,0,0,0.03) !important;
         background-color: #f8f9fa !important;
@@ -566,10 +554,27 @@ white-space: pre-wrap;
         box-sizing: border-box !important;
     }
 
-    /* 2.5 Ensure the index list stays as a clean vertical structure */
+    /* 2.4 🎯 POSITION MAP 2: Drops the header and title right beneath the navigation card */
+    .blog-header-wrapper {
+        order: 2 !important;
+        margin-left: 0 !important; 
+        margin-right: 0 !important;
+        width: 100% !important; 
+        box-sizing: border-box !important;
+    }
+
+    /* Centers the main text title header track beautifully */
+    .trends-blogspage-title {
+        font-size: 28px !important;
+        text-align: center !important;
+        width: 100% !important;
+        margin: 2vh 0 !important;
+    }
+
+    /* Ensure the index list stays as a clean vertical structure */
     .db-sidebar-list-container {
         display: block !important;
-        column-count: 1 !important;     /* Forces profile name listings down a single column path */
+        column-count: 1 !important;     
         margin: 0 !important;
         padding: 0 !important;
         width: 100% !important;
@@ -581,11 +586,17 @@ white-space: pre-wrap;
         display: block !important;
         white-space: nowrap !important;
         overflow: hidden !important;
-        text-overflow: ellipsis !important; /* Elegant trimming for long names with '...' */
-        margin-bottom: 10px !important;    /* Clean spacing padding optimization for finger touch targets */
+        text-overflow: ellipsis !important; 
+        margin-bottom: 10px !important;    
     }
 
-    /* 2.6 STRETCH EDITORIAL TEXT CARDS TO RESPONSIVE PHONE WIDTH */
+    /* 2.5 POSITION MAP 3: Sequences subsequent content cards further down the canvas track */
+    .blog-featured-image-container { order: 3 !important; }
+    .blog-introduction-container { order: 4 !important; }
+    .db-architecture-card { order: 5 !important; }
+    .faq-outer-section-wrapper { order: 6 !important; }
+
+    /* Stretch editorial text cards to responsive phone width */
     .db-architecture-card,
     .blog-introduction-container {
         width: 100% !important;
@@ -595,14 +606,11 @@ white-space: pre-wrap;
         box-sizing: border-box !important;
     }
 
-    /* 2.7 THE TABLE REALIGNMENT ENGINE: Cancels out the -5vh laptop left offset */
+    /* The table realignment engine: Cancels out the -5vh laptop left offset */
     .trends-blogpage-table-wrapper {
         width: 100% !important;
         max-width: 100% !important;               
-        
-        /* CENTER TRACK ALIGNMENT: Forces tables to align perfectly with content card borders */
-        margin: 4vh 0 2vh 0 !important;  /* Sets left/right offsets to 0, stopping the leftward drift! */
-        
+        margin: 4vh 0 2vh 0 !important;  
         border-collapse: separate !important;
         box-sizing: border-box !important;
     }
