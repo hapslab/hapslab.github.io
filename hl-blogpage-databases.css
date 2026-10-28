@@ -568,7 +568,7 @@ white-space: pre-wrap;
         column-count: 1 !important;     /* Forces profile name listings down a single column path */
         margin: 0 !important;
         padding: 0 !important;
-        width: 50% !important;
+        width: 100% !important;
         box-sizing: border-box !important;
     }
 
