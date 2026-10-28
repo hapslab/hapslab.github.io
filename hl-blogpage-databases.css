@@ -592,8 +592,8 @@ white-space: pre-wrap;
         position: relative !important;   /* Unpins it from freezing statically on top of reading text */
         top: 0 !important;
         left: 0 !important;
-        width: 85% !important;           
-        max-width: 85% !important;
+        width: 50% !important;           
+        max-width: 50% !important;
         margin: 3vh auto 2vh auto !important; /* Centers the narrow vertical block beautifully */
         height: 200px !important;        
         max-height: 200px !important;     
