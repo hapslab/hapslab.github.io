@@ -509,80 +509,134 @@ white-space: pre-wrap;
 /* =========================================================================
    2. MOBILE BREAKPOINT MEDIA ENGINE (Surgical Alignment Fixes for Phones)
    ========================================================================= */
+/* =========================================================================
+   🎯 DEFINITIVE MOBILE ALIGNMENT SWITCH (Production-Ready Fix for Phones)
+   ========================================================================= */
 @media (max-width: 768px) {
-   /* 1.1 Reset header layout dimensions for mobile phones */
-   /*
-   .org-ddm { padding-top: 1vh !important; margin-bottom: 2vh !important; position: relative !important;}
-   */
-   
-    .org-ddm {
-        height: 1.5vh !important;
-        padding-top: 1vh !important;
-        margin-bottom: 2vh !important; 
-        position: relative !important;
-    }
-
-   /* 2.1 Reset root canvas layout dimensions for mobile phones */
+    
+    /* 1. RESET ROOT DISPLAY OVERFLOW CANVAS LAYER TRACKS */
     html, body {
         width: 100% !important;
         max-width: 100% !important;
         overflow-x: hidden !important;
     }
 
-    /* 2.2 Strip the desktop 25vw left/right margins from parent containers */
-    .trends-blogspage-container,
-    .blog-header-wrapper,
-    .faq-outer-section-wrapper { 
+    /* 2. OVERRIDE GLOBAL PORTAL TEMPLATE HEADER COMPONENT FIELDS */
+    /* Snaps the silver tracking line up from the 10vh desktop layout blowout */
+    .org-ddm {
+        position: relative !important;
+        height: auto !important;
+        padding-top: 1.5vh !important;
+        padding-bottom: 1.5vh !important;
+        margin-bottom: 2vh !important; /* Pulls the silver divider line up to its proper spot */
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Converts the crowded horizontal link row into an elegant, wrapped top mobile menu bar */
+    .menu-box-container {
+        position: relative !important;
+        left: 0 !important;
+        width: 100% !important;
+        display: flex !important;
+        flex-flow: row wrap !important; /* Safely wraps your menu links into uniform rows on phones */
+        justify-content: center !important;
+        align-items: center !important;
+        padding: 0 4vw !important;
+        margin: 0 auto !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Standardizes link block layout boxes so items distribute evenly on phone screens */
+    .menu-box {
+        font-size: 13px !important; /* Premium tap-optimized scale size */
+        margin: 6px 10px !important; /* Balanced item distribution spacing */
+        padding: 0 !important;
+        display: inline-block !important;
+        text-align: center !important;
+    }
+
+    .org-NameHeader {
+        font-size: 18px !important;
+        display: block !important;
+        text-align: center !important;
+        margin-bottom: 4px !important;
+    }
+
+    /* Hides the long database tagline string to maximize view space above the fold */
+    .org-MotoHeader {
+        display: none !important;
+    }
+
+    /* Erases the wide laptop layout offset causing horizontal text drift */
+    .menu-box-respo {
+        padding-left: 0 !important;
+    }
+
+    /* 3. CORE WRAPPER LAYOUT FIELD REALIGNMENT RULES */
+    /* Configures the container block to handle element rendering vertically */
+    .trends-blogspage-container {
+        display: flex !important;
+        flex-direction: column !important;
         margin-left: 0 !important; 
         margin-right: 0 !important;
         width: 100% !important; 
         padding-left: 4vw !important;
         padding-right: 4vw !important;
         box-sizing: border-box !important;
-        text-align: left !important;
     }
 
-    /* 2.3 Center the main top branding header row titles */
-    .trends-blogspage-title {
-        font-size: 28px !important;
-        text-align: center !important;
-        width: 100% !important;
-        margin: 12vh 0 2vh 0 !important;
-        padding-top: 2vh !important;
-    }
-
-    /* 2.4 🎯 MOBILE INDEX HEIGHT CAPSULE: Restricts the box size so it takes minimal space */
+    /* 🎯 POSITION MAP 1: Places the Database Navigation card right at the top */
     .db-sidebar-navigation-pane {
-        position: relative !important;   /* Unpins it from freezing statically over reading text */
+        order: 1 !important;
+        position: relative !important;   /* Unpins it from freezing statically on top of reading text */
         top: 0 !important;
         left: 0 !important;
-        width: 50% !important;
-        max-width: 50% !important;
-        
-        /* 🌟 BOUNDARY HOOKS: Restricts container footprint to 200px and enables standalone scrolling */
+        width: 85% !important;           
+        max-width: 85% !important;
+        margin: 3vh auto 2vh auto !important; /* Centers the narrow vertical block beautifully */
         height: 200px !important;        
         max-height: 200px !important;     
         overflow-y: auto !important;     /* Moves item lists into an isolated internal scrolling track */
         overflow-x: hidden !important;
-        
         display: block !important;
         box-shadow: inset 0 2px 5px rgba(0,0,0,0.03) !important;
         background-color: #f8f9fa !important;
         border: 1px solid #dee2e6 !important;
         border-radius: 6px !important;
         padding: 12px 14px !important;
-        margin: 2vh 0 4vh 0 !important;
         box-sizing: border-box !important;
     }
 
-    /* 2.5 Ensure the index list stays as a clean vertical structure */
+    /* 🎯 POSITION MAP 2: Drops the header wrapper and title cleanly below the Navigation box */
+    .blog-header-wrapper {
+        order: 2 !important;
+        margin: 3vh auto 2vh auto !important;
+        width: 100% !important; 
+        box-sizing: border-box !important;
+    }
+
+    .trends-blogspage-title {
+        font-size: 26px !important; /* Crisp mobile heading scale dimension */
+        text-align: center !important;
+        width: 100% !important;
+        margin: 0 !important;
+        line-height: 1.3 !important;
+    }
+
+    /* 🎯 POSITION MAP 3: Sequences subsequent content elements further down the canvas path */
+    .blog-featured-image-container { order: 3 !important; }
+    .blog-introduction-container    { order: 4 !important; }
+    .db-architecture-card          { order: 5 !important; }
+    .faq-outer-section-wrapper     { order: 6 !important; }
+
+    /* 4. VERTICAL DIRECTORY INDICES AND COMPONENT LAYOUT TRACKS */
     .db-sidebar-list-container {
         display: block !important;
-        column-count: 1 !important;     /* Forces profile name listings down a single column path */
+        column-count: 1 !important; /* Forces profile name listings down a single column vertical path */
         margin: 0 !important;
         padding: 0 !important;
         width: 100% !important;
-        box-sizing: border-box !important;
     }
 
     .db-sidebar-list-container li {
@@ -590,11 +644,11 @@ white-space: pre-wrap;
         display: block !important;
         white-space: nowrap !important;
         overflow: hidden !important;
-        text-overflow: ellipsis !important; /* Elegant trimming for long names with '...' */
-        margin-bottom: 10px !important;    /* Clean spacing padding optimization for finger touch targets */
+        text-overflow: ellipsis !important; /* Elegant text trimming with '...' for long database names */
+        margin-bottom: 10px !important;    /* Tap-friendly padding targets */
     }
 
-    /* 2.6 STRETCH EDITORIAL TEXT CARDS TO RESPONSIVE PHONE WIDTH */
+    /* Stretches text profile cards to responsive smartphone dimensions */
     .db-architecture-card,
     .blog-introduction-container {
         width: 100% !important;
@@ -604,26 +658,22 @@ white-space: pre-wrap;
         box-sizing: border-box !important;
     }
 
-    /* 2.7 🎯 THE TABLE REALIGNMENT ENGINE: Cancels out the -5vh laptop left offset */
+    /* Cancels out the raw -5vh desktop table offsets, pulling tables back to center track alignment */
     .trends-blogpage-table-wrapper {
         width: 100% !important;
         max-width: 100% !important;               
-        
-        /* 🌟 CENTER TRACK ALIGNMENT: Forces tables to align perfectly with content card borders */
-        margin: 4vh 0 2vh 0 !important;  /* Sets left/right offsets to 0, stopping the leftward drift! */
-        
+        margin: 4vh 0 2vh 0 !important;  
         border-collapse: separate !important;
         box-sizing: border-box !important;
     }
 
-    /* Balanced cell density mapping for small smartphone monitors */
     .trends-blogpage-table-wrapper th, 
     .trends-blogpage-table-wrapper td {
         padding: 10px 12px !important; 
         font-size: 12px !important;
     }
 
-    /* Adjust featured hero visuals and standalone elements */
+    /* Rescale hero graphics and bottom layout widgets to window borders */
     .blog-featured-image-container,
     .trends-blogpage-img-container,
     .faq-content-card {
