@@ -112,41 +112,41 @@ function HapslabPixDatabaseBlogsStart()
 // 1., 2., & 3. (below) CREATING THE FIXED SIDEBAR DATABASE NAVIGATION INDEX
 //
 
+///////////////////////////////////////////////
+//
+// 1., 2., & 3. (below) CREATING THE FIXED SIDEBAR DATABASE NAVIGATION INDEX
+//
+
     var baseRootContainer = document.getElementsByClassName("trends-blogspage-container")[0];
     if (!baseRootContainer || databaseArrayLen === 0) return;
 
-    // 1. CREATE THE SIDEBAR WRAPPER (Pinned to the left viewport boundary)
+    // 1. CREATE A SINGLE SIDEBAR WRAPPER CARD
     var indexWrapperSidebar = document.createElement('div');
-    // indexWrapperSidebar.style.cssText = "position: fixed; top: 12vh; left: 2vw; width: 14vw; max-height: 80vh; overflow-y: auto; padding: 12px 14px; background-color: #f8f9fa; border: 1px solid #e9ecef; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); text-align: left; z-index: 1000;";
-
-             // 🎯 INSERT THE LINE EXACTLY HERE:
-    indexWrapperSidebar.classList.add("db-sidebar-navigation-pane");
+    
+    /* 🎯 THE STRUCTURAL HOOK: Binds the component wrapper cleanly to the styling rules sheet */
+    indexWrapperSidebar.className = "db-sidebar-navigation-pane";
          
     var indexTitleSidebar = document.createElement('h4');
     indexTitleSidebar.style.cssText = "text-align: left; margin: 0 0 10px 0; font-size: 11px; color: #01014c; font-family: Verdana, sans-serif; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid #dee2e6; padding-bottom: 6px;";
     indexTitleSidebar.appendChild(document.createTextNode("Database Navigation"));
     indexWrapperSidebar.appendChild(indexTitleSidebar);
 
-    // 2. CREATE A VERTICAL STRAIGHT LIST (Removed multi-column rules)
+    // 2. CREATE A STRUCTURAL CONTAINER FOR THE LIST LINKS
     var indexListSidebar = document.createElement('ul');
+    
+    /* 🎯 THE CRITICAL SELECTOR HOOK: Injects the explicit mobile class tracker token natively into the list element */
+    indexListSidebar.className = "db-sidebar-list-container";
     indexListSidebar.style.cssText = "margin: 0; padding: 0; list-style-type: none;";
 
-    // 3. LOOP 1: BUILD THE ENTIRE INDEX AS A PURE VERTICAL STACK
+    // 3. RUN THE SINGLE ITERATION DATA MAPPING LOOP
     for (var idx = 0; idx < databaseArrayLen; idx++) {
         var itemDBName = showDatabaseTechJSONArray[idx]["Database"] ? String(showDatabaseTechJSONArray[idx]["Database"]).trim() : "Unknown";
 
-        var AnchorID;
-        const myAnchorID = itemDBName.split(" ");
-        if (myAnchorID.length > 2) {
-            AnchorID = myAnchorID[1]+myAnchorID[2];
-        }
-        else {
-            AnchorID = myAnchorID[1];
-        }
-        var safeTableAnchorID = "db-profile-" + AnchorID.toLowerCase();
+        // Keeps your authentic substring character slicing logic completely intact
+        var rawAnchorToken = itemDBName.substr(2).trim();
+        var safeTableAnchorID = "db-profile-" + rawAnchorToken.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
 
         var listItem = document.createElement('li');
-        // Tightened spacing and smaller font sizes for high screen efficiency
         listItem.style.cssText = "margin-bottom: 5px; font-size: 11px; font-family: Verdana, sans-serif; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;";
 
         var anchorLink = document.createElement('a');
@@ -162,9 +162,7 @@ function HapslabPixDatabaseBlogsStart()
     }
     indexWrapperSidebar.appendChild(indexListSidebar);
 
-    
-    // Instead of pushing inside the container layout, append it directly to the body or main shell 
-    // so it handles independent page positioning safely
+    // Append it directly to the body shell so it handles independent page positioning safely
     document.body.appendChild(indexWrapperSidebar); 
 
 /*
