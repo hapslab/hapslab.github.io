@@ -507,73 +507,81 @@ white-space: pre-wrap;
 }
 
 /* =========================================================================
-   2. MOBILE BREAKPOINT MEDIA ENGINE (Surgical Alignment Fixes for Phones)
-   ========================================================================= */
-/* =========================================================================
-   🎯 DEFINITIVE MOBILE ALIGNMENT SWITCH (Production-Ready Fix for Phones)
-   ========================================================================= */
-/* =========================================================================
-   🎯 DEFINITIVE PRODUCTION MOBILE REALIGNMENT RULES
+   2. 🎯 DEFINITIVE MOBILE BREAKPOINT MEDIA ENGINE (Surgical Alignment Fixes for Phones)
    ========================================================================= */
 @media (max-width: 768px) {
     
-    /* 1. RESET BASE ROOT DISPLAY OVERFLOW CANVAS FIELDS */
+    /* 2.1 RESET ROOT DISPLAY OVERFLOW CANVAS FIELDS */
     html, body {
         width: 100% !important;
         max-width: 100% !important;
         overflow-x: hidden !important;
     }
 
-    /* 2. OPTIMIZE GLOBAL PORTAL TOP ROW SEGMENTS (Snaps navigation layout back) */
+    /* 2.2 THE SURGICAL TOP HEADER IN-LINE UNIFICATION ENGINE */
+    /* Snaps the silver divider line up cleanly right under your menu elements */
     .org-ddm {
         position: relative !important;
         height: auto !important;
-        padding-top: 1.5vh !important;
-        padding-bottom: 1.5vh !important;
-        margin-bottom: 3vh !important; /* Pulls the top silver track line clean up where it belongs */
+        padding-top: 12px !important;
+        padding-bottom: 12px !important;
+        margin-bottom: 3vh !important; 
+        border-bottom: 1px solid silver !important;
         width: 100% !important;
         box-sizing: border-box !important;
     }
 
-    /* Converts the crowded top horizontal links row into an elegant wrapped mobile top-bar */
+    /* 🎯 THE HORIZONTAL LOCK: Forces ALL header links to stay on a single line */
     .menu-box-container {
         position: relative !important;
         left: 0 !important;
         width: 100% !important;
         display: flex !important;
-        flex-flow: row wrap !important; /* Safely wraps your menu links into uniform mobile tiers */
-        justify-content: center !important;
+        flex-flow: row nowrap !important; /* Prevents menu links from ever breaking onto a second line */
+        justify-content: space-between !important; /* Spreads items evenly across the top header row */
         align-items: center !important;
-        padding: 0 4vw !important;
+        padding: 0 3vw !important;
         margin: 0 auto !important;
         box-sizing: border-box !important;
     }
 
+    /* 🎯 THE COMPRESSION GUARD: Scales down typography and spacing so all 7 items fit easily */
     .menu-box {
-        font-size: 13px !important; /* Highly tap-optimized scale size */
-        margin: 6px 10px !important; /* Even item margins for balanced distribution tracking */
-        padding: 0 !important;
+        font-size: 11px !important; /* Slim, crisp font scale for phone navigation rows */
+        margin: 0 !important;
+        padding: 0 4px !important; /* Tight internal cell padding to fit small screen margins */
         display: inline-block !important;
-        text-align: center !important;
+        white-space: nowrap !important; /* Stops the link text strings from splitting */
     }
 
+    /* @hapslab branding title adjustments */
     .org-NameHeader {
-        font-size: 18px !important;
-        display: block !important;
-        text-align: center !important;
-        margin-bottom: 4px !important;
+        font-size: 13px !important; /* Keeps your name prominent but proportional */
+        font-weight: bold !important;
+        display: inline-block !important;
+        margin: 0 !important;
+        padding-right: 4px !important;
     }
 
+    /* Hides the long secondary tagline text block to save screen tracking real estate */
     .org-MotoHeader {
-        display: none !important; /* Hides the long raw database tagline string to save space on mobile */
+        display: none !important; 
     }
 
+    /* Erases the wide laptop layout offsets that caused the text wrapping glitch */
     .menu-box-respo {
-        padding-left: 0 !important; /* Erases wide desktop left padding offsets causing text drift */
+        padding-left: 0 !important;
+    }
+    
+    .menu-box-header-Moto-shift {
+        margin-right: 0 !important;
     }
 
-    /* 3. CORE CONTENT LANE NORMALIZATION WRAPPERS */
-    /* 🎯 THE CRITICAL REPAIR: We removed flexbox display/ordering here to restore your structural card layout flow natively! */
+    .menu-box-header-right-shift {
+        margin-right: 0 !important;
+    }
+
+    /* 2.3 CORE CONTENT LANE NORMALIZATION WRAPPERS */
     .trends-blogspage-container {
         display: block !important; 
         margin-left: 0 !important; 
@@ -584,23 +592,19 @@ white-space: pre-wrap;
         box-sizing: border-box !important;
     }
 
-    /* 4. SOLID STANDALONE LAYOUT DECORATION FOR THE DYNAMIC SIDEBAR LIST CARD */
+    /* 2.4 SOLID STANDALONE LAYOUT DECORATION FOR THE DYNAMIC SIDEBAR LIST CARD */
     .db-sidebar-navigation-pane {
-        position: relative !important;   /* Unpins it from freezing statically on top of reading text */
+        position: relative !important;   
         top: 0 !important;
         left: 0 !important;
         display: block !important;
-        
-        /* 🌟 THE SLIM-LINE STYLING PARAMETERS: Keeps it narrow, perfectly centered, and easy to scroll */
-        width: 85% !important;           
-        max-width: 85% !important;
-        margin: 4vh auto 4vh auto !important; /* Centers the card tray cleanly down the middle track */
-        
+        width: 50% !important;           
+        max-width: 50% !important;
+        margin: 4vh auto 4vh auto !important; 
         height: 180px !important;        
         max-height: 180px !important;     
-        overflow-y: auto !important;     /* Maps items into a clean standalone internal scrolling lane */
+        overflow-y: auto !important;     
         overflow-x: hidden !important;
-        
         background-color: #f8f9fa !important;
         border: 1px solid #dee2e6 !important;
         border-radius: 6px !important;
@@ -611,7 +615,7 @@ white-space: pre-wrap;
 
     .db-sidebar-list-container {
         display: block !important;
-        column-count: 1 !important;     /* Forces database listings down a clean single column path */
+        column-count: 1 !important;     
         margin: 0 !important;
         padding: 0 !important;
         width: 100% !important;
@@ -622,11 +626,11 @@ white-space: pre-wrap;
         display: block !important;
         white-space: nowrap !important;
         overflow: hidden !important;
-        text-overflow: ellipsis !important; /* Adds '...' neatly to long entity strings */
-        margin-bottom: 10px !important;    /* Comfortable spacing for mobile finger clicks */
+        text-overflow: ellipsis !important; 
+        margin-bottom: 10px !important;    
     }
 
-    /* 5. CENTER HEADERS & TEXT CARDS TO RESPONSIVE PHONE WIDTHS */
+    /* 2.5 CENTER HEADERS & TEXT CARDS TO RESPONSIVE PHONE WIDTHS */
     .blog-header-wrapper {
         margin: 3vh auto 2vh auto !important;
         width: 100% !important;
@@ -650,11 +654,11 @@ white-space: pre-wrap;
         box-sizing: border-box !important;
     }
 
-    /* 6. CORRECTION FOR THE SHIFTED DATA TABLES */
+    /* 2.6 CORRECTION FOR THE SHIFTED DATA TABLES */
     .trends-blogpage-table-wrapper {
         width: 100% !important;
         max-width: 100% !important;               
-        margin: 4vh 0 2vh 0 !important; /* 🌟 THE FIX: Sets left/right offsets to 0, pulling tables back to card borders! */
+        margin: 4vh 0 2vh 0 !important; 
         border-collapse: separate !important;
         box-sizing: border-box !important;
     }
@@ -665,7 +669,6 @@ white-space: pre-wrap;
         font-size: 12px !important;
     }
 
-    /* Adjust featured images and standalone card elements */
     .blog-featured-image-container,
     .trends-blogpage-img-container,
     .faq-content-card {
@@ -682,6 +685,7 @@ white-space: pre-wrap;
         height: auto !important;
     }
 }
+
 
 
 /* =========================================================================
