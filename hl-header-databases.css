@@ -340,12 +340,14 @@ white-space: pre-wrap;
     .org-ddm { padding-top: .75vh; height: 1.5vh; }
     .menu-box-respo { padding-left: 25vw; }
     .org-NameHeader { top: -.15vh; }
+   /*
     #display-picture-id { height: 31.5vh; width: 99vw; background-size: 75.5vw 31.5vh; }
     #display-picture-id-img { height: 31.5vh; width: 75.5vw; }
     #display-picture-text-container { top: 0; left: 75.5vw; height: 31.5vh; width: 21.5vw; }
     #display-picture-text { left: 1vw; height: auto; width: 17vw; font: normal .9vw fantasy, sans-serif; padding-right: 1.75vw; }
     #display-picture-slider-right { top: 4.75vh; left: 18.5vw; }
     .display-picture-slider-circle { margin-bottom: 1.25vh; }
+   */
     .trends-blogpage-atag { position: relative !important; display: block !important; margin-bottom: 5vh !important; text-align: center; }
     .trends-blogpage-container { padding: 1vh 2vw 5vh 2vw; margin-bottom: 5vh; }
     .trends-blogpage-text-container { margin-left: 4vw; margin-bottom: 2.5vh; padding: 3vh 2vw 1.5vh 0; }
