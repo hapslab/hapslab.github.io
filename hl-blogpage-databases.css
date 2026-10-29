@@ -393,8 +393,7 @@ padding-right: 4px !important;
 .menu-box-respo { padding-left: 0 !important; }
 .menu-box-header-Moto-shift { margin-right: 0 !important; }
 .menu-box-header-right-shift { margin-right: 0 !important; }
-
-.db-sidebar-navigation-pane {
+.trends-blogspage-container .db-sidebar-navigation-pane {
 position: relative !important;
 top: 0vh !important;
 left: 0vw !important;
@@ -433,11 +432,6 @@ margin: 3vh auto 2vh auto !important;
 width: 100% !important;
 text-align: center !important;
 }
-
-/*
-    .trends-blogspage-container is MISSING in the 768px area
-*/
-
 .trends-blogspage-title {
 font-size: 1.8vw !important;
 text-align: center !important;
@@ -459,16 +453,12 @@ max-width: 100% !important;
 margin: 4vh 0 2vh 0 !important;
 border-collapse: separate !important;
 box-sizing: border-box !important;
-
-/* 🎯 Below line GLIDES EVERYTHING on the Mbile towards Right of the screen */
-   transform: translateX(4vw) !important;
 }
 .trends-blogpage-table-wrapper th,
 .trends-blogpage-table-wrapper td {
 padding: 10px 12px !important;
 font-size: 12px !important;
 }
-
 .blog-featured-image-container,
 .trends-blogpage-img-container,
 .faq-content-card {
