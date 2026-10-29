@@ -379,7 +379,9 @@ white-space: pre-wrap;
     #trends-columns-container { padding-bottom: 3vh; width: 50%; margin: auto; margin-bottom: 0; }
 
     /* --- THE MOBILITY CORRECTION CORE SHIFT --- */
+   /*
     .trends-blogspage-container,
+   */
     .blog-header-wrapper,
     .blog-introduction-container { 
         margin-left: 0 !important; 
@@ -414,31 +416,47 @@ white-space: pre-wrap;
         margin-left: 0 !important;
     }
 
-    /* Hides the fixed navigation index column so it drops off small displays instantly */
-    .db-sidebar-navigation-pane {
-       /*
-       display: none !important; 
-
-    position: fixed !important; 
-    top: 12vh !important; 
-    left: 2vw !important; 
-
-       */
-        top: 9vh !important;
-        left: -5vh !important;
+    /* PRESENT CHANGE - Hides the fixed navigation index column so it drops off small displays instantly */
+    .trends-blogspage-container .db-sidebar-navigation-pane {
+        position: relative !important;   
+        top: 0vh !important;
+        left: 0vw !important;
         display: block !important;
-        padding: 0 !important;
-        width: 25% !important;           
-        max-width: 25% !important;
-    }
-    .db-sidebar-list-container {
-        width: 100% !important;
-        max-width: 100% !important;
+        width: 50vw !important;           
+        max-width: 50vw !important;       
+        margin: 4vh auto 4vh auto !important; 
+        
+        /* FLUID HEIGHT CORES: Restricts vertical bounds to a compact 22vh box */
+        height: 22vh !important;        
+        max-height: 22vh !important;     
+        overflow-y: auto !important;     /* Maps your 25 entities into an isolated scrolling window */
+        overflow-x: hidden !important;
+        
+        background-color: #f8f9fa !important;
+        border: 1px solid #dee2e6 !important;
+        border-radius: 6px !important;
+        padding: 1.5vh 2vw !important;
+        box-shadow: inset 0 2px 4px rgba(0,0,0,0.02) !important;
+        box-sizing: border-box !important;
     }
 
+    /* 2. FORCES LIST ITEMS INTO A CLEAN SINGLE COLUMN VIEW */
+    .db-sidebar-navigation-pane .db-sidebar-list-container {
+        display: block !important;
+        column-count: 1 !important;     
+        margin: 0vw !important;
+        padding: 0vw !important;
+        width: 100% !important;
+    }
+
+    /* 3. TRIMS LONG DATABASE NAMES ELEGANTLY TO FIT MOBILE BOUNDS */
     .db-sidebar-list-container li {
         width: 100% !important;
-        max-width: 100% !important;
+        display: block !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important; /* Adds '...' for truncated names */
+        margin-bottom: 1.25vh !important;   /* Comfortable finger-tap target spacing */
     }
    
 }
