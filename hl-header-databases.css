@@ -433,10 +433,12 @@ white-space: pre-wrap;
     }
     .db-sidebar-list-container {
         width: 100% !important;
+        max-width: 100% !important;
     }
 
     .db-sidebar-list-container li {
         width: 100% !important;
+        max-width: 100% !important;
     }
    
 }
