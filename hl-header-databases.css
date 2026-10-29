@@ -425,9 +425,9 @@ white-space: pre-wrap;
 
        */
         top: 9vh !important;
-        left: 0 !important;
+        left: 0vh !important;
         display: block !important;
-        padding: 0 !important;
+        padding: 0vh !important;
         width: 50% !important;           
         max-width: 50% !important;
     }
@@ -446,6 +446,16 @@ white-space: pre-wrap;
     margin-bottom: 12vh !important;
     box-sizing: border-box;
 }
+
+    /* 2.5 Ensure the index list stays as a clean vertical structure */
+    .db-sidebar-list-container {
+        width: 100% !important;
+    }
+
+    .db-sidebar-list-container li {
+        width: 100% !important;
+    }
+
 
 .faq-section-title {
     font-family: Verdana, sans-serif; 
