@@ -425,11 +425,11 @@ white-space: pre-wrap;
 
        */
         top: 9vh !important;
-        left: 0vh !important;
+        left: -5vh !important;
         display: block !important;
-        padding: 0vh !important;
-        width: 50% !important;           
-        max-width: 50% !important;
+        padding: 0 !important;
+        width: 25% !important;           
+        max-width: 25% !important;
     }
     .db-sidebar-list-container {
         width: 100% !important;
