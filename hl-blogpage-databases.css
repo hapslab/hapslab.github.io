@@ -26,32 +26,6 @@ html, body, main {
 /* =========================================================================
    1. OUTSIDE THE BLOCK (For Laptops and Desktops)
    ========================================================================= */
-/* This tells regular computers to float the menu fixed on the left track */
-/* =========================================================================
-   1. REGULAR DESKTOP & LAPTOP LAYOUT CONFIGURATION (Fires on Large Screens)
-   ========================================================================= */
-.db-sidebar-navigation-pane {
-    position: fixed !important; 
-    top: 15vh !important; 
-    left: 2vw !important; 
-    width: 14vw !important; 
-    max-height: 75vh !important; 
-    overflow-y: auto !important; 
-    padding: 14px 16px !important; 
-    background-color: #f8f9fa !important; 
-    border: 1px solid #e9ecef !important; 
-    border-radius: 8px !important; 
-    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05) !important; 
-    text-align: left !important; 
-    z-index: 1000 !important;
-}
-
-.db-sidebar-list-container {
-    display: block !important;
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
 /* --- TEXT ALIGNMENT & LINK MAPS --- */
 .a-blog { font-size: 110%; color: #13133a; border-bottom: .1px normal #13133a; }
 .a-cat { color: #660000; border-bottom: .1px normal #660000; }
@@ -498,12 +472,21 @@ white-space: pre-wrap;
     box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05) !important; 
     text-align: left !important; 
     z-index: 1000 !important;
+    display: block !important; /* Forces visibility on laptop monitors */
 }
 
 .db-sidebar-list-container {
     display: block !important;
+    column-count: 1 !important;
     margin: 0 !important;
     padding: 0 !important;
+    list-style-type: none !important;
+}
+
+.db-sidebar-list-container li {
+    display: block !important;
+    width: 100% !important;
+    margin-bottom: 6px !important;
 }
 
 /* =========================================================================
@@ -519,58 +502,56 @@ white-space: pre-wrap;
     }
 
     /* 2.2 THE SURGICAL TOP HEADER IN-LINE UNIFICATION ENGINE */
-    /* Snaps the silver divider line up cleanly right under your menu elements */
+    /* 🎯 THE FIX: Restores the premium silver divider line safely beneath the brand nav tier */
     .org-ddm {
         position: relative !important;
         height: auto !important;
         padding-top: 12px !important;
         padding-bottom: 12px !important;
         margin-bottom: 3vh !important; 
-        border-bottom: 1px solid silver !important;
+        border-bottom: 2px solid silver !important; /* Locks onto your exact hapslablab.css values */
         width: 100% !important;
         box-sizing: border-box !important;
+        display: block !important;
     }
 
-    /* 🎯 THE HORIZONTAL LOCK: Forces ALL header links to stay on a single line */
+    /* Forces ALL header links to stay perfectly inline on mobile screens */
     .menu-box-container {
         position: relative !important;
         left: 0 !important;
         width: 100% !important;
         display: flex !important;
-        flex-flow: row nowrap !important; /* Prevents menu links from ever breaking onto a second line */
-        justify-content: space-between !important; /* Spreads items evenly across the top header row */
+        flex-flow: row nowrap !important; /* Prevents menu links from breaking onto a second line */
+        justify-content: space-between !important; /* Spreads items evenly across the row */
         align-items: center !important;
         padding: 0 3vw !important;
         margin: 0 auto !important;
         box-sizing: border-box !important;
     }
 
-    /* 🎯 THE COMPRESSION GUARD: Scales down typography and spacing so all 7 items fit easily */
+    /* Scales down typography and spacing so all 7 items fit comfortably */
     .menu-box {
-        font-size: 11px !important; /* Slim, crisp font scale for phone navigation rows */
+        font-size: 11px !important; 
         margin: 0 !important;
-        padding: 0 4px !important; /* Tight internal cell padding to fit small screen margins */
+        padding: 0 4px !important; 
         display: inline-block !important;
-        white-space: nowrap !important; /* Stops the link text strings from splitting */
+        white-space: nowrap !important; 
     }
 
-    /* @hapslab branding title adjustments */
     .org-NameHeader {
-        font-size: 13px !important; /* Keeps your name prominent but proportional */
+        font-size: 13px !important; 
         font-weight: bold !important;
         display: inline-block !important;
         margin: 0 !important;
         padding-right: 4px !important;
     }
 
-    /* Hides the long secondary tagline text block to save screen tracking real estate */
     .org-MotoHeader {
-        display: none !important; 
+        display: none !important; /* Hides long taglines on mobile screens to save space */
     }
 
-    /* Erases the wide laptop layout offsets that caused the text wrapping glitch */
     .menu-box-respo {
-        padding-left: 0 !important;
+        padding-left: 0 !important; /* Erases laptop offsets causing mobile alignment drift */
     }
     
     .menu-box-header-Moto-shift {
@@ -592,19 +573,21 @@ white-space: pre-wrap;
         box-sizing: border-box !important;
     }
 
-    /* 2.4 SOLID STANDALONE LAYOUT DECORATION FOR THE DYNAMIC SIDEBAR LIST CARD */
+    /* 2.4 DYNAMIC SIDEBAR LIST CARD SLIM-LINE OVERRIDES FOR PHONES */
     .db-sidebar-navigation-pane {
-        position: relative !important;   
+        position: relative !important;   /* Unpins it from freezing statically over reading text */
         top: 0 !important;
         left: 0 !important;
         display: block !important;
-        width: 50% !important;           
-        max-width: 50% !important;
-        margin: 4vh auto 4vh auto !important; 
+        width: 85% !important;           
+        max-width: 85% !important;
+        margin: 4vh auto 4vh auto !important; /* Centers the card tray cleanly down the middle track */
+        
         height: 180px !important;        
         max-height: 180px !important;     
-        overflow-y: auto !important;     
+        overflow-y: auto !important;     /* Maps items into a clean standalone internal scrolling lane */
         overflow-x: hidden !important;
+        
         background-color: #f8f9fa !important;
         border: 1px solid #dee2e6 !important;
         border-radius: 6px !important;
@@ -615,7 +598,7 @@ white-space: pre-wrap;
 
     .db-sidebar-list-container {
         display: block !important;
-        column-count: 1 !important;     
+        column-count: 1 !important;     /* Forces database listings down a clean single column path */
         margin: 0 !important;
         padding: 0 !important;
         width: 100% !important;
@@ -626,7 +609,7 @@ white-space: pre-wrap;
         display: block !important;
         white-space: nowrap !important;
         overflow: hidden !important;
-        text-overflow: ellipsis !important; 
+        text-overflow: ellipsis !important; /* Adds '...' neatly to long entity strings */
         margin-bottom: 10px !important;    
     }
 
@@ -638,7 +621,7 @@ white-space: pre-wrap;
     }
 
     .trends-blogspage-title {
-        font-size: 26px !important;
+        font-size: 1.5vw !important;
         text-align: center !important;
         width: 100% !important;
         margin: 2vh 0 !important;
@@ -658,7 +641,7 @@ white-space: pre-wrap;
     .trends-blogpage-table-wrapper {
         width: 100% !important;
         max-width: 100% !important;               
-        margin: 4vh 0 2vh 0 !important; 
+        margin: 4vh 0 2vh 0 !important; /* Sets left/right offsets to 0, pulling tables back to card borders! */
         border-collapse: separate !important;
         box-sizing: border-box !important;
     }
@@ -669,6 +652,7 @@ white-space: pre-wrap;
         font-size: 12px !important;
     }
 
+    /* Adjust featured images and standalone card elements */
     .blog-featured-image-container,
     .trends-blogpage-img-container,
     .faq-content-card {
