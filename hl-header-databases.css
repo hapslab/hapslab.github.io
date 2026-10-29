@@ -391,12 +391,12 @@ white-space: pre-wrap;
         text-align: left !important;
     }
 
-    /* Centers the main large landing title neatly */
+    /* BLOGS PAGE TITLE */
     .trends-blogspage-title {
-        font-size: 32px !important;
+        font-size: 3.2vw !important;
         text-align: center !important;
         width: 100% !important;
-        margin: 4vh 0 !important;
+        margin: 8vh 0 !important;
     }
 
     /* Force the featured image block layout wrapper to fit full screen bounds */
