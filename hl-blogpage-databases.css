@@ -103,20 +103,24 @@ div a.org-url { color: #6B4700; }
     background-color: transparent !important; /* 🌟 UNLOCKS the canvas layer so the slate shows through */
 }
 
-
-/*
-.trends-blogpage-container {
-    position: relative;
-    background-color: transparent !important; /* 🌟 UNLOCKS the canvas layer so the slate shows through */
-    height: auto;
-    display: flex !important;
-    flex-direction: column !important; 
-    align-items: center !important;
-    font-size: 1.2vw;
-    padding: 3vh 2vw 5vh 2vw;
-    margin-bottom: 8vh;
+/* =========================================================================
+   SURGICAL LAPTOP ALIGNMENT FIX FOR THE FAQ BLOCK ONLY
+   ========================================================================= */
+.trends-blogspage-container .faq-content-card {
+    display: block !important;
+    width: 100% !important;
+    max-width: 850px !important;            
+    
+    /* 🎯 THE FIX: Overrides the parent's left displacement to center the FAQ perfectly */
+    margin: 6vh auto 6vh -4vw !important;   
+    
+    padding: 4vh 3vw !important;            
+    background-color: #ffffff !important;   
+    border: 1px solid #e9ecef !important;   
+    border-radius: 8px !important;          
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03) !important; 
+    box-sizing: border-box !important;
 }
-*/
 
 .trends-blogspage-title { 
     font-family: 'Montserrat', sans-serif; 
