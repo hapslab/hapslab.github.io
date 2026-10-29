@@ -399,7 +399,14 @@ white-space: pre-wrap;
 
     /* Hides the fixed navigation index column so it drops off small displays instantly */
     .db-sidebar-navigation-pane {
-       /* display: none !important; */
+       /*
+       display: none !important; 
+
+    position: fixed !important; 
+    top: 12vh !important; 
+    left: 2vw !important; 
+
+       */
         left: 0 !important;
         display: block !important;
         width: 50% !important;           
