@@ -459,6 +459,18 @@ box-sizing: border-box !important;
 padding: 10px 12px !important;
 font-size: 12px !important;
 }
+    /* 🎯 THE DRIFT REPAIR: Balances the column weights so the table centers perfectly on phone screens */
+    .trends-blogpage-table-wrapper tr th:first-child,
+    .trends-blogpage-table-wrapper tr td:first-child {
+        width: auto !important; /* Overrides the desktop 30% width crunch */
+        padding-right: 8px !important;
+    }
+
+    .trends-blogpage-table-wrapper tr th:last-child,
+    .trends-blogpage-table-wrapper tr td:last-child {
+        width: auto !important; /* Lets text columns distribute fluidly */
+    }
+
 .blog-featured-image-container,
 .trends-blogpage-img-container,
 .faq-content-card {
