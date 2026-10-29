@@ -72,15 +72,16 @@ div a.org-url { color: #6B4700; }
 .share-contactus .share-facebook .share-linkedin .share-twitter .share-googlep .share-youtube { font-size: .7vw; }
 
 /* =========================================================================
-   3. LANDING DISPLAY SLIDER PANES
+   3. LANDING DISPLAY SLIDER PANES - STOPPED 29-Oct-2026
    ========================================================================= */
+/*
 #display-picture-id { position: relative; margin-top: .3vh; left: 0; height: 60vh; width: 99vw; background-size: 69.5vw 60vh; background-repeat: no-repeat; opacity: 0.9; z-index: -1; }
 #display-picture-id-img { background-position: center; background-repeat: no-repeat; background-size: cover; height: 60vh; width: 69.5vw; z-index: -1; }
 #display-picture-text-container { position: absolute; top: 0; left: 69.5vw; height: 60vh; width: 29.6vw; background: rgb(0, 0, 0); background: rgba(0, 0, 0, 0.65); }
 #display-picture-text { position: relative; top: 0; left: 1vw; height: auto; padding-right: 2vw; color: #F6F5F5; font: normal .80vw verdana, sans-serif; padding-right: 3.5vw; letter-spacing: 0; line-height: 125%; }
 #display-picture-slider-right { position: absolute; top: 7.5vh; left: 27.75vw; padding: 0; }
 .display-picture-slider-circle { display: block; position: relative; color: olive; width: .416vw; height: .416vw; border-radius: .416vw; border: .208vw double #ccc; background: #F6F5F5; margin-bottom: 1.75vh; }
-
+*/
 /* =========================================================================
    4. DYNAMIC BLOG ENGINE & PROFILE ELEMENT FRAMEWORK
    ========================================================================= */
