@@ -505,9 +505,9 @@ white-space: pre-wrap;
     /* 🎯 THE FIX: Restores the premium silver divider line safely beneath the brand nav tier */
     .org-ddm {
         position: relative !important;
-        height: auto !important;
-        padding-top: 12px !important;
-        padding-bottom: 12px !important;
+        height: 4vh !important;
+        padding-top: 1.2vh !important;
+        padding-bottom: 1.2vh !important;
         margin-bottom: 3vh !important; 
         border-bottom: 2px solid silver !important; /* Locks onto your exact hapslablab.css values */
         width: 100% !important;
@@ -621,7 +621,7 @@ white-space: pre-wrap;
     }
 
     .trends-blogspage-title {
-        font-size: 1.5vw !important;
+        font-size: 1.8vw !important;
         text-align: center !important;
         width: 100% !important;
         margin: 2vh 0 !important;
