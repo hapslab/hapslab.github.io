@@ -534,11 +534,16 @@ color: #01014c !important;
 text-align: center !important;
 margin-bottom: 5vh !important;
 }
+
+/* ********************************************
+   Surgical targeting: Targets the card strictly inside the FAQ wrapper on laptops 
+********************************************* */
 .faq-outer-section-wrapper .faq-content-card {
 position: relative !important;
 height: auto !important;
-width: 110% !important;
-margin: 4vh 0 3vh -5vh !important; /* Pulls the card left to align precisely with table edges */
+width: 56.5vw !important;
+margin: 0 auto !important; /* Centers it perfectly down the middle of the 78vw page container */
+
 background-color: #ffffff !important;
 border: 2px solid #0F172A !important;
 border-radius: 8px !important;
