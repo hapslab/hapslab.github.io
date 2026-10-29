@@ -563,54 +563,53 @@ white-space: pre-wrap;
     }
 
     /* 2.3 CORE CONTENT LANE NORMALIZATION WRAPPERS */
-    .trends-blogspage-container {
-        display: block !important; 
-        margin-left: 0 !important; 
-        margin-right: 0 !important;
-        width: 100% !important; 
-        padding-left: 4vw !important;
-        padding-right: 4vw !important;
-        box-sizing: border-box !important;
-    }
-
     /* 2.4 DYNAMIC SIDEBAR LIST CARD SLIM-LINE OVERRIDES FOR PHONES */
-    .db-sidebar-navigation-pane {
-        position: relative !important;   /* Unpins it from freezing statically over reading text */
-        top: 0 !important;
-        left: 0 !important;
+/* =========================================================================
+   MOBILE BREAKPOINT: TARGETED DATABASE NAVIGATION PANELS ONLY
+   ========================================================================= */
+@media (max-width: 768px) {
+    
+    /* 1. THE REPAIR: Sets the panel to a fluid 50vw and centers it down the canvas track */
+    .trends-blogspage-container .db-sidebar-navigation-pane {
+        position: relative !important;   
+        top: 0vh !important;
+        left: 0vw !important;
         display: block !important;
-        width: 85% !important;           
-        max-width: 85% !important;
-        margin: 4vh auto 4vh auto !important; /* Centers the card tray cleanly down the middle track */
+        width: 50vw !important;           
+        max-width: 50vw !important;       
+        margin: 4vh auto 4vh auto !important; 
         
-        height: 180px !important;        
-        max-height: 180px !important;     
-        overflow-y: auto !important;     /* Maps items into a clean standalone internal scrolling lane */
+        /* FLUID HEIGHT CORES: Restricts vertical bounds to a compact 22vh box */
+        height: 22vh !important;        
+        max-height: 22vh !important;     
+        overflow-y: auto !important;     /* Maps your 25 entities into an isolated scrolling window */
         overflow-x: hidden !important;
         
         background-color: #f8f9fa !important;
         border: 1px solid #dee2e6 !important;
         border-radius: 6px !important;
-        padding: 12px 14px !important;
+        padding: 1.5vh 2vw !important;
         box-shadow: inset 0 2px 4px rgba(0,0,0,0.02) !important;
         box-sizing: border-box !important;
     }
 
-    .db-sidebar-list-container {
+    /* 2. FORCES LIST ITEMS INTO A CLEAN SINGLE COLUMN VIEW */
+    .db-sidebar-navigation-pane .db-sidebar-list-container {
         display: block !important;
-        column-count: 1 !important;     /* Forces database listings down a clean single column path */
-        margin: 0 !important;
-        padding: 0 !important;
+        column-count: 1 !important;     
+        margin: 0vw !important;
+        padding: 0vw !important;
         width: 100% !important;
     }
 
+    /* 3. TRIMS LONG DATABASE NAMES ELEGANTLY TO FIT MOBILE BOUNDS */
     .db-sidebar-list-container li {
         width: 100% !important;
         display: block !important;
         white-space: nowrap !important;
         overflow: hidden !important;
-        text-overflow: ellipsis !important; /* Adds '...' neatly to long entity strings */
-        margin-bottom: 10px !important;    
+        text-overflow: ellipsis !important; /* Adds '...' for truncated names */
+        margin-bottom: 1.25vh !important;   /* Comfortable finger-tap target spacing */
     }
 
     /* 2.5 CENTER HEADERS & TEXT CARDS TO RESPONSIVE PHONE WIDTHS */
