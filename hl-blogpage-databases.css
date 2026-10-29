@@ -393,7 +393,8 @@ padding-right: 4px !important;
 .menu-box-respo { padding-left: 0 !important; }
 .menu-box-header-Moto-shift { margin-right: 0 !important; }
 .menu-box-header-right-shift { margin-right: 0 !important; }
-.trends-blogspage-container .db-sidebar-navigation-pane {
+
+.db-sidebar-navigation-pane {
 position: relative !important;
 top: 0vh !important;
 left: 0vw !important;
@@ -432,6 +433,15 @@ margin: 3vh auto 2vh auto !important;
 width: 100% !important;
 text-align: center !important;
 }
+
+    /* 🎯 OVERRIDES LAPTOP DRIFT of 17vh margin: Balances the right-side content track on mobile screens */
+    .trends-blogspage-container {
+        margin-left: 14vw !important;  /* Centers the right content track next to your nav */
+        width: 84vw !important;        /* Widens the lane so all 24 tables sit beautifully balanced */
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
 .trends-blogspage-title {
 font-size: 1.8vw !important;
 text-align: center !important;
@@ -459,17 +469,6 @@ box-sizing: border-box !important;
 padding: 10px 12px !important;
 font-size: 12px !important;
 }
-    /* 🎯 THE DRIFT REPAIR: Balances the column weights so the table centers perfectly on phone screens */
-    .trends-blogpage-table-wrapper tr th:first-child,
-    .trends-blogpage-table-wrapper tr td:first-child {
-        width: auto !important; /* Overrides the desktop 30% width crunch */
-        padding-right: 8px !important;
-    }
-
-    .trends-blogpage-table-wrapper tr th:last-child,
-    .trends-blogpage-table-wrapper tr td:last-child {
-        width: auto !important; /* Lets text columns distribute fluidly */
-    }
 
 .blog-featured-image-container,
 .trends-blogpage-img-container,
