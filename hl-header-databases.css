@@ -333,6 +333,7 @@ white-space: pre-wrap;
     box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important; 
     text-align: left !important; 
     z-index: 1000 !important;
+    display: block !important;
 }
 
 .db-sidebar-list-container {
