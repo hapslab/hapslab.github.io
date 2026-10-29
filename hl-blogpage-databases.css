@@ -434,13 +434,9 @@ width: 100% !important;
 text-align: center !important;
 }
 
-    /* 🎯 OVERRIDES LAPTOP DRIFT of 17vh margin: Balances the right-side content track on mobile screens */
-    .trends-blogspage-container {
-        margin-left: 14vw !important;  /* Centers the right content track next to your nav */
-        width: 84vw !important;        /* Widens the lane so all 24 tables sit beautifully balanced */
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-    }
+/*
+    .trends-blogspage-container is MISSING in the 768px area
+*/
 
 .trends-blogspage-title {
 font-size: 1.8vw !important;
