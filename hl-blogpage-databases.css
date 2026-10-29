@@ -459,6 +459,9 @@ max-width: 100% !important;
 margin: 4vh 0 2vh 0 !important;
 border-collapse: separate !important;
 box-sizing: border-box !important;
+
+/* 🎯 Below line GLIDES EVERYTHING on the Mbile towards Right of the screen */
+   transform: translateX(4vw) !important;
 }
 .trends-blogpage-table-wrapper th,
 .trends-blogpage-table-wrapper td {
