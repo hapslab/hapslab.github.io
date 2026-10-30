@@ -214,7 +214,6 @@ div a.org-url { color: #6B4700; }
 
 .trends-blogpage-details { position: relative; text-align: right; height: 1vh; top: .5vh; right: .25vw; width: auto; color: #414141; word-spacing: 0; font-family: fantasy, sans-serif; font-size: .6vw; font-weight: normal; }
 .trends-blogpage-style { position: relative; text-align: right; height: 1vh; top: .5vh; right: .25vw; width: auto; color: #414141; font-size: .6vw; font-weight: bold; font-style: normal; }
-Use code with caution.
 .trends-blogpage-desc { position: relative; height: auto; font-size: 1vw; top: 1vh; word-spacing: .25vw; text-align: left; }
 .trends-blogs-details { position: relative; float: center; color: #414141; font-size: .6vw; font-weight: normal; padding-top: .5vh; padding-bottom: 8vh; }
 /* =========================================================================
