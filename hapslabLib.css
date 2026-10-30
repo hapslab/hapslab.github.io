@@ -97,7 +97,7 @@ h4
 .org-NameHeader
 {                               /* FONTs of top HEADER for Hapslab */
    position: relative;
-   top: .75vh !important;
+   top: .5vh !important;
    color: maroon;               /* #855800; */
    font-weight: bold;
    font-size: 1.75vw;
@@ -108,7 +108,7 @@ h4
 .org-MotoHeader 
 {
    position: relative;
-   top: .75vh !important;
+   top: .5vh !important;
    color: navy;                 /* #4a6f2c;  vertical-align: 0px; */
    font-weight: normal;
    font-size: 1.2vw;            /* FONTSIZE of top HEADER */
