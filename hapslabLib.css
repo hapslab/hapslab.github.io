@@ -107,6 +107,7 @@ h4
 .org-MotoHeader 
 {
    position: relative;
+   margin-top: -1vh !important;
    color: navy;                 /* #4a6f2c;  vertical-align: 0px; */
    font-weight: normal;
    font-size: 1.2vw;            /* FONTSIZE of top HEADER */
