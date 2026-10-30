@@ -89,7 +89,7 @@ h4
   -moz-user-select: none;       /* mozilla browsers */
   -khtml-user-select: none;     /* webkit browsers  */
    text-decoration-style: solid;
-   top: .75vh;                  /* Position inside org-ddm class, places Hapslab, Moto, Menu buttoms */ 
+   top: .5vh;                  /* Position inside org-ddm class, places Hapslab, Moto, Menu buttoms */ 
    vertical-align: middle;
    font-family: fantasy;        /* Comic Sans, Florence, fantasy; */
 }
