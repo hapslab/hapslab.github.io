@@ -536,8 +536,10 @@ margin-bottom: 5vh !important;
 .faq-outer-section-wrapper .faq-content-card {
 position: relative !important;
 height: auto !important;
-width: 110% !important;
-margin: 4vh 0 3vh -5vh !important; /* Pulls the card left to align precisely with table edges */
+        /* 🎯 THE EXACT CONTENT MATCH: Matches the exact 56.5vw width of your main articles/images */
+        width: 56.5vw !important;               
+        margin: 0 auto 0 17vh !important; /* Centers it perfectly down the middle of the 78vw page container */
+
 background-color: #ffffff !important;
 border: 2px solid #0F172A !important;
 border-radius: 8px !important;
