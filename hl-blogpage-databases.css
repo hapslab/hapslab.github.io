@@ -538,7 +538,7 @@ position: relative !important;
 height: auto !important;
         /* 🎯 THE EXACT CONTENT MATCH: Matches the exact 56.5vw width of your main articles/images */
         width: 56.5vw !important;               
-        margin: 0 auto 0 17vh !important; /* Centers it perfectly down the middle of the 78vw page container */
+        margin: 0 auto 0 28vh !important; /* Centers it perfectly down the middle of the 78vw page container */
 
 background-color: #ffffff !important;
 border: 2px solid #0F172A !important;
