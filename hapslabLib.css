@@ -89,7 +89,7 @@ h4
   -moz-user-select: none;       /* mozilla browsers */
   -khtml-user-select: none;     /* webkit browsers  */
    text-decoration-style: solid;
-   top: .25vh;                  /* Position inside org-ddm class, places Hapslab, Moto, Menu buttoms */ 
+   /* top: .25vh;                   Position inside org-ddm class, places Hapslab, Moto, Menu buttoms */ 
    vertical-align: middle;
    font-family: fantasy;        /* Comic Sans, Florence, fantasy; */
 }
@@ -97,7 +97,7 @@ h4
 .org-NameHeader
 {                               /* FONTs of top HEADER for Hapslab */
    position: relative;
-   /* top: .5vh !important; */
+   top: .25vh !important; 
    color: maroon;               /* #855800; */
    font-weight: bold;
    font-size: 1.75vw;
@@ -108,7 +108,7 @@ h4
 .org-MotoHeader 
 {
    position: relative;
-   /* top: .5vh !important; */
+   top: .25vh !important;
    color: navy;                 /* #4a6f2c;  vertical-align: 0px; */
    font-weight: normal;
    font-size: 1.2vw;            /* FONTSIZE of top HEADER */
